@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brandlete — coaching software that keeps athletes on track</title>
+<meta name="description" content="Brandlete gives sports programs the operating system to set athlete goals, assign weekly work, and spot at-risk athletes weeks before they churn. Built for directors, coaches, athletes, and parents." />
+<meta property="og:title" content="Brandlete — coaching software that keeps athletes on track" />
+<meta property="og:description" content="The operating system for athlete development. Goals, weekly work, and at-risk visibility — for directors, coaches, athletes, and parents." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://brandlete.makeacompany.ai" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f6f5;
+    --bg-card: #ffffff;
+    --bg-dark: #0f1a17;
+    --ink: #111815;
+    --ink-soft: #4d5b56;
+    --ink-onDark: #eef3f1;
+    --ink-onDark-soft: #9eb1ab;
+    --rule: #dbe3df;
+    --accent: #d24a1f;
+    --accent-soft: #fae2d7;
+    --good: #1f7a4a;
+    --radius: 14px;
+    --maxw: 1120px;
+    --gutter: clamp(20px, 4vw, 40px);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 0;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+  h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); }
+  h3 { font-size: 1.2rem; font-weight: 600; }
+  p { margin: 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  nav { padding: 28px 0 0; }
+  nav .wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .mark {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    align-items: center;
+  }
+  .nav-links a { color: var(--ink-soft); }
+  .nav-links .btn-sm {
+    background: var(--ink);
+    color: var(--ink-onDark);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .nav-links .btn-sm:hover { background: var(--accent); text-decoration: none; }
+
+  /* Hero */
+  .hero { padding: clamp(48px, 9vw, 100px) 0 clamp(32px, 6vw, 64px); }
+  .hero h1 { max-width: 18ch; margin-bottom: 22px; }
+  .hero .lede {
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-bottom: 32px;
+  }
+  .cta-row {
+    display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+  }
+  .btn {
+    display: inline-block;
+    font: inherit;
+    font-weight: 600;
+    padding: 14px 22px;
+    background: var(--ink);
+    color: var(--ink-onDark);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn:hover { background: var(--accent); text-decoration: none; color: var(--ink-onDark); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+  }
+  .btn-ghost:hover { background: var(--bg-card); color: var(--ink); }
+  .micro { margin-top: 14px; font-size: 0.88rem; color: var(--ink-soft); }
+
+  /* Product mock */
+  .product {
+    margin-top: clamp(40px, 6vw, 64px);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    overflow: hidden;
+    box-shadow: 0 20px 60px -30px rgba(15, 26, 23, 0.25);
+  }
+  .product-bar {
+    background: linear-gradient(180deg, #f4f6f5, #e8ece9);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 14px;
+    display: flex; gap: 6px; align-items: center;
+  }
+  .product-bar i {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #d0d6d3;
+  }
+  .product-bar i:nth-child(1) { background: #f17171; }
+  .product-bar i:nth-child(2) { background: #f3c34c; }
+  .product-bar i:nth-child(3) { background: #69c777; }
+  .product-bar span {
+    margin-left: 14px; font-size: 0.85rem; color: var(--ink-soft);
+  }
+  .product-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 380px;
+  }
+  @media (max-width: 760px) { .product-body { grid-template-columns: 1fr; } .product-side { display: none; } }
+  .product-side {
+    background: #fbfcfb;
+    border-right: 1px solid var(--rule);
+    padding: 20px 16px;
+    font-size: 0.92rem;
+  }
+  .product-side h4 {
+    margin: 0 0 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .product-side ul {
+    list-style: none; padding: 0; margin: 0 0 22px;
+  }
+  .product-side li {
+    padding: 7px 10px;
+    border-radius: 6px;
+    color: var(--ink);
+    cursor: default;
+  }
+  .product-side li.active { background: var(--accent-soft); color: var(--ink); font-weight: 600; }
+  .product-main { padding: 26px 28px; }
+  .product-main h3 { margin-bottom: 4px; }
+  .product-main .sub { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 22px; }
+  .athlete-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 90px;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.95rem;
+    align-items: center;
+  }
+  .athlete-row:first-of-type { border-top: 1px solid var(--rule); padding-top: 14px; }
+  .athlete-row.head {
+    border-top: none;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    font-weight: 600;
+    padding-bottom: 6px;
+  }
+  .name { display: flex; gap: 10px; align-items: center; }
+  .avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid; place-items: center;
+    font-weight: 600; font-size: 0.78rem;
+  }
+  .bar {
+    height: 6px;
+    background: #e8ece9;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar > i {
+    display: block;
+    height: 100%;
+    background: var(--good);
+    border-radius: 3px;
+  }
+  .bar.warn > i { background: #d28a1f; }
+  .bar.bad > i { background: var(--accent); }
+  .pill {
+    font-size: 0.78rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #e8ece9;
+    color: var(--ink-soft);
+    font-weight: 600;
+    justify-self: start;
+  }
+  .pill.green { background: #d8eedf; color: #18653b; }
+  .pill.amber { background: #f7e6c2; color: #7a5012; }
+  .pill.red { background: #f8d6c9; color: #8a2a12; }
+
+  /* Sections */
+  section + section { border-top: 1px solid var(--rule); }
+  .section { padding: clamp(60px, 9vw, 100px) 0; }
+  .section.dark {
+    background: var(--bg-dark);
+    color: var(--ink-onDark);
+    border-top: none;
+  }
+  .section.dark h2, .section.dark h3 { color: var(--ink-onDark); }
+  .section.dark p { color: var(--ink-onDark-soft); }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .section.dark .eyebrow { color: var(--ink-onDark-soft); }
+  .lede-large {
+    font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+
+  /* Differentiator strip */
+  .diff {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 3vw, 36px);
+    margin-top: clamp(40px, 6vw, 56px);
+  }
+  @media (max-width: 900px) { .diff { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .diff { grid-template-columns: 1fr; } }
+  .diff .stat {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.2vw, 2.6rem);
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .diff h3 { margin-bottom: 6px; }
+  .diff p { font-size: 0.95rem; color: var(--ink-soft); }
+
+  /* Audience */
+  .three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+    margin-top: clamp(36px, 6vw, 56px);
+  }
+  @media (max-width: 880px) { .three { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: flex; flex-direction: column;
+  }
+  .card .num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+  .card h3 { margin-bottom: 10px; }
+  .card p { color: var(--ink-soft); font-size: 0.97rem; }
+  .card ul {
+    margin: 14px 0 0; padding: 0; list-style: none;
+    font-size: 0.95rem; color: var(--ink);
+  }
+  .card ul li {
+    padding: 7px 0; border-top: 1px solid var(--rule);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .card ul li::before {
+    content: "→"; color: var(--accent); flex-shrink: 0;
+  }
+
+  /* How */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 36px);
+    margin-top: clamp(36px, 6vw, 56px);
+  }
+  @media (max-width: 880px) { .how-grid { grid-template-columns: 1fr; } }
+
+  /* Testimonial */
+  .quote {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .quote blockquote {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .who {
+    display: flex; gap: 12px; align-items: center;
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+  }
+  .who .avatar {
+    width: 42px; height: 42px; font-size: 1rem;
+  }
+  .who div { line-height: 1.3; }
+  .who .name-l { font-weight: 600; }
+  .who .role { font-size: 0.88rem; color: var(--ink-soft); }
+
+  /* Pricing */
+  .pricing { text-align: center; max-width: 760px; margin: 0 auto; }
+  .pricing h2 { margin-bottom: 20px; }
+  .pricing p { margin: 0 auto 28px; max-width: 60ch; }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+    text-align: left;
+  }
+  @media (max-width: 720px) { .price-grid { grid-template-columns: 1fr; } }
+  .tier {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+  .tier h3 { color: var(--ink-onDark); margin-bottom: 6px; }
+  .tier .price {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    color: var(--ink-onDark);
+    margin: 14px 0 4px;
+  }
+  .tier .price small { font-size: 0.9rem; color: var(--ink-onDark-soft); font-family: 'Inter', sans-serif; }
+  .tier p { color: var(--ink-onDark-soft); font-size: 0.95rem; }
+  .tier ul { list-style: none; padding: 0; margin: 16px 0 0; font-size: 0.93rem; color: var(--ink-onDark-soft); }
+  .tier ul li { padding: 5px 0; }
+  .tier ul li::before { content: "✓ "; color: var(--accent); }
+  .tier .btn { margin-top: 18px; background: var(--accent); color: #fff; }
+  .tier .btn:hover { background: #b53a14; }
+
+  /* Footer */
+  footer {
+    padding: 48px 0 60px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: baseline;
+  }
+  footer .mark { color: var(--ink); }
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="mark">Brandlete</div>
+    <div class="nav-links">
+      <a href="#who-for">Who it's for</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#demo" class="btn-sm">Book a demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Athlete development software</p>
+    <h1>The operating system for athlete&nbsp;development.</h1>
+    <p class="lede">Brandlete gives sports programs one place to set goals, assign weekly work, and spot at-risk athletes weeks before they churn — so directors keep parents happy, coaches stay accountable, and athletes actually improve.</p>
+
+    <div class="cta-row">
+      <a href="#demo" class="btn">Book a demo</a>
+      <a href="#how" class="btn btn-ghost">See how it works</a>
+    </div>
+    <p class="micro">Built for clubs, academies, and travel programs from 50 to 5,000 athletes.</p>
+
+    <div class="product" aria-hidden="true">
+      <div class="product-bar">
+        <i></i><i></i><i></i>
+        <span>brandlete.app · Director dashboard · Spring season</span>
+      </div>
+      <div class="product-body">
+        <div class="product-side">
+          <h4>Program</h4>
+          <ul>
+            <li class="active">Athletes at risk</li>
+            <li>Coach activity</li>
+            <li>Engagement</li>
+            <li>Parent reports</li>
+          </ul>
+          <h4>Teams</h4>
+          <ul>
+            <li>U13 Boys</li>
+            <li>U15 Girls</li>
+            <li>U17 Elite</li>
+          </ul>
+        </div>
+        <div class="product-main">
+          <h3>Athletes at risk this week</h3>
+          <p class="sub">5 athletes flagged · 3 weeks ahead of typical churn signal</p>
+
+          <div class="athlete-row head">
+            <div>Athlete</div><div>Engagement (30d)</div><div>Last check-in</div><div></div>
+          </div>
+          <div class="athlete-row">
+            <div class="name"><div class="avatar">MA</div><div>Maya A.<br><span style="font-size:0.82rem;color:var(--ink-soft)">U15 Girls</span></div></div>
+            <div class="bar bad"><i style="width:22%"></i></div>
+            <div>11 days ago</div>
+            <div class="pill red">High risk</div>
+          </div>
+          <div class="athlete-row">
+            <div class="name"><div class="avatar">JT</div><div>Jordan T.<br><span style="font-size:0.82rem;color:var(--ink-soft)">U13 Boys</span></div></div>
+            <div class="bar warn"><i style="width:48%"></i></div>
+            <div>5 days ago</div>
+            <div class="pill amber">Watch</div>
+          </div>
+          <div class="athlete-row">
+            <div class="name"><div class="avatar">RP</div><div>Riley P.<br><span style="font-size:0.82rem;color:var(--ink-soft)">U17 Elite</span></div></div>
+            <div class="bar"><i style="width:84%"></i></div>
+            <div>Yesterday</div>
+            <div class="pill green">On track</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="diff">
+  <div class="wrap">
+    <p class="eyebrow">Why Brandlete</p>
+    <h2>Built for development, not&nbsp;scheduling.</h2>
+    <p class="lede-large" style="margin-top:14px">TeamSnap moves practices. Hudl analyzes film. Brandlete is the layer in between — the weekly habits and feedback loop that actually makes athletes better.</p>
+    <div class="diff">
+      <div>
+        <div class="stat">&lt; 30s</div>
+        <h3>Assign weekly work</h3>
+        <p>Coaches drop film reviews, fitness blocks, and goals to a whole team in under thirty seconds.</p>
+      </div>
+      <div>
+        <div class="stat">3 weeks</div>
+        <h3>Earlier churn signal</h3>
+        <p>Directors see at-risk athletes weeks before they quit — when an intervention still works.</p>
+      </div>
+      <div>
+        <div class="stat">1 app</div>
+        <h3>Athletes &amp; parents</h3>
+        <p>Goals, assignments, and progress in a single feed. No PDFs, no group chats, no DM chaos.</p>
+      </div>
+      <div>
+        <div class="stat">Zero</div>
+        <h3>Spreadsheets</h3>
+        <p>Stop running your program out of Google Sheets and group texts. Brandlete is the system of record.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="who-for">
+  <div class="wrap">
+    <p class="eyebrow">Who it's for</p>
+    <h2>Four people. One source of&nbsp;truth.</h2>
+    <div class="three">
+      <div class="card">
+        <div class="num">Directors</div>
+        <h3>See the whole program in one view.</h3>
+        <p>Real-time visibility into engagement, coach activity, and at-risk athletes — across every team in your club.</p>
+        <ul>
+          <li>Weekly at-risk report</li>
+          <li>Coach activity audit</li>
+          <li>Retention &amp; renewal signals</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">Coaches</div>
+        <h3>Run a real development program.</h3>
+        <p>Set goals, assign weekly work, track who's actually doing it. Less admin, more coaching.</p>
+        <ul>
+          <li>Team &amp; per-athlete goals</li>
+          <li>Weekly assignment templates</li>
+          <li>Athlete feedback in one feed</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">Athletes &amp; parents</div>
+        <h3>Know what to do this week.</h3>
+        <p>Athletes get a clear weekly plan. Parents see progress without nagging — and without group-chat overload.</p>
+        <ul>
+          <li>Weekly plan on the phone</li>
+          <li>Quiet parent progress digest</li>
+          <li>Goals + milestones over time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Stand up your first team in an&nbsp;afternoon.</h2>
+    <div class="how-grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Import your roster.</h3>
+        <p>CSV or copy-paste. Athletes and parents get a one-tap invite. No app store gymnastics — works in the browser.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Set goals &amp; weekly work.</h3>
+        <p>Use a template (soccer, baseball, basketball, hockey, lacrosse) or build your own. Assign once, reuse every week.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Watch the dashboard.</h3>
+        <p>Engagement drops, missed check-ins, and at-risk athletes surface automatically. Step in before churn — not after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proof">
+  <div class="wrap">
+    <p class="eyebrow">Why programs switch</p>
+    <h2>What directors tell&nbsp;us.</h2>
+    <div class="three">
+      <div class="quote">
+        <blockquote>"We were running the program out of three spreadsheets and a group chat. Brandlete put it all in one place and our renewal rate went up the first season."</blockquote>
+        <div class="who">
+          <div class="avatar">—</div>
+          <div>
+            <div class="name-l">Program director</div>
+            <div class="role">Real attribution coming soon — pilot customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <blockquote>"My coaches are actually consistent now. The weekly assignment templates mean nobody coasts and nobody reinvents the wheel."</blockquote>
+        <div class="who">
+          <div class="avatar">—</div>
+          <div>
+            <div class="name-l">Head coach</div>
+            <div class="role">Real attribution coming soon — pilot customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <blockquote>"I finally know what my kid is supposed to do during the week. The Sunday digest is enough — I don't have to chase the coach."</blockquote>
+        <div class="who">
+          <div class="avatar">—</div>
+          <div>
+            <div class="name-l">Parent</div>
+            <div class="role">Real attribution coming soon — pilot customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="pricing">
+  <div class="wrap pricing">
+    <p class="eyebrow">Pricing</p>
+    <h2>Simple, per-athlete pricing.</h2>
+    <p>No setup fees. No per-coach charges. Pilot a single team free for 30 days.</p>
+
+    <div class="price-grid">
+      <div class="tier">
+        <h3>Team</h3>
+        <p>For a single team or small academy.</p>
+        <div class="price">$4<small> / athlete / month</small></div>
+        <ul>
+          <li>Up to 50 athletes</li>
+          <li>Unlimited coaches</li>
+          <li>Parent access included</li>
+          <li>Weekly assignment templates</li>
+        </ul>
+        <a href="#demo" class="btn">Book a demo</a>
+      </div>
+      <div class="tier">
+        <h3>Program</h3>
+        <p>For clubs and multi-team organizations.</p>
+        <div class="price">Custom<small> · volume pricing</small></div>
+        <ul>
+          <li>Unlimited athletes &amp; teams</li>
+          <li>Director dashboard &amp; at-risk reports</li>
+          <li>SSO + roster sync</li>
+          <li>Dedicated onboarding</li>
+        </ul>
+        <a href="#demo" class="btn">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <div class="wrap" style="text-align:center; max-width: 640px; margin: 0 auto;">
+    <p class="eyebrow">Book a demo</p>
+    <h2>30 minutes. Real product. No&nbsp;deck.</h2>
+    <p class="lede-large" style="margin: 18px auto 28px;">We'll walk through your program, set up a team live on the call, and show you what your at-risk report would look like this week.</p>
+    <a href="mailto:hello@brandlete.com?subject=Brandlete%20demo%20request" class="btn">Email us to book</a>
+    <p class="micro">Or reach us at <a href="mailto:hello@brandlete.com">hello@brandlete.com</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">Brandlete</div>
+    <div>
+      Production site: <a href="https://brandlete.com">brandlete.com</a> ·
+      <a href="mailto:hello@brandlete.com">hello@brandlete.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
