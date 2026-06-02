@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brandlete.makeacompany.ai/sitemap.xml
