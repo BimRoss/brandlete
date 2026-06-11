@@ -654,6 +654,110 @@
   .tier .list li::before { content: "✓"; color: var(--brand); font-weight: 700; }
   .tier .badge.muted { color: var(--ink-3); background: var(--card-2); }
 
+  .billing-toggle {
+    display: inline-flex;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 18px;
+    gap: 2px;
+  }
+  .billing-opt {
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--ink-3);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .billing-opt:hover { color: var(--ink); }
+  .billing-opt.active {
+    background: var(--brand);
+    color: #ffffff;
+  }
+  .tier-solo {
+    display: grid;
+    grid-template-columns: minmax(0, 480px);
+    justify-content: start;
+  }
+  @media (max-width: 620px) { .tier-solo { grid-template-columns: 1fr; } }
+  .tier .price-num .price-amount {
+    color: var(--brand);
+    font-weight: 800;
+  }
+  .tier .price-sub { color: var(--ink-3); font-size: 0.86rem; margin: -6px 0 4px; }
+  .pricing-foot {
+    margin-top: 18px;
+    font-size: 0.92rem;
+    color: var(--ink-3);
+  }
+  .pricing-foot a { color: var(--brand); font-weight: 600; }
+  .pricing-foot a:hover { color: var(--brand-deep); }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 880px) { .contact-card { grid-template-columns: 1fr; } }
+  .contact-card .lead h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 10px; color: var(--ink); }
+  .contact-card .lead p { color: var(--ink-3); font-size: 0.96rem; line-height: 1.55; }
+  .contact-card .lead .shoe {
+    width: 56px; height: auto;
+    margin-bottom: 16px;
+    opacity: 0.95;
+    filter: drop-shadow(0 0 0.5px var(--brand));
+  }
+  .contact-form { display: grid; gap: 14px; }
+  .contact-row { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 540px) { .contact-row { grid-template-columns: 1fr; } }
+  .contact-field { display: flex; flex-direction: column; gap: 6px; }
+  .contact-field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .contact-field input,
+  .contact-field select,
+  .contact-field textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 11px 13px;
+    border-radius: 10px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-2);
+    color: var(--ink);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder { color: var(--ink-soft); }
+  .contact-field input:focus,
+  .contact-field select:focus,
+  .contact-field textarea:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px var(--brand-soft);
+  }
+  .contact-field textarea { resize: vertical; min-height: 110px; }
+  .contact-form .btn { align-self: flex-start; }
+  .contact-status {
+    font-size: 0.88rem;
+    color: var(--success);
+    min-height: 1.2em;
+  }
+  .contact-status.error { color: var(--danger); }
+
   .cta-strip {
     margin-top: 44px;
     background: var(--hero-grad);
@@ -726,6 +830,14 @@
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg></span>
         <span>Overview<span class="sub">Your coaching hub</span></span>
       </a>
+      <a href="#programs">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v6H4z"/><path d="M4 13h16v6H4z"/></svg></span>
+        <span>Programs<span class="sub">Every level of play</span></span>
+      </a>
+      <a href="#ai">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span>
+        <span>AI-native<span class="sub">Human-first by design</span></span>
+      </a>
       <a href="#who-for">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20c.6-3.4 3.4-5.5 6.5-5.5s5.9 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M22 19c-.4-2.3-2.1-3.7-4-3.9"/></svg></span>
         <span>Who it's for<span class="sub">Directors, coaches, families</span></span>
@@ -733,10 +845,6 @@
       <a href="#how">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16"/><path d="M4 12h10"/><path d="M4 19h16"/><circle cx="18" cy="12" r="2.4"/></svg></span>
         <span>How it works<span class="sub">Onboard in an afternoon</span></span>
-      </a>
-      <a href="#programs">
-        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v6H4z"/><path d="M4 13h16v6H4z"/></svg></span>
-        <span>Programs<span class="sub">Every level of play</span></span>
       </a>
       <a href="#team">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.6"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg></span>
@@ -748,7 +856,11 @@
       </a>
       <a href="#pricing">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v12"/><path d="M9 9h5a2 2 0 0 1 0 4H10a2 2 0 0 0 0 4h6"/></svg></span>
-        <span>Pricing<span class="sub">Simple per-athlete</span></span>
+        <span>Pricing<span class="sub">Full Access, monthly or yearly</span></span>
+      </a>
+      <a href="#contact">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg></span>
+        <span>Contact<span class="sub">Send us a note</span></span>
       </a>
     </nav>
 
@@ -763,7 +875,7 @@
   <main class="content">
     <div class="topstrip">
       <div class="greet">
-        <div class="eyebrow">Spring season · 2026</div>
+        <div class="eyebrow">Summer season · 2026</div>
         <h2>Hey coach, <span class="wave">👋</span> let's keep building today.</h2>
       </div>
       <div class="actions">
@@ -779,7 +891,7 @@
     <section class="hero-card" id="hero">
       <div class="eyebrow"><span class="pulse"></span>Continue where you left off</div>
       <h1>The operating <span class="accent">system</span><br/>for athlete development.</h1>
-      <p class="lede">One place to set goals, assign weekly work, and spot at-risk athletes weeks before they churn. Built for the directors, coaches, athletes, and parents who actually run the program.</p>
+      <p class="lede">One place to set goals, assign weekly work, and spot at-risk athletes weeks before they churn. AI-native under the hood, human-first on the surface — so every athlete gets measurable growth without the experience ever feeling robotic.</p>
       <div class="cta-row">
         <a href="#demo" class="btn btn-light">Continue program</a>
         <a href="#how" class="btn ghost-on-dark">See how it works</a>
@@ -815,6 +927,60 @@
         <div class="sub">Brandlete is the system of record.</div>
       </div>
     </div>
+
+    <section class="section" id="programs">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Across every level</div>
+          <h2>From club &amp; travel to college.</h2>
+        </div>
+        <a href="#demo" class="right">Find your fit ↗</a>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="img/youth-club.jpg" alt="Youth club soccer players celebrating a goal at golden hour." loading="lazy" />
+          <figcaption><span class="level-name">Club &amp; travel</span><span class="level-num">Level i</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/youth-baseball.jpg" alt="Youth travel baseball player taking batting practice indoors." loading="lazy" />
+          <figcaption><span class="level-name">Elite &amp; academy</span><span class="level-num">Level ii</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/youth-highschool.jpg" alt="High school varsity basketball team preparing in the locker room." loading="lazy" />
+          <figcaption><span class="level-name">High school</span><span class="level-num">Level iii</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/youth-college.jpg" alt="College lacrosse player jogging off the field at dusk." loading="lazy" />
+          <figcaption><span class="level-name">College</span><span class="level-num">Level iv</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">AI-native · human-first</div>
+          <h2>AI works behind the scenes. Coaches and athletes stay in front.</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge">For athletes</span>
+          <h3>A plan that adapts as you grow.</h3>
+          <p class="lede">Weekly work, goals, and habits adjust to how the season is actually going — no spreadsheet rebuild, no static PDF.</p>
+        </div>
+        <div class="card">
+          <span class="badge">For coaches</span>
+          <h3>Less admin, more coaching.</h3>
+          <p class="lede">Templates, prompts, and summaries do the busywork so you spend your time on feedback and relationships — not data entry.</p>
+        </div>
+        <div class="card">
+          <span class="badge">For directors</span>
+          <h3>Measurable growth, week over week.</h3>
+          <p class="lede">Engagement, retention, and development signals roll up automatically. The numbers are real, the decisions are still yours.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="who-for">
       <div class="section-head">
@@ -876,34 +1042,6 @@
       </div>
     </section>
 
-    <section class="section" id="programs">
-      <div class="section-head">
-        <div class="left">
-          <div class="eyebrow">Across every level</div>
-          <h2>From club &amp; travel to college.</h2>
-        </div>
-        <a href="#demo" class="right">Find your fit ↗</a>
-      </div>
-      <div class="gallery">
-        <figure>
-          <img src="img/youth-club.jpg" alt="Youth club soccer players celebrating a goal at golden hour." loading="lazy" />
-          <figcaption><span class="level-name">Club &amp; travel</span><span class="level-num">Level i</span></figcaption>
-        </figure>
-        <figure>
-          <img src="img/youth-baseball.jpg" alt="Youth travel baseball player taking batting practice indoors." loading="lazy" />
-          <figcaption><span class="level-name">Elite &amp; academy</span><span class="level-num">Level ii</span></figcaption>
-        </figure>
-        <figure>
-          <img src="img/youth-highschool.jpg" alt="High school varsity basketball team preparing in the locker room." loading="lazy" />
-          <figcaption><span class="level-name">High school</span><span class="level-num">Level iii</span></figcaption>
-        </figure>
-        <figure>
-          <img src="img/youth-college.jpg" alt="College lacrosse player jogging off the field at dusk." loading="lazy" />
-          <figcaption><span class="level-name">College</span><span class="level-num">Level iv</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
     <section class="section" id="team">
       <div class="section-head">
         <div class="left">
@@ -915,21 +1053,21 @@
       <div class="team-grid">
         <div class="team-col">
           <div class="team-portrait">JS</div>
-          <div class="role-row"><span class="role-tag">CEO</span><span class="role-mini">Founder I</span></div>
+          <div class="role-row"><span class="role-tag">CEO</span></div>
           <h3>Judd Simon</h3>
           <p>Co-founder and chief executive. Sets the product vision and the path to becoming the operating system for athlete development.</p>
           <a class="team-link" href="https://www.linkedin.com/in/juddsimon" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
         <div class="team-col">
           <div class="team-portrait">JO</div>
-          <div class="role-row"><span class="role-tag">CSO</span><span class="role-mini">Founder II</span></div>
+          <div class="role-row"><span class="role-tag">CSO</span></div>
           <h3>John Osberg</h3>
           <p>Chief sales officer. Leads sales, partnerships, and the go-to-market motion across clubs, high schools, and college programs.</p>
           <a class="team-link" href="https://www.linkedin.com/in/johnosberg" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
         <div class="team-col">
           <div class="team-portrait">DT</div>
-          <div class="role-row"><span class="role-tag">CTO</span><span class="role-mini">Founder III</span></div>
+          <div class="role-row"><span class="role-tag">CTO</span></div>
           <h3>David Taylor</h3>
           <p>Chief technology officer. Builds the platform end to end, from roster import to weekly assignments to the at-risk report.</p>
           <a class="team-link" href="https://www.linkedin.com/in/taylordavidduayne" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -964,29 +1102,96 @@
       <div class="section-head">
         <div class="left">
           <div class="eyebrow">Pricing</div>
-          <h2>Simple, per-athlete pricing.</h2>
+          <h2>One plan. Everything in.</h2>
         </div>
-        <a href="#demo" class="right">Pilot a team free ↗</a>
+        <a href="#demo" class="right">Talk to us about programs ↗</a>
       </div>
-      <div class="grid-2">
+      <div class="billing-toggle" role="tablist" aria-label="Billing period">
+        <button type="button" class="billing-opt active" data-period="monthly" role="tab" aria-selected="true">Monthly</button>
+        <button type="button" class="billing-opt" data-period="yearly" role="tab" aria-selected="false">Yearly</button>
+      </div>
+      <div class="tier-solo">
         <div class="tier featured">
           <div class="tier-head">
-            <div class="tier-name">Team</div>
-            <span class="badge">Most common</span>
+            <div class="tier-name">Full Access</div>
+            <span class="badge">Athlete plan</span>
           </div>
-          <div class="price-num">$4 <small>per athlete · per month</small></div>
-          <ul class="list"><li>Up to 50 athletes</li><li>Unlimited coaches</li><li>Parent access included</li><li>Weekly assignment templates</li></ul>
-          <a href="#demo" class="btn" style="align-self:flex-start;margin-top:6px;">Book a demo</a>
-        </div>
-        <div class="tier">
-          <div class="tier-head">
-            <div class="tier-name">Program</div>
-            <span class="badge muted">Multi-team</span>
+          <div class="price-num">
+            <span class="price-amount">$14.99</span>
+            <small class="price-period">/ Month</small>
           </div>
-          <div class="price-num">Custom <small>volume pricing</small></div>
-          <ul class="list"><li>Unlimited athletes and teams</li><li>Director dashboard and at-risk reports</li><li>SSO + roster sync</li><li>Dedicated onboarding</li></ul>
-          <a href="#demo" class="btn btn-ghost" style="align-self:flex-start;margin-top:6px;">Talk to sales</a>
+          <p class="price-sub" data-period-note="monthly">Billed monthly. Cancel anytime.</p>
+          <ul class="list">
+            <li>Personalized Development Plan</li>
+            <li>Goal Setting &amp; Progress Tracking</li>
+            <li>Add Multiple Coaches For Feedback</li>
+            <li>Direct Coach Accountability</li>
+            <li>Daily Tasks &amp; Habit Building</li>
+            <li>Parent Visibility &amp; Support</li>
+            <li>Performance Insights Over Time</li>
+            <li>Public Profile &amp; Season Stat Tracking</li>
+          </ul>
+          <a href="https://www.brandlete.com" target="_blank" rel="noopener" class="btn" style="align-self:flex-start;margin-top:6px;">Sign up on brandlete.com</a>
         </div>
+      </div>
+      <p class="pricing-foot">Running a club, high school, or college program? <a href="#contact">Talk to us about program pricing.</a></p>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Contact</div>
+          <h2>Send a note. We'll write back.</h2>
+        </div>
+        <a href="mailto:hello@brandlete.com" class="right">hello@brandlete.com ↗</a>
+      </div>
+      <div class="contact-card">
+        <div class="lead">
+          <img class="shoe" src="img/brandlete-shoe.png" alt="" />
+          <h3>Questions about how Brandlete works?</h3>
+          <p>Tell us a little about your program or where you are in your athletic development and we'll get back to you. If you'd rather just email, <a href="mailto:hello@brandlete.com" style="color:var(--brand);font-weight:600;">hello@brandlete.com</a> goes to the same inbox.</p>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-field">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+          </div>
+          <div class="contact-row">
+            <div class="contact-field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <div class="contact-field">
+              <label for="contact-role">I am a:</label>
+              <select id="contact-role" name="role" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Athlete</option>
+                <option>Parent</option>
+                <option>Coach</option>
+                <option>Program Director</option>
+                <option>Partner / Investor</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="contact-field">
+            <label for="contact-interest">What are you interested in?</label>
+            <select id="contact-interest" name="interest" required>
+              <option value="" disabled selected>Select…</option>
+              <option>A personal Brandlete account</option>
+              <option>Bringing Brandlete to my team or program</option>
+              <option>Partnership or pilot</option>
+              <option>Press or investor inquiry</option>
+              <option>Just curious</option>
+            </select>
+          </div>
+          <div class="contact-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send message</button>
+          <div class="contact-status" id="contact-status" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </section>
 
@@ -1032,7 +1237,7 @@
       });
     }
 
-    var sections = ['hero','who-for','how','programs','team','proof','pricing'];
+    var sections = ['hero','programs','ai','who-for','how','team','proof','pricing','contact'];
     var links = sections.reduce(function (acc, id) {
       acc[id] = document.querySelector('.rail-nav a[href="#' + id + '"]');
       return acc;
@@ -1048,6 +1253,61 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    var billingButtons = document.querySelectorAll('.billing-opt');
+    var priceAmount = document.querySelector('.price-amount');
+    var pricePeriod = document.querySelector('.price-period');
+    var priceSub = document.querySelector('.price-sub');
+    var prices = {
+      monthly: { amount: '$14.99', period: '/ Month', note: 'Billed monthly. Cancel anytime.' },
+      yearly:  { amount: '$149.99', period: '/ Year',  note: 'Billed yearly. Save about 17% versus monthly.' }
+    };
+    billingButtons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        billingButtons.forEach(function (other) {
+          other.classList.toggle('active', other === b);
+          other.setAttribute('aria-selected', other === b ? 'true' : 'false');
+        });
+        var p = prices[b.getAttribute('data-period')] || prices.monthly;
+        if (priceAmount) priceAmount.textContent = p.amount;
+        if (pricePeriod) pricePeriod.textContent = p.period;
+        if (priceSub) priceSub.textContent = p.note;
+      });
+    });
+
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('contact-status');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        var name = (data.get('name') || '').toString().trim();
+        var email = (data.get('email') || '').toString().trim();
+        var role = (data.get('role') || '').toString().trim();
+        var interest = (data.get('interest') || '').toString().trim();
+        var message = (data.get('message') || '').toString().trim();
+        if (!name || !email || !role || !interest || !message) {
+          status.textContent = 'Please fill in every field, then send.';
+          status.classList.add('error');
+          return;
+        }
+        status.classList.remove('error');
+        var subject = 'Brandlete contact — ' + name + ' (' + role + ')';
+        var body = [
+          'Name: ' + name,
+          'Email: ' + email,
+          'I am a: ' + role,
+          'Interested in: ' + interest,
+          '',
+          message
+        ].join('\n');
+        var href = 'mailto:hello@brandlete.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+        status.textContent = 'Opening your email app. If nothing opens, write hello@brandlete.com directly.';
+        window.location.href = href;
+      });
+    }
   })();
 </script>
 
