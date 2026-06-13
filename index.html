@@ -184,8 +184,14 @@
     font-size: 0.95rem;
     color: var(--ink);
   }
+  .rail-toggle {
+    display: flex;
+    justify-content: flex-start;
+    padding: 6px 4px 4px;
+  }
   @media (max-width: 920px) {
     .brand-mark { border-bottom: none; padding: 0; flex-shrink: 0; }
+    .rail-toggle { padding: 0; margin-left: 4px; }
   }
 
   .rail-section-label {
@@ -270,7 +276,8 @@
   @media (max-width: 720px) {
     .topstrip { flex-direction: column; align-items: stretch; gap: 14px; }
     .topstrip .greet h2 { min-height: 2.6em; }
-    .topstrip .actions { justify-content: flex-end; }
+    .topstrip .actions { justify-content: center; }
+    .topstrip .actions .btn { padding: 13px 28px; font-size: 0.96rem; }
   }
 
   .chip {
@@ -856,6 +863,12 @@
       <img src="img/brandlete-shoe.png" alt="" />
       <span class="wordmark">BRANDLETE</span>
     </div>
+    <div class="rail-toggle">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
+        <svg class="icon-dark ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-light ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.5 4.5l1.5 1.5M18 18l1.5 1.5M4.5 19.5L6 18M18 6l1.5-1.5"/></svg>
+      </button>
+    </div>
 
     <div class="rail-section-label">Workspace</div>
     <nav class="rail-nav">
@@ -913,10 +926,6 @@
       </div>
       <div class="actions">
         <span class="chip"><span class="dot"></span>Pilot programs onboarding</span>
-        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
-          <svg class="icon-dark ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="icon-light ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.5 4.5l1.5 1.5M18 18l1.5 1.5M4.5 19.5L6 18M18 6l1.5-1.5"/></svg>
-        </button>
         <a href="#demo" class="btn">Book a demo</a>
       </div>
     </div>
@@ -1264,8 +1273,8 @@
         setTimeout(function () {
           greetRole.textContent = roles[idx];
           greetRole.classList.remove('fade');
-        }, 280);
-      }, 2400);
+        }, 320);
+      }, 5000);
     }
 
     var sections = ['hero','programs','ai','who-for','how','team','proof','pricing','contact'];
