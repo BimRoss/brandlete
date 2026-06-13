@@ -577,6 +577,48 @@
     color: var(--accent-cyan);
   }
 
+  .athlete-band {
+    position: relative;
+    margin: 56px 0;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+    box-shadow: var(--shadow-card);
+  }
+  .athlete-band img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .athlete-band:hover img { transform: scale(1.03); }
+  @media (max-width: 760px) {
+    .athlete-band img { aspect-ratio: 4 / 3; }
+    .athlete-band { margin: 40px 0; }
+  }
+  .athlete-band figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 22px 28px;
+    background: linear-gradient(to top, rgba(6,9,18,0.85) 0%, rgba(6,9,18,0.25) 70%, transparent 100%);
+    color: #f5f9ff;
+    display: flex; justify-content: space-between; align-items: end;
+    gap: 14px;
+  }
+  .athlete-band figcaption .level-name {
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+  .athlete-band figcaption .level-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+  }
+
   .product-twoup {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1018,20 +1060,10 @@
         </div>
         <a href="#demo" class="right">Find your fit ↗</a>
       </div>
-      <div class="gallery">
-        <figure>
-          <img src="img/youth-club.jpg" alt="Youth club soccer players celebrating a goal at golden hour." loading="lazy" />
-          <figcaption><span class="level-name">Club &amp; travel</span><span class="level-num">Level i</span></figcaption>
-        </figure>
-        <figure>
-          <img src="img/youth-highschool.jpg" alt="High school varsity basketball team preparing in the locker room." loading="lazy" />
-          <figcaption><span class="level-name">High school</span><span class="level-num">Level ii</span></figcaption>
-        </figure>
-        <figure>
-          <img src="img/youth-college.jpg" alt="College lacrosse player jogging off the field at dusk." loading="lazy" />
-          <figcaption><span class="level-name">College</span><span class="level-num">Level iii</span></figcaption>
-        </figure>
-      </div>
+      <figure class="athlete-band">
+        <img src="img/youth-club.jpg" alt="Youth club soccer players celebrating a goal at golden hour." loading="lazy" />
+        <figcaption><span class="level-name">Club &amp; travel</span><span class="level-num">Level i</span></figcaption>
+      </figure>
     </section>
 
     <div class="kpis">
@@ -1110,6 +1142,11 @@
       </div>
     </section>
 
+    <figure class="athlete-band">
+      <img src="img/youth-highschool.jpg" alt="High school varsity basketball team preparing in the locker room." loading="lazy" />
+      <figcaption><span class="level-name">High school</span><span class="level-num">Level ii</span></figcaption>
+    </figure>
+
     <section class="section" id="how">
       <div class="section-head">
         <div class="left">
@@ -1176,6 +1213,11 @@
         </div>
       </div>
     </section>
+
+    <figure class="athlete-band">
+      <img src="img/youth-college.jpg" alt="College lacrosse player jogging off the field at dusk." loading="lazy" />
+      <figcaption><span class="level-name">College</span><span class="level-num">Level iii</span></figcaption>
+    </figure>
 
     <section class="section" id="proof">
       <div class="section-head">
