@@ -581,6 +581,48 @@
     color: var(--accent-cyan);
   }
 
+  .product-twoup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 880px) { .product-twoup { grid-template-columns: 1fr; } }
+  .product-twoup figure {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #0a1024;
+    box-shadow: var(--shadow-card);
+    display: flex; flex-direction: column;
+  }
+  .product-twoup figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .product-twoup figcaption {
+    padding: 14px 18px;
+    color: #e7ecf7;
+    background: #0a1024;
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 10px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .product-twoup figcaption .surface-name {
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: -0.01em;
+  }
+  .product-twoup figcaption .surface-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+  }
+
   .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   @media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
@@ -949,6 +991,26 @@
       <div class="cta-row">
         <a href="#demo" class="btn btn-light">Continue program</a>
         <a href="#how" class="btn ghost-on-dark">See how it works</a>
+      </div>
+    </section>
+
+    <section class="section" id="inside">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Inside the platform</div>
+          <h2>Coaches drive the system. Athletes live in it.</h2>
+        </div>
+        <a href="#demo" class="right">See it live ↗</a>
+      </div>
+      <div class="product-twoup">
+        <figure>
+          <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
+          <figcaption><span class="surface-name">Coach Hub</span><span class="surface-tag">Coach view</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
+          <figcaption><span class="surface-name">Athlete Workspace</span><span class="surface-tag">Athlete view</span></figcaption>
+        </figure>
       </div>
     </section>
 
