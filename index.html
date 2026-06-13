@@ -593,7 +593,7 @@
     display: flex; flex-direction: column; gap: 12px;
   }
   .team-portrait {
-    width: 72px; height: 72px;
+    width: 84px; height: 84px;
     border-radius: 50%;
     background: var(--brand-soft);
     color: var(--brand);
@@ -603,6 +603,12 @@
     font-size: 1.4rem;
     letter-spacing: -0.02em;
     text-transform: uppercase;
+    overflow: hidden;
+  }
+  .team-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .team-col .role-row {
     display: flex; align-items: center; gap: 8px;
@@ -1083,28 +1089,28 @@
       </div>
       <div class="team-grid">
         <div class="team-col">
-          <div class="team-portrait">JS</div>
+          <div class="team-portrait"><img src="img/team-judd.jpg" alt="Judd Simon" loading="lazy" /></div>
           <div class="role-row"><span class="role-tag">CEO</span></div>
           <h3>Judd Simon</h3>
           <p>Co-founder and chief executive. Sets the product vision and the path to becoming the operating system for athlete development.</p>
           <a class="team-link" href="https://www.linkedin.com/in/juddsimon" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
         <div class="team-col">
-          <div class="team-portrait">JO</div>
+          <div class="team-portrait"><img src="img/team-john.jpg" alt="John Osberg" loading="lazy" /></div>
           <div class="role-row"><span class="role-tag">VP, Partnerships</span></div>
           <h3>John Osberg</h3>
           <p>Leads partnerships and the go-to-market motion across clubs, high schools, and college programs.</p>
           <a class="team-link" href="https://www.linkedin.com/in/johnosberg" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
         <div class="team-col">
-          <div class="team-portrait">DT</div>
+          <div class="team-portrait"><img src="img/team-david.jpg" alt="David Taylor" loading="lazy" /></div>
           <div class="role-row"><span class="role-tag">CTO</span></div>
           <h3>David Taylor</h3>
           <p>Chief technology officer. Builds the platform end to end, from roster import to weekly assignments to the at-risk report.</p>
           <a class="team-link" href="https://www.linkedin.com/in/taylordavidduayne" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
         <div class="team-col">
-          <div class="team-portrait">BL</div>
+          <div class="team-portrait"><img src="img/team-brian.jpg" alt="Brian Lehman" loading="lazy" /></div>
           <div class="role-row"><span class="role-tag">VP, Business Development</span></div>
           <h3>Brian Lehman</h3>
           <p>Drives revenue and new program partnerships, with a focus on parent and athletic-director relationships.</p>
