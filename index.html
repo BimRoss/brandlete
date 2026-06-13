@@ -1,14 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <script>
   try {
     var url = new URL(window.location.href);
     var override = url.searchParams.get('theme');
     var saved = localStorage.getItem('brandlete-theme');
-    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    var sys = prefersLight ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', override || saved || sys);
+    document.documentElement.setAttribute('data-theme', override || saved || 'light');
   } catch (e) {}
 </script>
 <meta charset="utf-8" />
@@ -427,6 +425,35 @@
     align-self: end;
   }
 
+  .cohort-strip {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 20px 4px 0;
+    padding: 14px 6px 0;
+    border-top: 1px solid var(--border);
+  }
+  .cohort-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-right: 6px;
+  }
+  .cohort-mark {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-2);
+    opacity: 0.82;
+  }
+  @media (max-width: 640px) {
+    .cohort-strip { gap: 8px 14px; }
+    .cohort-mark { font-size: 0.84rem; }
+  }
+
   .kpis {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -640,6 +667,53 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+  .product-img-wrap {
+    position: relative;
+    display: block;
+  }
+  .product-img-wrap .pin {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    z-index: 2;
+  }
+  .product-img-wrap .pin i {
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.78rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 0 4px rgba(56,189,248,0.18), 0 4px 12px rgba(2,8,23,0.35);
+    flex-shrink: 0;
+  }
+  .product-img-wrap .pin em {
+    font-style: normal;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #0b132a;
+    background: rgba(255,255,255,0.96);
+    padding: 4px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(2,8,23,0.18);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.18s, transform 0.18s;
+  }
+  .product-img-wrap .pin:hover em,
+  .product-img-wrap:hover .pin em { opacity: 1; transform: translateX(0); }
+  @media (max-width: 720px) {
+    .product-img-wrap .pin em { display: none; }
   }
   .product-twoup figcaption {
     padding: 14px 18px;
@@ -878,28 +952,23 @@
   .contact-status.error { color: var(--danger); }
 
   .cta-strip {
-    margin-top: 44px;
-    background: var(--hero-grad);
-    color: #ffffff;
-    border-radius: 18px;
-    padding: 36px clamp(24px, 4vw, 44px);
+    margin-top: 28px;
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px clamp(20px, 3vw, 28px);
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 24px;
+    grid-template-columns: 1.4fr auto;
+    gap: 18px;
     align-items: center;
-    box-shadow: var(--shadow-card);
+    box-shadow: none;
     position: relative;
     overflow: hidden;
   }
   @media (max-width: 760px) { .cta-strip { grid-template-columns: 1fr; } }
-  .cta-strip::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 90% 0%, rgba(56,189,248,0.35), transparent 50%);
-    pointer-events: none;
-  }
-  .cta-strip h2 { color: #ffffff; max-width: 22ch; position: relative; }
-  .cta-strip .lede { color: rgba(245,249,255,0.86); margin-top: 10px; position: relative; }
+  .cta-strip h2 { color: var(--ink); font-size: 1.05rem; font-weight: 600; max-width: none; position: relative; }
+  .cta-strip .lede { color: var(--ink-soft); margin-top: 2px; font-size: 0.88rem; position: relative; }
   .cta-strip .ctas { display: flex; gap: 12px; flex-wrap: wrap; position: relative; justify-self: end; }
   @media (max-width: 760px) { .cta-strip .ctas { justify-self: start; } }
   .cta-strip .ghost-on-dark {
@@ -1018,7 +1087,7 @@
         <h2>Hey <span id="greet-role" class="greet-role">coach</span>, <span class="wave">👋</span> let's keep building today.</h2>
       </div>
       <div class="actions">
-        <span class="chip"><span class="dot"></span>Pilot programs onboarding</span>
+        <span class="chip"><span class="dot"></span>Summer 2026 cohort · onboarding now</span>
         <a href="#demo" class="btn">Book a demo</a>
       </div>
     </div>
@@ -1033,6 +1102,15 @@
       </div>
     </section>
 
+    <div class="cohort-strip" aria-label="Pilot cohort segments">
+      <span class="cohort-label">Pilot cohort</span>
+      <span class="cohort-mark">Club &amp; Travel</span>
+      <span class="cohort-mark">High School</span>
+      <span class="cohort-mark">JUCO &amp; NAIA</span>
+      <span class="cohort-mark">D2 / D3</span>
+      <span class="cohort-mark">Private &amp; Prep</span>
+    </div>
+
     <section class="section" id="inside">
       <div class="section-head">
         <div class="left">
@@ -1043,11 +1121,21 @@
       </div>
       <div class="product-twoup">
         <figure>
-          <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
+          <div class="product-img-wrap">
+            <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
+            <span class="pin" style="top:14%;left:8%"><i>1</i><em>Assign weekly work in &lt;30s</em></span>
+            <span class="pin" style="top:42%;left:62%"><i>2</i><em>At-risk athletes flagged early</em></span>
+            <span class="pin" style="top:78%;left:22%"><i>3</i><em>Roster-wide progress at a glance</em></span>
+          </div>
           <figcaption><span class="surface-name">Coach Hub</span><span class="surface-tag">Coach view</span></figcaption>
         </figure>
         <figure>
-          <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
+          <div class="product-img-wrap">
+            <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
+            <span class="pin" style="top:12%;left:10%"><i>1</i><em>Today's focus, one screen</em></span>
+            <span class="pin" style="top:46%;left:64%"><i>2</i><em>Coach updates in line</em></span>
+            <span class="pin" style="top:80%;left:24%"><i>3</i><em>Progress streak stays visible</em></span>
+          </div>
           <figcaption><span class="surface-name">Athlete Workspace</span><span class="surface-tag">Athlete view</span></figcaption>
         </figure>
       </div>
@@ -1236,6 +1324,14 @@
           <blockquote>“My coaches are actually consistent now. The weekly assignment templates mean nobody coasts and nobody reinvents the wheel.”</blockquote>
           <div class="who"><div class="avatar">HC</div><div class="meta"><div class="nm">Head Coach</div><div class="role">Pilot customer, attribution pending</div></div></div>
         </div>
+        <div class="quote">
+          <blockquote>“For the first time I can actually see what my kid is working on without nagging her coach. The Sunday check-in does what every team chat tried to do and failed.”</blockquote>
+          <div class="who"><div class="avatar">PR</div><div class="meta"><div class="nm">Club Soccer Parent</div><div class="role">Pilot customer, attribution pending</div></div></div>
+        </div>
+        <div class="quote">
+          <blockquote>“We replaced two tools and a Google Sheet on day one. The at-risk flag pulled three athletes back into the program before mid-season.”</blockquote>
+          <div class="who"><div class="avatar">AD</div><div class="meta"><div class="nm">Athletic Director</div><div class="role">Pilot customer, attribution pending</div></div></div>
+        </div>
       </div>
     </section>
 
@@ -1259,9 +1355,9 @@
           </div>
           <div class="price-num">
             <span class="price-amount">$14.99</span>
-            <small class="price-period">/ Month</small>
+            <small class="price-period">per athlete / month</small>
           </div>
-          <p class="price-sub" data-period-note="monthly">Billed monthly. Cancel anytime.</p>
+          <p class="price-sub" data-period-note="monthly">Billed monthly. Cancel anytime. No per-coach or per-parent fees.</p>
           <ul class="list">
             <li>Personalized Development Plan</li>
             <li>Goal Setting &amp; Progress Tracking</li>
@@ -1338,11 +1434,11 @@
 
     <section class="cta-strip" id="demo">
       <div>
-        <h2>30 minutes. Real product. No deck.</h2>
-        <p class="lede">We'll set up a team live on the call and show you what your at-risk report would look like this week.</p>
+        <h2>Prefer email? 30-minute demo, real product, no deck.</h2>
+        <p class="lede">We'll set up a team live on the call and show you this week's at-risk report.</p>
       </div>
       <div class="ctas">
-        <a href="mailto:info@brandlete.com?subject=Brandlete%20demo%20request" class="btn btn-light">Email us to book</a>
+        <a href="mailto:info@brandlete.com?subject=Brandlete%20demo%20request" class="btn">Email us to book</a>
       </div>
     </section>
 
@@ -1381,12 +1477,6 @@
     btn.addEventListener('click', function () {
       apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
-    if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-        try { if (localStorage.getItem('brandlete-theme')) return; } catch (err) {}
-        apply(e.matches ? 'dark' : 'light');
-      });
-    }
 
     var greetRole = document.getElementById('greet-role');
     var greetH2 = greetRole ? greetRole.parentElement : null;
@@ -1445,8 +1535,8 @@
     var pricePeriod = document.querySelector('.price-period');
     var priceSub = document.querySelector('.price-sub');
     var prices = {
-      monthly: { amount: '$14.99', period: '/ Month', note: 'Billed monthly. Cancel anytime.' },
-      yearly:  { amount: '$149.99', period: '/ Year',  note: 'Billed yearly. Save about 17% versus monthly.' }
+      monthly: { amount: '$14.99', period: 'per athlete / month', note: 'Billed monthly. Cancel anytime. No per-coach or per-parent fees.' },
+      yearly:  { amount: '$149.99', period: 'per athlete / year',  note: 'Billed yearly. Save about 17% versus monthly. Coaches and parents always free.' }
     };
     billingButtons.forEach(function (b) {
       b.addEventListener('click', function () {
