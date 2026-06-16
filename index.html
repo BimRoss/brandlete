@@ -446,32 +446,40 @@
   }
 
   .cohort-strip {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    margin: 20px 4px 0;
-    padding: 14px 6px 0;
+    margin: 22px 4px 0;
+    padding: 16px 6px 0;
     border-top: 1px solid var(--border);
   }
   .cohort-label {
+    display: block;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-right: 6px;
+    color: #00CCFF;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .cohort-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   .cohort-mark {
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-    color: var(--ink-2);
-    opacity: 0.82;
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,204,255,0.45);
+    background: rgba(0,204,255,0.08);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
   }
   @media (max-width: 640px) {
-    .cohort-strip { gap: 8px 14px; }
-    .cohort-mark { font-size: 0.84rem; }
+    .cohort-bubbles { gap: 8px; }
+    .cohort-mark { font-size: 0.84rem; padding: 6px 12px; }
   }
 
   .kpis {
@@ -1407,13 +1415,16 @@
       <p class="hero-supporting">Built for coaches. Clear for athletes. Visible to parents. Actionable for program leaders.</p>
     </section>
 
-    <div class="cohort-strip" aria-label="Pilot cohort segments">
-      <span class="cohort-label">Built for</span>
-      <span class="cohort-mark">Club &amp; Travel</span>
-      <span class="cohort-mark">High School</span>
-      <span class="cohort-mark">JUCO &amp; NAIA</span>
-      <span class="cohort-mark">D2 / D3</span>
-      <span class="cohort-mark">Academies &amp; Camps</span>
+    <div class="cohort-strip" aria-label="Designed for organizations developing athletes">
+      <span class="cohort-label">Designed for organizations developing athletes</span>
+      <div class="cohort-bubbles">
+        <span class="cohort-mark">Clubs &amp; Travel Programs</span>
+        <span class="cohort-mark">Collegiate Programs</span>
+        <span class="cohort-mark">High Schools</span>
+        <span class="cohort-mark">Academies</span>
+        <span class="cohort-mark">Camps</span>
+        <span class="cohort-mark">Specialized Coaches</span>
+      </div>
     </div>
 
     <section class="section" id="why">
