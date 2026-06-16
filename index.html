@@ -391,12 +391,34 @@
   .hero-card .cta-row {
     display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;
   }
-  .hero-card .hero-supporting {
-    margin-top: 22px;
-    color: rgba(245,249,255,0.7);
-    font-size: 0.95rem;
+  .hero-card .hero-roles {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 720px) { .hero-card .hero-roles { grid-template-columns: repeat(2, 1fr); } }
+  .hero-card .hero-role {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-card .hero-role .role-tag {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #00CCFF;
+    margin-bottom: 4px;
+  }
+  .hero-card .hero-role .role-name {
+    display: block;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.02rem;
     letter-spacing: 0.01em;
-    max-width: 60ch;
   }
   .hero-card .ghost-on-dark {
     background: rgba(255,255,255,0.06);
@@ -1412,7 +1434,12 @@
         <a href="#contact" class="btn btn-light">Book a Demo</a>
         <a href="#power25" class="btn ghost-on-dark">See Partnership Program</a>
       </div>
-      <p class="hero-supporting">Built for coaches. Clear for athletes. Visible to parents. Actionable for program leaders.</p>
+      <div class="hero-roles">
+        <div class="hero-role"><span class="role-tag">Built for</span><span class="role-name">Coaches</span></div>
+        <div class="hero-role"><span class="role-tag">Clear for</span><span class="role-name">Athletes</span></div>
+        <div class="hero-role"><span class="role-tag">Visible to</span><span class="role-name">Parents</span></div>
+        <div class="hero-role"><span class="role-tag">Actionable for</span><span class="role-name">Program Leaders</span></div>
+      </div>
     </section>
 
     <div class="cohort-strip" aria-label="Designed for organizations developing athletes">
