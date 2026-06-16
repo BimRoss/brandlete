@@ -1211,25 +1211,93 @@
   }
 
   footer {
-    margin-top: 44px;
-    padding: 24px 0 8px;
+    margin-top: 64px;
+    padding: 40px 0 0;
     border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 14px;
     color: var(--ink-3);
-    font-size: 0.84rem;
-    flex-wrap: wrap;
+    font-size: 0.88rem;
   }
-  footer .foot-mark { display: flex; align-items: center; color: var(--ink-2); }
-  footer .foot-mark img { width: 120px; height: auto; display: block; }
-  footer .foot-mark .foot-logo-dark { display: none; }
-  [data-theme="dark"] footer .foot-mark .foot-logo-light { display: none; }
-  [data-theme="dark"] footer .foot-mark .foot-logo-dark { display: block; }
-  footer a { color: var(--brand); }
-  footer a:hover { color: var(--brand-deep); }
-  footer .foot-legal { display: flex; gap: 14px; align-items: center; }
-  footer .foot-legal a { color: var(--ink-3); text-decoration: none; }
-  footer .foot-legal a:hover { color: var(--ink); text-decoration: underline; }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1.6fr 1fr;
+    gap: 48px;
+    padding-bottom: 32px;
+  }
+  @media (max-width: 880px) {
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-connect { grid-column: 1 / -1; }
+  }
+  @media (max-width: 540px) {
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+    .foot-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+  .foot-brand .foot-mark img { width: 140px; height: auto; display: block; margin-bottom: 16px; }
+  .foot-brand .foot-mark .foot-logo-dark { display: none; }
+  [data-theme="dark"] .foot-brand .foot-mark .foot-logo-light { display: none; }
+  [data-theme="dark"] .foot-brand .foot-mark .foot-logo-dark { display: block; }
+  .foot-brand .foot-tag {
+    color: var(--ink-2);
+    font-size: 0.96rem;
+    line-height: 1.5;
+    max-width: 28ch;
+    margin: 0 0 16px;
+  }
+  .foot-brand .foot-contact {
+    display: inline-block;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 2px;
+  }
+  .foot-brand .foot-contact:hover { color: var(--brand); border-color: var(--brand); }
+  .foot-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .foot-nav h5,
+  .foot-connect h5 {
+    margin: 0 0 14px;
+    color: var(--ink-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .foot-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .foot-nav a { color: var(--ink-3); text-decoration: none; font-size: 0.9rem; }
+  .foot-nav a:hover { color: var(--brand); }
+  .foot-connect .foot-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: background 0.15s;
+  }
+  .foot-connect .foot-cta:hover { background: var(--brand-deep); }
+  .foot-connect .foot-cta::after { content: "→"; font-size: 0.95rem; }
+  .foot-connect .socials { gap: 8px; }
+  .foot-legal-strip {
+    border-top: 1px solid var(--border);
+    padding: 18px 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+  .foot-legal-strip .foot-legal { display: flex; gap: 18px; align-items: center; }
+  .foot-legal-strip a { color: var(--ink-3); text-decoration: none; }
+  .foot-legal-strip a:hover { color: var(--ink); text-decoration: underline; }
 
   .power25 {
     position: relative;
@@ -1389,7 +1457,7 @@
   }
   .socials a:hover { background: var(--card-2); color: var(--brand); border-color: var(--brand); }
   .socials a svg { width: 18px; height: 18px; }
-  footer .socials a { width: 32px; height: 32px; }
+  footer .socials a { width: 36px; height: 36px; }
 </style>
 </head>
 <body>
@@ -2033,27 +2101,59 @@
     </section>
 
     <footer>
-      <div class="foot-mark">
-        <img src="img/brandlete-logo-light.png" alt="Brandlete" class="foot-logo-light" />
-        <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="foot-logo-dark" />
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="foot-mark">
+            <img src="img/brandlete-logo-light.png" alt="Brandlete" class="foot-logo-light" />
+            <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="foot-logo-dark" />
+          </div>
+          <p class="foot-tag">Athlete development, built around the work.</p>
+          <a class="foot-contact" href="mailto:info@brandlete.com">info@brandlete.com</a>
+        </div>
+        <nav class="foot-nav" aria-label="Footer">
+          <div>
+            <h5>Platform</h5>
+            <ul>
+              <li><a href="#why">Why Brandlete</a></li>
+              <li><a href="#platform">Platform</a></li>
+              <li><a href="#playbooks">Playbooks</a></li>
+              <li><a href="#how">How It Works</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#power25">Power 25</a></li>
+              <li><a href="#proof">Proof</a></li>
+              <li><a href="https://brandlete.com">brandlete.com</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="foot-connect">
+          <h5>Connect</h5>
+          <a href="#contact" class="foot-cta">Book a Demo</a>
+          <span class="socials" aria-label="Brandlete on social">
+            <a href="https://www.linkedin.com/company/brandlete" target="_blank" rel="noopener" aria-label="Brandlete on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm7 0h3.8v1.5h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V20.5h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.9 1.28-1.9 2.6v4.98h-4v-11z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/joinbrandlete" target="_blank" rel="noopener" aria-label="Brandlete on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/brandlete" target="_blank" rel="noopener" aria-label="Brandlete on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.7c0-.87.24-1.46 1.5-1.46h1.6V4.6c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.43-3.94 4.05v2.46H7.8v3h2.5V21h3.2z"/></svg>
+            </a>
+          </span>
+        </div>
       </div>
-      <div>Production · <a href="https://brandlete.com">brandlete.com</a> · <a href="mailto:info@brandlete.com">info@brandlete.com</a></div>
-      <div class="foot-legal">
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Use</a>
+      <div class="foot-legal-strip">
+        <div>© 2026 Brandlete, Inc.</div>
+        <div class="foot-legal">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Use</a>
+        </div>
       </div>
-      <span class="socials" aria-label="Brandlete on social">
-        <a href="https://www.linkedin.com/company/brandlete" target="_blank" rel="noopener" aria-label="Brandlete on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm7 0h3.8v1.5h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V20.5h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.9 1.28-1.9 2.6v4.98h-4v-11z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/joinbrandlete" target="_blank" rel="noopener" aria-label="Brandlete on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.facebook.com/brandlete" target="_blank" rel="noopener" aria-label="Brandlete on Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.7c0-.87.24-1.46 1.5-1.46h1.6V4.6c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.43-3.94 4.05v2.46H7.8v3h2.5V21h3.2z"/></svg>
-        </a>
-      </span>
-      <div>© 2026 Brandlete, Inc.</div>
     </footer>
   </main>
 </div>
