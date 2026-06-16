@@ -321,6 +321,13 @@
     .topstrip .actions { justify-content: center; flex-wrap: wrap; }
     .topstrip .actions .btn { padding: 13px 28px; font-size: 0.96rem; }
     .topstrip .greet { align-items: center; text-align: center; }
+    .topstrip .greet h2 {
+      white-space: normal;
+      font-size: 1.5rem !important;
+      line-height: 1.25;
+    }
+    .greet-role { font-size: 1em; }
+    .greet-cursor { height: 0.85em; }
   }
 
   .chip {
@@ -2091,6 +2098,11 @@
     var greetH2 = greetRole ? greetRole.parentElement : null;
     function fitGreet() {
       if (!greetH2) return;
+      // On mobile, let the heading wrap naturally via CSS instead of shrinking to fit one line.
+      if (window.matchMedia('(max-width: 720px)').matches) {
+        greetH2.style.fontSize = '';
+        return;
+      }
       var parent = greetH2.parentElement;
       var maxW = parent ? parent.clientWidth : 0;
       if (!maxW) return;
