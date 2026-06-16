@@ -1110,11 +1110,16 @@
     font-size: 0.84rem;
     flex-wrap: wrap;
   }
-  footer .foot-mark { display: flex; align-items: center; gap: 8px; color: var(--ink-2); }
-  footer .foot-mark img { width: 22px; height: auto; }
-  footer .foot-mark .wordmark { font-weight: 700; letter-spacing: 0.14em; font-size: 0.8rem; }
+  footer .foot-mark { display: flex; align-items: center; color: var(--ink-2); }
+  footer .foot-mark img { width: 120px; height: auto; display: block; }
+  footer .foot-mark .foot-logo-dark { display: none; }
+  [data-theme="dark"] footer .foot-mark .foot-logo-light { display: none; }
+  [data-theme="dark"] footer .foot-mark .foot-logo-dark { display: block; }
   footer a { color: var(--brand); }
   footer a:hover { color: var(--brand-deep); }
+  footer .foot-legal { display: flex; gap: 14px; align-items: center; }
+  footer .foot-legal a { color: var(--ink-3); text-decoration: none; }
+  footer .foot-legal a:hover { color: var(--ink); text-decoration: underline; }
 
   .power25 {
     position: relative;
@@ -1898,10 +1903,14 @@
 
     <footer>
       <div class="foot-mark">
-        <img src="img/brandlete-shoe.png" alt="" />
-        <span class="wordmark">BRANDLETE</span>
+        <img src="img/brandlete-logo-light.png" alt="Brandlete" class="foot-logo-light" />
+        <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="foot-logo-dark" />
       </div>
       <div>Production · <a href="https://brandlete.com">brandlete.com</a> · <a href="mailto:info@brandlete.com">info@brandlete.com</a></div>
+      <div class="foot-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+      </div>
       <span class="socials" aria-label="Brandlete on social">
         <a href="https://www.linkedin.com/company/brandlete" target="_blank" rel="noopener" aria-label="Brandlete on LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm7 0h3.8v1.5h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V20.5h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.9 1.28-1.9 2.6v4.98h-4v-11z"/></svg>
