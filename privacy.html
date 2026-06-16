@@ -22,24 +22,33 @@
   :root {
     --bg: #f6f8fc;
     --card: #ffffff;
+    --card-2: #eef2f9;
+    --rail: #ffffff;
+    --rail-border: #e3e8f1;
     --border: #e3e8f1;
     --ink: #0b1224;
     --ink-2: #3c4a66;
     --ink-3: #6b7891;
+    --ink-soft: #8b95ad;
     --brand: #2196f3;
     --brand-deep: #1573c4;
-    --maxw: 820px;
+    --brand-soft: rgba(33,150,243,0.12);
     color-scheme: light;
   }
   [data-theme="dark"] {
     --bg: #060912;
     --card: #0f1530;
+    --card-2: #131a3a;
+    --rail: #0a0f25;
+    --rail-border: #1c2444;
     --border: #1c2444;
     --ink: #f1f5fb;
     --ink-2: #c1cae0;
     --ink-3: #8d99b6;
+    --ink-soft: #6e7a99;
     --brand: #4d9eff;
     --brand-deep: #2563eb;
+    --brand-soft: rgba(77,158,255,0.16);
     color-scheme: dark;
   }
   * { box-sizing: border-box; }
@@ -52,31 +61,74 @@
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 40px 24px 80px;
+  a { color: inherit; text-decoration: none; }
+  .app {
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+    min-height: 100vh;
   }
-  header.top {
+  .app > * { min-width: 0; }
+  @media (max-width: 920px) { .app { grid-template-columns: 1fr; } }
+  .rail {
+    background: var(--rail);
+    border-right: 1px solid var(--rail-border);
+    padding: 22px 18px 28px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 28px;
+    flex-direction: column;
+    gap: 18px;
+    overflow-y: auto;
+  }
+  @media (max-width: 920px) {
+    .rail { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rail-border); }
+  }
+  .brand-mark {
+    display: flex; align-items: center; gap: 10px;
+    padding: 4px 4px 14px;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 36px;
   }
-  header.top a.brand { display: flex; align-items: center; text-decoration: none; }
-  header.top img { width: 140px; height: auto; display: block; }
-  header.top .brand-logo-dark { display: none; }
-  [data-theme="dark"] header.top .brand-logo-light { display: none; }
-  [data-theme="dark"] header.top .brand-logo-dark { display: block; }
-  header.top nav a {
+  .brand-mark img { width: 100%; max-width: 180px; height: auto; display: block; }
+  .brand-mark .brand-logo-dark { display: none; }
+  [data-theme="dark"] .brand-mark .brand-logo-light { display: none; }
+  [data-theme="dark"] .brand-mark .brand-logo-dark { display: block; }
+  .rail-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 0 6px;
+    margin-top: 8px;
+  }
+  .rail-nav { display: flex; flex-direction: column; gap: 2px; }
+  .rail-nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
     color: var(--ink-2);
-    text-decoration: none;
-    font-size: 0.92rem;
-    margin-left: 18px;
+    font-weight: 500;
+    font-size: 0.94rem;
+    transition: background 0.15s, color 0.15s;
   }
-  header.top nav a:hover { color: var(--brand); }
+  .rail-nav a:hover { background: var(--card-2); color: var(--ink); }
+  .rail-nav a.active { background: var(--brand-soft); color: var(--brand); }
+  .content {
+    padding: 40px clamp(20px, 4vw, 56px) 64px;
+    max-width: 1080px;
+  }
+  .meta-row {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .meta-row a.back {
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+  .meta-row a.back:hover { color: var(--brand); }
   h1 {
     font-size: 2rem;
     margin: 0 0 8px;
@@ -148,18 +200,31 @@
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
-      <a href="/" class="brand" aria-label="Brandlete — home">
+  <div class="app">
+    <aside class="rail">
+      <a href="/" class="brand-mark" aria-label="Brandlete — home">
         <img src="img/brandlete-logo-light.png" alt="Brandlete" class="brand-logo-light" />
         <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="brand-logo-dark" />
       </a>
-      <nav>
-        <a href="/">Home</a>
+      <div class="rail-section-label">Brandlete</div>
+      <nav class="rail-nav">
+        <a href="/#overview">Overview</a>
+        <a href="/#why">Why It Matters</a>
+        <a href="/#platform">The Platform</a>
+        <a href="/#playbooks">Playbooks</a>
+        <a href="/#power25">Partnership Program</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#contact">Book a Demo</a>
+      </nav>
+      <div class="rail-section-label">Legal</div>
+      <nav class="rail-nav">
+        <a href="/privacy.html" class="active">Privacy Policy</a>
         <a href="/terms.html">Terms of Use</a>
       </nav>
-    </header>
+    </aside>
 
+    <main class="content">
+    <div class="meta-row"><a href="/" class="back">← Back to Brandlete</a></div>
     <h1>Privacy Policy</h1>
     <div class="meta">Revision date: March 8, 2023</div>
 
@@ -410,6 +475,7 @@
         <a href="/terms.html">Terms of Use</a>
       </div>
     </footer>
+    </main>
   </div>
 </body>
 </html>
