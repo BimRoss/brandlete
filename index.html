@@ -179,8 +179,10 @@
     max-width: 180px;
     height: auto;
     display: block;
-    border-radius: 6px;
   }
+  .brand-mark .brand-logo-dark { display: none; }
+  [data-theme="dark"] .brand-mark .brand-logo-light { display: none; }
+  [data-theme="dark"] .brand-mark .brand-logo-dark { display: block; }
   .rail-toggle {
     display: flex;
     justify-content: flex-start;
@@ -1160,7 +1162,8 @@
 <div class="app">
   <aside class="rail">
     <a href="/" class="brand-mark" aria-label="Brandlete — back to home">
-      <img src="img/brandlete-logo.png" alt="Brandlete" class="brand-logo" />
+      <img src="img/brandlete-logo-light.png" alt="Brandlete" class="brand-logo brand-logo-light" />
+      <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="brand-logo brand-logo-dark" />
     </a>
     <div class="rail-toggle">
       <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
