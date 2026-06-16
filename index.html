@@ -150,19 +150,70 @@
     gap: 18px;
     overflow-y: auto;
   }
+  .mobile-topbar { display: none; }
+  .nav-backdrop { display: none; }
   @media (max-width: 920px) {
-    .rail {
-      position: static;
-      height: auto;
-      flex-direction: row;
+    .mobile-topbar {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 10px;
-      padding: 14px 18px;
-      border-right: none;
+      padding: 12px 16px;
+      background: var(--rail);
       border-bottom: 1px solid var(--rail-border);
-      overflow-x: auto;
+      position: sticky;
+      top: 0;
+      z-index: 30;
     }
-    .rail .rail-foot, .rail .rail-section-label { display: none; }
+    .mobile-topbar .mt-logo { display: flex; align-items: center; }
+    .mobile-topbar .mt-logo img { height: 32px; width: auto; display: block; }
+    .mobile-topbar .mt-logo .brand-logo-dark { display: none; }
+    [data-theme="dark"] .mobile-topbar .mt-logo .brand-logo-light { display: none; }
+    [data-theme="dark"] .mobile-topbar .mt-logo .brand-logo-dark { display: block; }
+    .mobile-topbar .mt-right { display: flex; align-items: center; gap: 8px; }
+    .mobile-topbar .mt-cta {
+      background: #00CCFF; color: #0b1224; border: 1px solid #00CCFF;
+      padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 0.86rem;
+    }
+    .hamburger {
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 0;
+    }
+    .hamburger svg { width: 20px; height: 20px; }
+    .rail {
+      position: fixed;
+      top: 0; left: 0;
+      width: 280px;
+      max-width: 86vw;
+      height: 100vh;
+      z-index: 50;
+      transform: translateX(-100%);
+      transition: transform 0.22s ease;
+      box-shadow: 0 0 32px rgba(0,0,0,0.18);
+      border-right: 1px solid var(--rail-border);
+      border-bottom: none;
+    }
+    body.nav-open .rail { transform: translateX(0); }
+    .nav-backdrop {
+      display: block;
+      position: fixed; inset: 0;
+      background: rgba(8,12,28,0.5);
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    body.nav-open .nav-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    body.nav-open { overflow: hidden; }
   }
 
   .brand-mark {
@@ -1342,6 +1393,19 @@
 </head>
 <body>
 
+<header class="mobile-topbar">
+  <a href="/" class="mt-logo" aria-label="Brandlete — home">
+    <img src="img/brandlete-logo-light.png" alt="Brandlete" class="brand-logo-light" />
+    <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="brand-logo-dark" />
+  </a>
+  <div class="mt-right">
+    <a href="#contact" class="mt-cta">Book a Demo</a>
+    <button type="button" id="nav-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+<div class="nav-backdrop" id="nav-backdrop"></div>
 <div class="app">
   <aside class="rail">
     <a href="/" class="brand-mark" aria-label="Brandlete — back to home">
@@ -1993,6 +2057,28 @@
   </main>
 </div>
 
+<script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    var rail = document.querySelector('.rail');
+    if (!toggle || !backdrop || !rail) return;
+    function setOpen(open) {
+      document.body.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!document.body.classList.contains('nav-open'));
+    });
+    backdrop.addEventListener('click', function () { setOpen(false); });
+    rail.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
 <script>
   (function () {
     var root = document.documentElement;
