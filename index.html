@@ -259,7 +259,7 @@
   .topstrip .greet {
     display: flex; flex-direction: column; gap: 4px; min-width: 0;
   }
-  .topstrip .greet h2 { font-size: clamp(1.05rem, 4.6vw, 2rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; white-space: nowrap; }
+  .topstrip .greet h2 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; white-space: nowrap; }
   .greet-role { display: inline-block; color: var(--accent-cyan); font-weight: 700; }
   .greet-cursor {
     display: inline-block;
@@ -1697,7 +1697,7 @@
       if (!maxW) return;
       greetH2.style.fontSize = '';
       var base = parseFloat(getComputedStyle(greetH2).fontSize) || 16;
-      var size = Math.min(32, Math.max(base, 22));
+      var size = Math.min(48, Math.max(base, 24));
       greetH2.style.fontSize = size + 'px';
       var guard = 60;
       while (greetH2.scrollWidth > maxW && size > 11 && guard-- > 0) {
