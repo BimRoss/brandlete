@@ -997,6 +997,147 @@
   footer a { color: var(--brand); }
   footer a:hover { color: var(--brand-deep); }
 
+  .power25 {
+    position: relative;
+    border-radius: 18px;
+    padding: 36px clamp(24px, 4vw, 48px);
+    background: linear-gradient(180deg, #0a1430 0%, #0b1a3c 100%);
+    color: #f5f9ff;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .power25::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 88% 18%, rgba(56,189,248,0.22), transparent 55%),
+                radial-gradient(circle at 8% 92%, rgba(33,150,243,0.16), transparent 55%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .power25 .eyebrow {
+    color: var(--accent-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .power25 h2 { color: #ffffff; max-width: 22ch; font-size: clamp(1.7rem, 3vw, 2.4rem); }
+  .power25 h2 .accent { color: var(--accent-cyan); }
+  .power25 .lede {
+    margin-top: 14px;
+    color: rgba(245,249,255,0.82);
+    font-size: clamp(1rem, 1.3vw, 1.12rem);
+    max-width: 62ch;
+    line-height: 1.55;
+  }
+  .power25-stats {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding: 22px clamp(18px, 3vw, 28px);
+    background: rgba(6,10,24,0.55);
+    border: 1px solid rgba(56,189,248,0.18);
+    border-radius: 14px;
+  }
+  @media (max-width: 760px) { .power25-stats { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  .power25-stat .num {
+    color: var(--accent-cyan);
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .power25-stat .num.white { color: #ffffff; }
+  .power25-stat .label {
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,249,255,0.7);
+  }
+  .power25-body {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+  }
+  @media (max-width: 880px) { .power25-body { grid-template-columns: 1fr; } }
+  .power25-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 540px) { .power25-benefits { grid-template-columns: 1fr; } }
+  .power25-benefit {
+    padding: 14px 16px 16px;
+    border-left: 2px solid var(--accent-cyan);
+    background: rgba(255,255,255,0.03);
+    border-radius: 0 10px 10px 0;
+  }
+  .power25-benefit h4 {
+    margin: 0 0 6px;
+    color: #ffffff;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .power25-benefit p {
+    margin: 0;
+    color: rgba(245,249,255,0.72);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .power25-who h3 {
+    color: var(--accent-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .power25-who ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .power25-who ul li {
+    padding-left: 14px;
+    border-left: 2px solid var(--accent-cyan);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.96rem;
+  }
+  .power25-who .fineprint {
+    color: rgba(245,249,255,0.66);
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+  .power25-cta {
+    margin-top: 26px;
+    padding: 18px clamp(18px, 3vw, 24px);
+    background: rgba(6,10,24,0.6);
+    border: 1px solid rgba(56,189,248,0.22);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: center;
+  }
+  @media (max-width: 760px) { .power25-cta { grid-template-columns: 1fr; } }
+  .power25-cta .pitch { color: #ffffff; font-weight: 600; font-size: 1.02rem; }
+  .power25-cta .pitch small { display: block; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; font-weight: 500; }
+  .power25-cta .ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .power25-cta .btn-light { background: var(--accent-cyan); border-color: var(--accent-cyan); color: #0a1430; }
+  .power25-cta .btn-light:hover { background: #79d6ff; border-color: #79d6ff; }
+
   ::selection { background: var(--brand); color: #ffffff; }
 
   svg.ico-svg { width: 18px; height: 18px; }
@@ -1062,6 +1203,10 @@
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H10l-4 3v-3H4V6z"/></svg></span>
         <span>Field notes<span class="sub">Words from the sideline</span></span>
       </a>
+      <a href="#power25">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 15.5l-5.2 2.8 1-5.9L3.5 8.2l5.9-.9z"/></svg></span>
+        <span>Power 25<span class="sub">Founding partnership · 2026</span></span>
+      </a>
       <a href="#pricing">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v12"/><path d="M9 9h5a2 2 0 0 1 0 4H10a2 2 0 0 0 0 4h6"/></svg></span>
         <span>Pricing<span class="sub">Full Access, monthly or yearly</span></span>
@@ -1087,7 +1232,7 @@
         <h2>Hey <span id="greet-role" class="greet-role">coach</span>, <span class="wave">👋</span> let's keep building today.</h2>
       </div>
       <div class="actions">
-        <span class="chip"><span class="dot"></span>Summer 2026 cohort · onboarding now</span>
+        <span class="chip"><span class="dot"></span>Power 25 Founding Class · 25 spots open</span>
         <a href="#demo" class="btn">Book a demo</a>
       </div>
     </div>
@@ -1335,6 +1480,75 @@
       </div>
     </section>
 
+    <section class="section" id="power25">
+      <div class="power25">
+        <div class="eyebrow">Founding class · 2026 charter</div>
+        <h2>The Brandlete <span class="accent">Power 25</span> Founding Partnership.</h2>
+        <p class="lede">Twenty five programs. Six months on the platform. Full credit toward year one. Founding partners shape what comes next.</p>
+
+        <div class="power25-stats">
+          <div class="power25-stat">
+            <div class="num">25</div>
+            <div class="label">Founding partners</div>
+          </div>
+          <div class="power25-stat">
+            <div class="num white">$3,000</div>
+            <div class="label">Six month pilot</div>
+          </div>
+          <div class="power25-stat">
+            <div class="num">100%</div>
+            <div class="label">Credit to year one</div>
+          </div>
+          <div class="power25-stat">
+            <div class="num white">6 mo</div>
+            <div class="label">To prove it out</div>
+          </div>
+        </div>
+
+        <div class="power25-body">
+          <div class="power25-benefits">
+            <div class="power25-benefit">
+              <h4>Full platform access</h4>
+              <p>Every coach, athlete, and admin seat for the program, all six months.</p>
+            </div>
+            <div class="power25-benefit">
+              <h4>Launch media package</h4>
+              <p>Custom announcement assets and social content marking the partnership.</p>
+            </div>
+            <div class="power25-benefit">
+              <h4>Direct line to our team</h4>
+              <p>Access to John and the product team. Your feedback shapes the roadmap.</p>
+            </div>
+            <div class="power25-benefit">
+              <h4>Year-one credit</h4>
+              <p>The full $3,000 rolls forward as a credit on your first annual contract.</p>
+            </div>
+          </div>
+          <div class="power25-who">
+            <h3>Who this is for</h3>
+            <ul>
+              <li>Athletic development camps</li>
+              <li>Club &amp; travel programs</li>
+              <li>High schools</li>
+              <li>Colleges &amp; universities</li>
+            </ul>
+            <p class="fineprint">Programs that take athlete development seriously and want a tool that proves they do.</p>
+          </div>
+        </div>
+
+        <div class="power25-cta">
+          <div class="pitch">
+            Twenty five spots. Founding partners shape what comes next.
+            <small>Book a 20 minute intro with John</small>
+          </div>
+          <div class="ctas">
+            <a href="https://www.linkedin.com/in/johnosberg" target="_blank" rel="noopener" class="btn ghost-on-dark">LinkedIn with John</a>
+            <a href="#contact" class="btn btn-light">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="pricing">
       <div class="section-head">
         <div class="left">
@@ -1513,7 +1727,7 @@
       }
     }
 
-    var sections = ['hero','programs','ai','who-for','how','team','proof','pricing','contact'];
+    var sections = ['hero','programs','ai','who-for','how','team','proof','power25','pricing','contact'];
     var links = sections.reduce(function (acc, id) {
       acc[id] = document.querySelector('.rail-nav a[href="#' + id + '"]');
       return acc;
