@@ -378,6 +378,13 @@
   .hero-card .cta-row {
     display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;
   }
+  .hero-card .hero-supporting {
+    margin-top: 22px;
+    color: rgba(245,249,255,0.7);
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    max-width: 60ch;
+  }
   .hero-card .ghost-on-dark {
     background: rgba(255,255,255,0.06);
     border-color: rgba(255,255,255,0.22);
@@ -498,8 +505,120 @@
 
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  @media (max-width: 980px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 620px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  @media (max-width: 1180px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 1100px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 980px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-5 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .grid-3, .grid-2, .grid-4, .grid-5 { grid-template-columns: 1fr; } }
+
+  .section-lede {
+    color: var(--ink-3);
+    font-size: 1.02rem;
+    line-height: 1.6;
+    max-width: 74ch;
+    margin: 4px 0 22px;
+  }
+  .ai-supporting {
+    margin-top: 28px;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .ai-supporting .ai-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--brand-2);
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .ai-supporting .ai-tag::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2);
+    box-shadow: 0 0 0 4px rgba(0,204,255,0.18);
+  }
+  .ai-supporting h3 { margin: 0; font-size: 1.08rem; }
+  .ai-supporting p { margin: 0; color: var(--ink-3); font-size: 0.95rem; line-height: 1.55; }
+
+  .platform-screens { margin-top: 28px; }
+
+  .playbook-tile {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .playbook-tile:hover { border-color: var(--brand-2); transform: translateY(-1px); }
+  .playbook-tile h4 { font-size: 0.98rem; font-weight: 600; color: var(--ink); margin: 0; }
+  .playbook-tile .pb-ico {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: rgba(0,204,255,0.10); color: var(--brand-2);
+    display: grid; place-items: center; flex: 0 0 auto;
+  }
+
+  .insight-card {
+    padding: 22px 22px 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    display: flex; flex-direction: column; gap: 14px;
+    box-shadow: var(--shadow-card);
+  }
+  .insight-card blockquote {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--ink);
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    position: relative;
+    padding-left: 18px;
+  }
+  .insight-card blockquote::before {
+    content: '"';
+    position: absolute; left: -2px; top: -4px;
+    font-size: 2rem;
+    color: var(--brand-2);
+    line-height: 1;
+  }
+  .insight-card .who-tag {
+    font-size: 0.78rem; color: var(--ink-3);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+
+  .program-card {
+    padding: 30px 32px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--card);
+    display: flex; flex-direction: column; gap: 14px;
+    max-width: 760px;
+    box-shadow: var(--shadow-card);
+  }
+  .program-card h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin: 0; }
+  .program-card .price-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    align-self: flex-start;
+    background: rgba(0,204,255,0.10);
+    color: var(--brand-2);
+    border: 1px solid rgba(0,204,255,0.30);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .pricing-secondary { margin-top: 36px; }
+  .pricing-secondary .secondary-eyebrow {
+    color: var(--ink-3);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
 
   .card {
     background: var(--card);
@@ -1168,17 +1287,25 @@
     </a>
     <div class="rail-section-label">Workspace</div>
     <nav class="rail-nav">
-      <a href="#hero" class="active">
+      <a href="#overview" class="active">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg></span>
-        <span>Overview<span class="sub">Your coaching hub</span></span>
+        <span>Overview<span class="sub">Athlete development, organized</span></span>
       </a>
-      <a href="#programs">
+      <a href="#why">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.9" fill="currentColor"/></svg></span>
+        <span>Why it matters<span class="sub">The case for a system</span></span>
+      </a>
+      <a href="#platform">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v6H4z"/><path d="M4 13h16v6H4z"/></svg></span>
-        <span>Programs<span class="sub">Every level of play</span></span>
+        <span>The platform<span class="sub">Five connected pieces</span></span>
       </a>
-      <a href="#ai">
-        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span>
-        <span>AI-native<span class="sub">Human-first by design</span></span>
+      <a href="#playbooks">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h11a3 3 0 0 1 3 3v13H7a2 2 0 0 1-2-2z"/><path d="M9 8h8M9 12h8M9 16h5"/></svg></span>
+        <span>Playbooks<span class="sub">Your curriculum, reusable</span></span>
+      </a>
+      <a href="#visibility">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+        <span>Program visibility<span class="sub">See it all in one view</span></span>
       </a>
       <a href="#who-for">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20c.6-3.4 3.4-5.5 6.5-5.5s5.9 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M22 19c-.4-2.3-2.1-3.7-4-3.9"/></svg></span>
@@ -1186,27 +1313,31 @@
       </a>
       <a href="#how">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16"/><path d="M4 12h10"/><path d="M4 19h16"/><circle cx="18" cy="12" r="2.4"/></svg></span>
-        <span>How it works<span class="sub">Onboard in an afternoon</span></span>
+        <span>How it works<span class="sub">Stand up a team fast</span></span>
+      </a>
+      <a href="#safe">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.4 7.6-8 9-4.6-1.4-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span>Safe communication<span class="sub">Transparent, archived, controlled</span></span>
       </a>
       <a href="#power25">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 15.5l-5.2 2.8 1-5.9L3.5 8.2l5.9-.9z"/></svg></span>
         <span>Power 25<span class="sub">Founding partnership · 2026</span></span>
       </a>
-      <a href="#team">
-        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.6"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg></span>
-        <span>Team<span class="sub">Builders behind it</span></span>
-      </a>
       <a href="#proof">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H10l-4 3v-3H4V6z"/></svg></span>
-        <span>Field notes<span class="sub">Words from the sideline</span></span>
+        <span>Proof<span class="sub">What programs are solving</span></span>
       </a>
       <a href="#pricing">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v12"/><path d="M9 9h5a2 2 0 0 1 0 4H10a2 2 0 0 0 0 4h6"/></svg></span>
-        <span>Pricing<span class="sub">Full Access, monthly or yearly</span></span>
+        <span>Pricing<span class="sub">Program-first</span></span>
+      </a>
+      <a href="#team">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.6"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg></span>
+        <span>Team<span class="sub">Operators with roots in sport</span></span>
       </a>
       <a href="#contact">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg></span>
-        <span>Contact<span class="sub">Send us a note</span></span>
+        <span>Contact<span class="sub">Book a demo</span></span>
       </a>
     </nav>
 
@@ -1222,125 +1353,188 @@
     <div class="topstrip">
       <div class="actions">
         <span class="chip"><span class="dot"></span>Power 25 Founding Class · 25 spots open</span>
-        <a href="#demo" class="btn">Book a demo</a>
+        <a href="#contact" class="btn">Book a demo</a>
         <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
           <svg class="icon-dark ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           <svg class="icon-light ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.5 4.5l1.5 1.5M18 18l1.5 1.5M4.5 19.5L6 18M18 6l1.5-1.5"/></svg>
         </button>
       </div>
-      <div class="greet">
-        <h2>For <span id="greet-role" class="greet-role"></span><span id="greet-cursor" class="greet-cursor" aria-hidden="true"></span> serious about athlete development.</h2>
-      </div>
     </div>
 
-    <section class="hero-card" id="hero">
-      <div class="eyebrow"><span class="pulse"></span>Continue where you left off</div>
-      <h1>The operating <span class="accent">system</span><br/>for athlete development.</h1>
-      <p class="lede">Athlete development infrastructure for programs, schools, and organizations. Goals, weekly work, and progress in one place. AI-native under the hood, human-first on the surface.</p>
+    <section class="hero-card" id="overview">
+      <h1>Turn athlete development into a <span class="accent">system</span><br/>your entire program can run.</h1>
+      <p class="lede">Brandlete helps schools, clubs, academies, and athletic departments build Development Playbooks, assign goals and tasks, deliver coach feedback, communicate safely, and give athletes, parents, coaches, and leaders real visibility into the development process.</p>
       <div class="cta-row">
-        <a href="#demo" class="btn btn-light">Continue program</a>
-        <a href="#how" class="btn ghost-on-dark">See how it works</a>
+        <a href="#contact" class="btn btn-light">Book a demo</a>
+        <a href="#power25" class="btn ghost-on-dark">Join Power 25</a>
       </div>
+      <p class="hero-supporting">Built for coaches. Clear for athletes. Visible to parents. Actionable for program leaders.</p>
     </section>
 
     <div class="cohort-strip" aria-label="Pilot cohort segments">
-      <span class="cohort-label">Pilot cohort</span>
+      <span class="cohort-label">Built for</span>
       <span class="cohort-mark">Club &amp; Travel</span>
       <span class="cohort-mark">High School</span>
       <span class="cohort-mark">JUCO &amp; NAIA</span>
       <span class="cohort-mark">D2 / D3</span>
-      <span class="cohort-mark">Private &amp; Prep</span>
+      <span class="cohort-mark">Academies &amp; Camps</span>
     </div>
 
-    <section class="section" id="inside">
+    <section class="section" id="why">
       <div class="section-head">
         <div class="left">
-          <div class="eyebrow">Inside the platform</div>
-          <h2>Coaches drive the system. Athletes live in it.</h2>
+          <div class="eyebrow">Why it matters</div>
+          <h2>Athlete development is too important to live in text threads.</h2>
         </div>
-        <a href="#demo" class="right">See it live ↗</a>
       </div>
-      <div class="product-twoup">
-        <figure>
-          <div class="product-img-wrap">
-            <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
-            <span class="pin" style="top:14%;left:8%"><i>1</i><em>Assign weekly work in &lt;30s</em></span>
-            <span class="pin" style="top:42%;left:62%"><i>2</i><em>Every athlete's progress in view</em></span>
-            <span class="pin" style="top:78%;left:22%"><i>3</i><em>Roster-wide progress at a glance</em></span>
-          </div>
-          <figcaption><span class="surface-name">Coach Hub</span><span class="surface-tag">Coach view</span></figcaption>
-        </figure>
-        <figure>
-          <div class="product-img-wrap">
-            <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
-            <span class="pin" style="top:12%;left:10%"><i>1</i><em>Today's focus, one screen</em></span>
-            <span class="pin" style="top:46%;left:64%"><i>2</i><em>Coach updates in line</em></span>
-            <span class="pin" style="top:80%;left:24%"><i>3</i><em>Progress streak stays visible</em></span>
-          </div>
-          <figcaption><span class="surface-name">Athlete Workspace</span><span class="surface-tag">Athlete view</span></figcaption>
-        </figure>
+      <p class="section-lede">Most sports programs care deeply about development, but the process is often scattered across texts, PDFs, spreadsheets, whiteboards, videos, verbal reminders, and disconnected apps. Coaches are overwhelmed. Athletes are unsure what to focus on. Parents do not always see the value. Leaders have limited visibility into what is actually happening across teams.</p>
+      <div class="grid-4">
+        <div class="card">
+          <span class="badge">Coaches</span>
+          <h3>Coaches need structure.</h3>
+          <p class="lede">Give coaches a repeatable way to guide development across teams, seasons, and athletes.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Athletes</span>
+          <h3>Athletes need direction.</h3>
+          <p class="lede">Show athletes what to work on, why it matters, and what comes next.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Parents</span>
+          <h3>Parents need visibility.</h3>
+          <p class="lede">Help families see the development happening beyond games, practices, and tournaments.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Programs</span>
+          <h3>Programs need consistency.</h3>
+          <p class="lede">Create a shared development standard across coaches, teams, and age groups.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="programs">
+    <section class="section" id="platform">
       <div class="section-head">
         <div class="left">
-          <div class="eyebrow">Across every level</div>
-          <h2>From club &amp; travel to college.</h2>
+          <div class="eyebrow">The platform</div>
+          <h2>Brandlete gives your program a development system.</h2>
         </div>
-        <a href="#demo" class="right">Find your fit ↗</a>
+        <a href="#contact" class="right">See it live ↗</a>
       </div>
-      <figure class="athlete-band">
-        <img src="img/youth-club.jpg" alt="Youth club soccer players celebrating a goal at golden hour." loading="lazy" />
-        <figcaption><span class="level-name">Club &amp; travel</span><span class="level-num">Level i</span></figcaption>
-      </figure>
+      <p class="section-lede">Brandlete connects the key pieces of athlete development into one simple workflow.</p>
+      <div class="grid-5">
+        <div class="card">
+          <h3>Development Playbooks</h3>
+          <p class="lede">Build repeatable development systems for teams, positions, skills, leadership, camps, tryouts, and seasons.</p>
+        </div>
+        <div class="card">
+          <h3>Assignments</h3>
+          <p class="lede">Turn Playbooks into goals, tasks, milestones, and athlete action.</p>
+        </div>
+        <div class="card">
+          <h3>Feedback</h3>
+          <p class="lede">Give structured coach feedback athletes can revisit and build from.</p>
+        </div>
+        <div class="card">
+          <h3>Communication</h3>
+          <p class="lede">Keep development conversations organized, transparent, and connected to the athlete journey.</p>
+        </div>
+        <div class="card">
+          <h3>Insights</h3>
+          <p class="lede">See engagement, progress, coach activity, and athletes who need more support.</p>
+        </div>
+      </div>
+      <div class="platform-screens">
+        <div class="product-twoup">
+          <figure>
+            <div class="product-img-wrap">
+              <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
+              <span class="pin" style="top:14%;left:8%"><i>1</i><em>Assign weekly work in seconds</em></span>
+              <span class="pin" style="top:42%;left:62%"><i>2</i><em>Every athlete's progress in view</em></span>
+              <span class="pin" style="top:78%;left:22%"><i>3</i><em>Roster-wide progress at a glance</em></span>
+            </div>
+            <figcaption><span class="surface-name">Coach Hub</span><span class="surface-tag">Coach view</span></figcaption>
+          </figure>
+          <figure>
+            <div class="product-img-wrap">
+              <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
+              <span class="pin" style="top:12%;left:10%"><i>1</i><em>Today's focus, one screen</em></span>
+              <span class="pin" style="top:46%;left:64%"><i>2</i><em>Coach updates in line</em></span>
+              <span class="pin" style="top:80%;left:24%"><i>3</i><em>Progress streak stays visible</em></span>
+            </div>
+            <figcaption><span class="surface-name">Athlete Workspace</span><span class="surface-tag">Athlete view</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="ai-supporting">
+        <span class="ai-tag">AI inside the platform</span>
+        <h3>AI that supports coaches, not replaces them.</h3>
+        <p>AI works behind the scenes — turning notes into Playbooks, summarizing weekly progress, and surfacing athletes who may need more attention. Coaches and athletes stay in front.</p>
+      </div>
     </section>
 
-    <div class="kpis">
-      <div class="kpi">
-        <div class="kpi-head"><span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13l4-4 4 4 8-8"/></svg></span><span class="name">Earlier support signal</span></div>
-        <div class="num">3 wks</div>
-        <div class="sub">Directors see where athletes need more support, sooner.</div>
-      </div>
-      <div class="kpi">
-        <div class="kpi-head"><span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></span><span class="name">Assign weekly work</span></div>
-        <div class="num">&lt;30s</div>
-        <div class="sub">Drop film, fitness, and goals to the whole team.</div>
-      </div>
-      <div class="kpi">
-        <div class="kpi-head"><span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="3"/><path d="M3 9h18"/></svg></span><span class="name">One source of truth</span></div>
-        <div class="num">1 app</div>
-        <div class="sub">No PDFs, no group chats, no DM chaos.</div>
-      </div>
-      <div class="kpi">
-        <div class="kpi-head"><span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></span><span class="name">Parent escalations</span></div>
-        <div class="num">Quiet</div>
-        <div class="sub">Parents see goals, work, and progress. The "why isn't my kid playing?" text dies.</div>
-      </div>
-    </div>
-
-    <section class="section" id="ai">
+    <section class="section" id="playbooks">
       <div class="section-head">
         <div class="left">
-          <div class="eyebrow">AI-native · human-first</div>
-          <h2>AI works behind the scenes. Coaches and athletes stay in front.</h2>
+          <div class="eyebrow">Development Playbooks</div>
+          <h2>Build your development curriculum once. Use it across your program.</h2>
         </div>
       </div>
+      <p class="section-lede">Create Playbooks for offseason development, position groups, leadership, culture, nutrition, film study, camps, tryouts, return-to-play, or team-specific growth. Assign them to athletes, teams, or groups and track progress over time.</p>
+      <div class="grid-4">
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h11a3 3 0 0 1 3 3v13H7a2 2 0 0 1-2-2z"/><path d="M9 8h8M9 12h8M9 16h5"/></svg></span><h4>Offseason Development</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M3 9v6l9 5 9-5V9"/></svg></span><h4>Freshman Onboarding</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 15.5l-5.2 2.8 1-5.9L3.5 8.2l5.9-.9z"/></svg></span><h4>Leadership Program</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><h4>Position-Specific Training</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v12H4z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></span><h4>Camp Follow-Up</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16"/><path d="M12 4v16"/><circle cx="12" cy="12" r="9"/></svg></span><h4>Tryout-to-Team Development</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span><h4>Return-To-Play</h4></div>
+        <div class="playbook-tile"><span class="pb-ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 10h18"/><path d="M8 2v4M16 2v4"/></svg></span><h4>Season Plan</h4></div>
+      </div>
+    </section>
+
+    <figure class="athlete-band">
+      <img src="img/youth-club.jpg" alt="Youth club soccer players celebrating a goal at golden hour." loading="lazy" />
+      <figcaption><span class="level-name">Club &amp; travel</span><span class="level-num">Level i</span></figcaption>
+    </figure>
+
+    <section class="section" id="visibility">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Program visibility</div>
+          <h2>See what's happening across your program.</h2>
+        </div>
+      </div>
+      <p class="section-lede">Brandlete gives leaders visibility into athlete engagement, coach activity, development progress, parent communication, and athletes who may need support before issues become bigger problems.</p>
       <div class="grid-3">
         <div class="card">
-          <span class="badge">For athletes</span>
-          <h3>A plan that adapts as you grow.</h3>
-          <p class="lede">Weekly work, goals, and habits adjust to how the season is actually going — no spreadsheet rebuild, no static PDF.</p>
+          <span class="badge">Signal</span>
+          <h3>Coach activity.</h3>
+          <p class="lede">See which coaches are assigning work, sending feedback, and showing up consistently for their athletes.</p>
         </div>
         <div class="card">
-          <span class="badge">For coaches</span>
-          <h3>Less admin, more coaching.</h3>
-          <p class="lede">Templates, prompts, and summaries do the busywork so you spend your time on feedback and relationships — not data entry.</p>
+          <span class="badge">Signal</span>
+          <h3>Athlete engagement.</h3>
+          <p class="lede">Track who's logging in, completing tasks, and engaging with development week over week.</p>
         </div>
         <div class="card">
-          <span class="badge">For directors</span>
-          <h3>Measurable growth, week over week.</h3>
-          <p class="lede">Engagement, retention, and development signals roll up automatically. The numbers are real, the decisions are still yours.</p>
+          <span class="badge">Signal</span>
+          <h3>Development progress.</h3>
+          <p class="lede">Watch goals close, milestones hit, and Playbook progress across teams and age groups.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Signal</span>
+          <h3>Parent visibility.</h3>
+          <p class="lede">Confirm parents are seeing the structure, communication, and progress behind their athlete's experience.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Signal</span>
+          <h3>Needs attention.</h3>
+          <p class="lede">Surface athletes who may need follow-up: missed check-ins, falling engagement, or quiet weeks.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Signal</span>
+          <h3>Retention signals.</h3>
+          <p class="lede">See where retention risk is forming early enough to act, not after the season ends.</p>
         </div>
       </div>
     </section>
@@ -1348,26 +1542,36 @@
     <section class="section" id="who-for">
       <div class="section-head">
         <div class="left">
-          <div class="eyebrow">Active development systems</div>
-          <h2>Four people. One source of truth.</h2>
+          <div class="eyebrow">Who it's for</div>
+          <h2>Built for the entire athlete development ecosystem.</h2>
         </div>
         <a href="#how" class="right">How it works ↗</a>
       </div>
       <div class="grid-3">
         <div class="card">
-          <span class="badge">Directors</span>
-          <h3>See the whole program in one view.</h3>
-          <p class="lede">Real-time visibility into engagement, coach activity, and where each athlete is in their development across every team in the program.</p>
+          <span class="badge">Athletic Directors</span>
+          <h3>Athletic directors.</h3>
+          <p class="lede">See program-wide development, coach activity, engagement, communication, and athlete experience.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Club Directors</span>
+          <h3>Club directors.</h3>
+          <p class="lede">Create consistency across teams, improve parent trust, strengthen retention, and show the value of your program.</p>
         </div>
         <div class="card">
           <span class="badge">Coaches</span>
-          <h3>Run a real development program.</h3>
-          <p class="lede">Set goals, assign weekly work, and track who's actually doing it. Less admin, more coaching.</p>
+          <h3>Coaches.</h3>
+          <p class="lede">Save time, assign development, send feedback, communicate clearly, and keep athletes accountable.</p>
         </div>
         <div class="card">
-          <span class="badge">Athletes &amp; parents</span>
-          <h3>Know what to do this week.</h3>
-          <p class="lede">Athletes get a clear weekly plan on their phone. Parents see progress without nagging the coach.</p>
+          <span class="badge">Athletes</span>
+          <h3>Athletes.</h3>
+          <p class="lede">Know what to work on, track progress, view feedback, complete goals, and showcase development.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Parents</span>
+          <h3>Parents.</h3>
+          <p class="lede">See the structure, support, and progress behind their athlete's experience.</p>
         </div>
       </div>
     </section>
@@ -1380,35 +1584,82 @@
     <section class="section" id="how">
       <div class="section-head">
         <div class="left">
-          <div class="eyebrow">Setup</div>
-          <h2>Stand up your first team in an afternoon.</h2>
+          <div class="eyebrow">How it works</div>
+          <h2>Stand up your first team fast.</h2>
         </div>
-        <a href="#demo" class="right">Book onboarding ↗</a>
+        <a href="#contact" class="right">Book onboarding ↗</a>
       </div>
       <div class="grid-3">
         <div class="card step">
           <div class="num"><span>i.</span> Step one</div>
           <h3>Import your roster.</h3>
-          <p class="lede">CSV or copy-paste. Athletes and parents get a one-tap invite. Works in the browser, no app-store gymnastics.</p>
+          <p class="lede">Upload a CSV or add athletes manually. Invite coaches, athletes, and parents.</p>
         </div>
         <div class="card step">
           <div class="num"><span>ii.</span> Step two</div>
-          <h3>Set goals and weekly work.</h3>
-          <p class="lede">Use a sport template (soccer, baseball, basketball, hockey, lacrosse) or build your own. Assign once, reuse every week.</p>
+          <h3>Create or choose a Playbook.</h3>
+          <p class="lede">Use a template or build your own development plan for your team, season, camp, or program.</p>
         </div>
         <div class="card step">
           <div class="num"><span>iii.</span> Step three</div>
-          <h3>Watch the dashboard.</h3>
-          <p class="lede">Engagement, check-ins, and athlete progress surface automatically. Step in to support, instead of reacting to drop-off.</p>
+          <h3>Assign goals and weekly work.</h3>
+          <p class="lede">Give athletes clear tasks, milestones, and expectations.</p>
+        </div>
+        <div class="card step">
+          <div class="num"><span>iv.</span> Step four</div>
+          <h3>Send feedback and updates.</h3>
+          <p class="lede">Coaches deliver structured feedback and keep communication connected to development.</p>
+        </div>
+        <div class="card step">
+          <div class="num"><span>v.</span> Step five</div>
+          <h3>Track progress.</h3>
+          <p class="lede">Directors and coaches see engagement, progress, and athletes who need support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="safe">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Safe communication</div>
+          <h2>Replace untracked texting with transparent program communication.</h2>
+        </div>
+      </div>
+      <p class="section-lede">Brandlete gives programs a safer, more organized way to communicate with athletes and families. Messaging can be turned on or off by the organization, conversations are archived, and parents and administrators can have visibility where appropriate.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge">Trust</span>
+          <h3>Archived conversations.</h3>
+          <p class="lede">Every coach-athlete and coach-parent message is logged and recoverable. Nothing important lives only in someone's phone.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Trust</span>
+          <h3>Parent visibility.</h3>
+          <p class="lede">Where the program allows it, parents can see the development conversations behind their athlete's experience.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Trust</span>
+          <h3>Admin oversight.</h3>
+          <p class="lede">Directors keep an open view into communication patterns and can step in early when something needs attention.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Trust</span>
+          <h3>Coach-athlete boundaries.</h3>
+          <p class="lede">Clear rules for what's appropriate, what's logged, and what's visible at the program level.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Trust</span>
+          <h3>Program-controlled settings.</h3>
+          <p class="lede">Each organization decides who can message whom, what's archived, and what parents see.</p>
         </div>
       </div>
     </section>
 
     <section class="section" id="power25">
       <div class="power25">
-        <div class="eyebrow">Founding class · 2026 charter</div>
-        <h2>The Brandlete <span class="accent">Power 25</span> Founding Partnership.</h2>
-        <p class="lede">Twenty five programs. Six months on the platform. Full credit toward year one. Founding partners shape what comes next.</p>
+        <div class="eyebrow">Power 25 · Founding partnership program</div>
+        <h2>Join the <span class="accent">Power 25</span> Partnership Program.</h2>
+        <p class="lede">We are selecting 25 forward-thinking organizations to help shape the future of athlete development infrastructure.</p>
 
         <div class="power25-stats">
           <div class="power25-stat">
@@ -1417,57 +1668,147 @@
           </div>
           <div class="power25-stat">
             <div class="num white">$3,000</div>
-            <div class="label">Six month pilot</div>
+            <div class="label">Six month commitment</div>
           </div>
           <div class="power25-stat">
             <div class="num">100%</div>
-            <div class="label">Credit to year one</div>
+            <div class="label">Credited toward full license</div>
           </div>
           <div class="power25-stat">
             <div class="num white">6 mo</div>
-            <div class="label">To prove it out</div>
+            <div class="label">Test period</div>
           </div>
         </div>
 
         <div class="power25-body">
           <div class="power25-benefits">
             <div class="power25-benefit">
-              <h4>Full platform access</h4>
-              <p>Every coach, athlete, and admin seat for the program, all six months.</p>
+              <h4>Founder-led onboarding</h4>
+              <p>Direct setup with the founding team to get your first Playbook live fast.</p>
             </div>
             <div class="power25-benefit">
-              <h4>Launch media package</h4>
-              <p>Custom announcement assets and social content marking the partnership.</p>
+              <h4>Priority product access</h4>
+              <p>First look at new features, beta surfaces, and platform updates before general release.</p>
             </div>
             <div class="power25-benefit">
-              <h4>Direct line to our team</h4>
-              <p>Access to John and the product team. Your feedback shapes the roadmap.</p>
+              <h4>Development Playbook setup</h4>
+              <p>We build your initial Playbooks alongside your coaches so your curriculum lands on day one.</p>
             </div>
             <div class="power25-benefit">
-              <h4>Year-one credit</h4>
-              <p>The full $3,000 rolls forward as a credit on your first annual contract.</p>
+              <h4>Quarterly strategy session</h4>
+              <p>Sit down with our team every quarter to align on growth, retention, and program goals.</p>
+            </div>
+            <div class="power25-benefit">
+              <h4>Founding partner recognition</h4>
+              <p>Public recognition as a Power 25 founding partner across our launch assets.</p>
+            </div>
+            <div class="power25-benefit">
+              <h4>Direct product feedback loop</h4>
+              <p>Your feedback shapes what we build next. Founding partners get a real seat at the table.</p>
             </div>
           </div>
           <div class="power25-who">
             <h3>Who this is for</h3>
             <ul>
-              <li>Athletic development camps</li>
+              <li>Athletic departments &amp; schools</li>
               <li>Club &amp; travel programs</li>
-              <li>High schools</li>
+              <li>Academies &amp; camps</li>
               <li>Colleges &amp; universities</li>
             </ul>
-            <p class="fineprint">Programs that take athlete development seriously and want a tool that proves they do.</p>
+            <p class="fineprint">Only 25 organizations will be selected for the first launch cohort.</p>
           </div>
         </div>
 
         <div class="power25-cta">
           <div class="pitch">
-            Twenty five spots. Founding partners shape what comes next.
-            <small>Book a 20 minute intro with John</small>
+            Only 25 organizations will be selected for the first launch cohort.
+            <small>Six-month commitment. $3,000 credited toward your full license.</small>
           </div>
           <div class="ctas">
             <a href="https://www.linkedin.com/in/johnosberg" target="_blank" rel="noopener" class="btn ghost-on-dark">LinkedIn with John</a>
-            <a href="#contact" class="btn btn-light">Book a demo</a>
+            <a href="#contact" class="btn btn-light">Apply for Power 25</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Proof</div>
+          <h2>What programs are trying to solve.</h2>
+        </div>
+      </div>
+      <p class="section-lede">These are the patterns we hear most often from athletic directors, club directors, and coaches. They're why Brandlete exists.</p>
+      <div class="grid-3">
+        <div class="insight-card">
+          <blockquote>Our coaches need a more consistent development process.</blockquote>
+          <div class="who-tag">Heard from athletic directors</div>
+        </div>
+        <div class="insight-card">
+          <blockquote>Parents want to see what their athletes are actually working on.</blockquote>
+          <div class="who-tag">Heard from club directors</div>
+        </div>
+        <div class="insight-card">
+          <blockquote>Athletes need clearer weekly direction.</blockquote>
+          <div class="who-tag">Heard from head coaches</div>
+        </div>
+        <div class="insight-card">
+          <blockquote>Directors need visibility across teams without chasing updates.</blockquote>
+          <div class="who-tag">Heard from program leaders</div>
+        </div>
+        <div class="insight-card">
+          <blockquote>Development should not disappear after practice ends.</blockquote>
+          <div class="who-tag">Heard across every conversation</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">Pricing</div>
+          <h2>Simple program pricing for serious athlete development.</h2>
+        </div>
+        <a href="#contact" class="right">Talk to us about programs ↗</a>
+      </div>
+      <p class="section-lede">Brandlete is built for schools, clubs, academies, and athletic organizations that want a structured development system across coaches, athletes, and families.</p>
+      <div class="program-card">
+        <span class="price-pill">For programs · Custom</span>
+        <h3>Program license</h3>
+        <p class="lede" style="margin:0;">Pricing scales with the size and scope of your organization. Includes coaches, athletes, parents, and admin seats so the whole program runs on one system.</p>
+        <ul class="list">
+          <li>Unlimited coaches, athletes, and parent seats per team</li>
+          <li>Development Playbook setup with our team</li>
+          <li>Director-level visibility and reporting</li>
+          <li>Safe communication settings tuned to your program</li>
+          <li>Founder-led onboarding for Power 25 partners</li>
+        </ul>
+        <a href="#contact" class="btn btn-light" style="align-self:flex-start;margin-top:4px;">Talk to us about program pricing</a>
+      </div>
+
+      <div class="pricing-secondary">
+        <div class="secondary-eyebrow">For individual athletes outside a program</div>
+        <div class="tier-solo">
+          <div class="tier featured">
+            <div class="tier-head">
+              <div class="tier-name">Full Access</div>
+              <span class="badge">Athlete plan</span>
+            </div>
+            <div class="price-num">
+              <span class="price-amount">$14.99</span>
+              <small class="price-period">per athlete / month</small>
+            </div>
+            <p class="price-sub" data-period-note="monthly">Billed monthly. Cancel anytime. No per-coach or per-parent fees.</p>
+            <ul class="list">
+              <li>Personalized Development Plan</li>
+              <li>Goal Setting &amp; Progress Tracking</li>
+              <li>Add Multiple Coaches For Feedback</li>
+              <li>Daily Tasks &amp; Habit Building</li>
+              <li>Parent Visibility &amp; Support</li>
+              <li>Performance Insights Over Time</li>
+            </ul>
+            <a href="https://www.brandlete.com" target="_blank" rel="noopener" class="btn" style="align-self:flex-start;margin-top:6px;">Sign up on brandlete.com</a>
           </div>
         </div>
       </div>
@@ -1476,7 +1817,7 @@
     <section class="section" id="team">
       <div class="section-head">
         <div class="left">
-          <div class="eyebrow">The team</div>
+          <div class="eyebrow">Team</div>
           <h2>Built by operators with roots in sport.</h2>
         </div>
         <a href="mailto:info@brandlete.com" class="right">Get in touch ↗</a>
@@ -1518,85 +1859,19 @@
       <figcaption><span class="level-name">College</span><span class="level-num">Level iii</span></figcaption>
     </figure>
 
-    <section class="section" id="proof">
-      <div class="section-head">
-        <div class="left">
-          <div class="eyebrow">Field notes</div>
-          <h2>What directors tell us.</h2>
-        </div>
-      </div>
-      <div class="grid-3">
-        <div class="quote">
-          <blockquote>“We were running the program out of three spreadsheets and a group chat. Brandlete put it all in one place and our renewal rate went up the first season.”</blockquote>
-          <div class="who"><div class="avatar">PD</div><div class="meta"><div class="nm">Program Director</div><div class="role">Pilot customer, attribution pending</div></div></div>
-        </div>
-        <div class="quote">
-          <blockquote>“My coaches are actually consistent now. The weekly assignment templates mean nobody coasts and nobody reinvents the wheel.”</blockquote>
-          <div class="who"><div class="avatar">HC</div><div class="meta"><div class="nm">Head Coach</div><div class="role">Pilot customer, attribution pending</div></div></div>
-        </div>
-        <div class="quote">
-          <blockquote>“For the first time I can actually see what my kid is working on without nagging her coach. The Sunday check-in does what every team chat tried to do and failed.”</blockquote>
-          <div class="who"><div class="avatar">PR</div><div class="meta"><div class="nm">Club Soccer Parent</div><div class="role">Pilot customer, attribution pending</div></div></div>
-        </div>
-        <div class="quote">
-          <blockquote>“We replaced two tools and a Google Sheet on day one. Brandlete showed us where three athletes needed more support, and we pulled them back into their development before mid-season.”</blockquote>
-          <div class="who"><div class="avatar">AD</div><div class="meta"><div class="nm">Athletic Director</div><div class="role">Pilot customer, attribution pending</div></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="section-head">
-        <div class="left">
-          <div class="eyebrow">Pricing</div>
-          <h2>One plan. Everything in.</h2>
-        </div>
-        <a href="#demo" class="right">Talk to us about programs ↗</a>
-      </div>
-      <div class="billing-toggle" role="tablist" aria-label="Billing period">
-        <button type="button" class="billing-opt active" data-period="monthly" role="tab" aria-selected="true">Monthly</button>
-        <button type="button" class="billing-opt" data-period="yearly" role="tab" aria-selected="false">Yearly</button>
-      </div>
-      <div class="tier-solo">
-        <div class="tier featured">
-          <div class="tier-head">
-            <div class="tier-name">Full Access</div>
-            <span class="badge">Athlete plan</span>
-          </div>
-          <div class="price-num">
-            <span class="price-amount">$14.99</span>
-            <small class="price-period">per athlete / month</small>
-          </div>
-          <p class="price-sub" data-period-note="monthly">Billed monthly. Cancel anytime. No per-coach or per-parent fees.</p>
-          <ul class="list">
-            <li>Personalized Development Plan</li>
-            <li>Goal Setting &amp; Progress Tracking</li>
-            <li>Add Multiple Coaches For Feedback</li>
-            <li>Direct Coach Accountability</li>
-            <li>Daily Tasks &amp; Habit Building</li>
-            <li>Parent Visibility &amp; Support</li>
-            <li>Performance Insights Over Time</li>
-            <li>Public Profile &amp; Season Stat Tracking</li>
-          </ul>
-          <a href="https://www.brandlete.com" target="_blank" rel="noopener" class="btn" style="align-self:flex-start;margin-top:6px;">Sign up on brandlete.com</a>
-        </div>
-      </div>
-      <p class="pricing-foot">Running a club, high school, or college program? <a href="#contact">Talk to us about program pricing.</a></p>
-    </section>
-
     <section class="section" id="contact">
       <div class="section-head">
         <div class="left">
           <div class="eyebrow">Contact</div>
-          <h2>Send a note. We'll write back.</h2>
+          <h2>Ready to see Brandlete in action?</h2>
         </div>
         <a href="mailto:info@brandlete.com" class="right">info@brandlete.com ↗</a>
       </div>
       <div class="contact-card">
         <div class="lead">
           <img class="shoe" src="img/brandlete-shoe.png" alt="" />
-          <h3>Questions about how Brandlete works?</h3>
-          <p>Tell us a little about your program or where you are in your athletic development and we'll get back to you. If you'd rather just email, <a href="mailto:info@brandlete.com" style="color:var(--brand);font-weight:600;">info@brandlete.com</a> goes to the same inbox.</p>
+          <h3>Book a 20-minute intro.</h3>
+          <p>We'll show how Brandlete can help your program organize development, support coaches, improve visibility, and create a better athlete experience. Prefer email? <a href="mailto:info@brandlete.com" style="color:var(--brand);font-weight:600;">info@brandlete.com</a> goes to the same inbox.</p>
         </div>
         <form class="contact-form" id="contact-form" novalidate>
           <div class="contact-field">
@@ -1612,10 +1887,12 @@
               <label for="contact-role">I am a:</label>
               <select id="contact-role" name="role" required>
                 <option value="" disabled selected>Select…</option>
+                <option>Athletic Director</option>
+                <option>Club Director</option>
+                <option>Coach</option>
+                <option>Academy Owner</option>
                 <option>Athlete</option>
                 <option>Parent</option>
-                <option>Coach</option>
-                <option>Program Director</option>
                 <option>Partner / Investor</option>
                 <option>Other</option>
               </select>
@@ -1625,30 +1902,20 @@
             <label for="contact-interest">What are you interested in?</label>
             <select id="contact-interest" name="interest" required>
               <option value="" disabled selected>Select…</option>
+              <option>Bringing Brandlete to my program</option>
+              <option>Power 25 partnership</option>
               <option>A personal Brandlete account</option>
-              <option>Bringing Brandlete to my team or program</option>
-              <option>Partnership or pilot</option>
               <option>Press or investor inquiry</option>
               <option>Just curious</option>
             </select>
           </div>
           <div class="contact-field">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" placeholder="How can we help?" required></textarea>
+            <textarea id="contact-message" name="message" placeholder="Tell us a little about your program or what you're hoping to solve." required></textarea>
           </div>
-          <button type="submit" class="btn">Send message</button>
+          <button type="submit" class="btn">Book a demo</button>
           <div class="contact-status" id="contact-status" role="status" aria-live="polite"></div>
         </form>
-      </div>
-    </section>
-
-    <section class="cta-strip" id="demo">
-      <div>
-        <h2>Prefer email? 30-minute demo, real product, no deck.</h2>
-        <p class="lede">We'll set up a team live on the call and walk you through this week's athlete development snapshot.</p>
-      </div>
-      <div class="ctas">
-        <a href="mailto:info@brandlete.com?subject=Brandlete%20demo%20request" class="btn">Email us to book</a>
       </div>
     </section>
 
