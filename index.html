@@ -67,10 +67,10 @@
     --ink-3: #6b7891;
     --ink-soft: #94a0b8;
     --brand: #2196f3;
-    --brand-2: #38bdf8;
+    --brand-2: #00CCFF;
     --brand-deep: #1573c4;
     --brand-soft: rgba(33,150,243,0.10);
-    --accent-cyan: #38bdf8;
+    --accent-cyan: #00CCFF;
     --success: #16a34a;
     --warn: #f59e0b;
     --danger: #e23b3b;
@@ -95,10 +95,10 @@
     --ink-3: #8d99b6;
     --ink-soft: #6b7794;
     --brand: #4d9eff;
-    --brand-2: #38bdf8;
+    --brand-2: #00CCFF;
     --brand-deep: #2563eb;
     --brand-soft: rgba(77,158,255,0.14);
-    --accent-cyan: #38bdf8;
+    --accent-cyan: #00CCFF;
     --success: #22c55e;
     --warn: #f59e0b;
     --danger: #ef4444;
@@ -266,7 +266,7 @@
     display: flex; flex-direction: column; gap: 4px; min-width: 0;
   }
   .topstrip .greet h2 { font-size: clamp(1.05rem, 4.6vw, 2rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; white-space: nowrap; }
-  .greet-role { display: inline-block; transition: opacity 0.28s ease; }
+  .greet-role { display: inline-block; color: var(--accent-cyan); font-weight: 700; transition: opacity 0.28s ease; }
   .greet-role.fade { opacity: 0; }
   @media (max-width: 720px) {
     .topstrip .actions { justify-content: center; flex-wrap: wrap; }
