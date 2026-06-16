@@ -174,16 +174,12 @@
     color: inherit;
     text-decoration: none;
   }
-  .brand-mark:hover .wordmark { color: var(--brand); }
-  .brand-mark img {
-    width: 36px; height: auto;
-    filter: drop-shadow(0 0 0.5px var(--brand));
-  }
-  .brand-mark .wordmark {
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    font-size: 0.95rem;
-    color: var(--ink);
+  .brand-mark .brand-logo {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
   }
   .rail-toggle {
     display: flex;
@@ -192,6 +188,7 @@
   }
   @media (max-width: 920px) {
     .brand-mark { border-bottom: none; padding: 0; flex-shrink: 0; }
+    .brand-mark .brand-logo { max-width: 140px; }
     .rail-toggle { padding: 0; margin-left: 4px; }
   }
 
@@ -1163,8 +1160,7 @@
 <div class="app">
   <aside class="rail">
     <a href="/" class="brand-mark" aria-label="Brandlete — back to home">
-      <img src="img/brandlete-shoe.png" alt="" />
-      <span class="wordmark">BRANDLETE</span>
+      <img src="img/brandlete-logo.png" alt="Brandlete" class="brand-logo" />
     </a>
     <div class="rail-toggle">
       <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
@@ -1228,7 +1224,6 @@
   <main class="content">
     <div class="topstrip">
       <div class="greet">
-        <div class="eyebrow">Summer season · 2026</div>
         <h2>Hey <span id="greet-role" class="greet-role">coach</span>, <span class="wave">👋</span> let's keep building today.</h2>
       </div>
       <div class="actions">
