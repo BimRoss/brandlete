@@ -321,8 +321,7 @@
   @media (max-width: 720px) {
     .topstrip .greet { align-items: center; text-align: center; }
     .topstrip .greet h2 {
-      white-space: normal;
-      font-size: 2.1rem !important;
+      font-size: 2.1rem;
       line-height: 1.2;
     }
     .greet-role { font-size: 1em; }
@@ -2209,20 +2208,18 @@
     var greetH2 = greetRole ? greetRole.parentElement : null;
     function fitGreet() {
       if (!greetH2) return;
-      // On mobile, let the heading wrap naturally via CSS instead of shrinking to fit one line.
-      if (window.matchMedia('(max-width: 720px)').matches) {
-        greetH2.style.fontSize = '';
-        return;
-      }
       var parent = greetH2.parentElement;
       var maxW = parent ? parent.clientWidth : 0;
       if (!maxW) return;
       greetH2.style.fontSize = '';
+      var isMobile = window.matchMedia('(max-width: 720px)').matches;
       var base = parseFloat(getComputedStyle(greetH2).fontSize) || 16;
-      var size = Math.min(48, Math.max(base, 24));
+      var ceiling = isMobile ? base : 48;
+      var floor = isMobile ? 14 : 11;
+      var size = Math.min(ceiling, Math.max(base, isMobile ? 14 : 24));
       greetH2.style.fontSize = size + 'px';
-      var guard = 60;
-      while (greetH2.scrollWidth > maxW && size > 11 && guard-- > 0) {
+      var guard = 80;
+      while (greetH2.scrollWidth > maxW && size > floor && guard-- > 0) {
         size -= 0.5;
         greetH2.style.fontSize = size + 'px';
       }
