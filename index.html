@@ -319,35 +319,19 @@
   @keyframes greet-blink { 50% { opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { .greet-cursor { animation: none; } }
   @media (max-width: 720px) {
-    .topstrip .actions { justify-content: center; flex-wrap: wrap; }
-    .topstrip .actions .btn { padding: 13px 28px; font-size: 0.96rem; }
     .topstrip .greet { align-items: center; text-align: center; }
     .topstrip .greet h2 {
       white-space: normal;
-      font-size: 1.5rem !important;
-      line-height: 1.25;
+      font-size: 2.1rem !important;
+      line-height: 1.2;
     }
     .greet-role { font-size: 1em; }
     .greet-cursor { height: 0.85em; }
     .topstrip .greet h2 .greet-tail { display: block; }
   }
   @media (max-width: 920px) {
-    .topstrip { flex-direction: column-reverse; }
-    .topstrip #theme-toggle { display: none; }
-    .topstrip .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      justify-content: stretch;
-      flex-wrap: nowrap;
-    }
-    .topstrip .actions .btn {
-      padding: 11px 10px;
-      font-size: 0.86rem;
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-    }
+    .topstrip { margin-bottom: 18px; }
+    .topstrip .actions { display: none; }
   }
 
   .chip {
