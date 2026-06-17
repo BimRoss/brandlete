@@ -175,6 +175,7 @@
       background: #00CCFF; color: #0b1224; border: 1px solid #00CCFF;
       padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 0.86rem;
     }
+    .mobile-topbar .icon-btn { width: 36px; height: 36px; }
     .hamburger {
       width: 40px; height: 40px;
       display: grid; place-items: center;
@@ -329,6 +330,24 @@
     .greet-role { font-size: 1em; }
     .greet-cursor { height: 0.85em; }
     .topstrip .greet h2 .greet-tail { display: block; }
+  }
+  @media (max-width: 920px) {
+    .topstrip { flex-direction: column-reverse; }
+    .topstrip #theme-toggle { display: none; }
+    .topstrip .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      justify-content: stretch;
+      flex-wrap: nowrap;
+    }
+    .topstrip .actions .btn {
+      padding: 11px 10px;
+      font-size: 0.86rem;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
   }
 
   .chip {
@@ -1470,6 +1489,10 @@
     <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="brand-logo-dark" />
   </a>
   <div class="mt-right">
+    <button type="button" id="theme-toggle-mobile" class="icon-btn" aria-label="Toggle dark mode">
+      <svg class="icon-dark ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="icon-light ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.5 4.5l1.5 1.5M18 18l1.5 1.5M4.5 19.5L6 18M18 6l1.5-1.5"/></svg>
+    </button>
     <a href="#contact" class="mt-cta">Book a Demo</a>
     <button type="button" id="nav-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -2185,15 +2208,17 @@
 <script>
   (function () {
     var root = document.documentElement;
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
+    var btns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')].filter(Boolean);
+    if (!btns.length) return;
     function apply(next) {
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('brandlete-theme', next); } catch (e) {}
-      btn.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false'); });
     }
-    btn.addEventListener('click', function () {
-      apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
     });
 
     var greetRole = document.getElementById('greet-role');
