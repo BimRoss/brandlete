@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <script>
   try {
     var url = new URL(window.location.href);
     var override = url.searchParams.get('theme');
     var saved = localStorage.getItem('brandlete-theme');
-    document.documentElement.setAttribute('data-theme', override || saved || 'light');
+    document.documentElement.setAttribute('data-theme', override || saved || 'dark');
   } catch (e) {}
 </script>
 <meta charset="utf-8" />
@@ -1228,7 +1228,7 @@
     .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
     .foot-brand { grid-column: 1 / -1; }
     .foot-connect { grid-column: 1 / -1; }
-    .foot-connect .foot-cta { display: none; }
+    .foot-connect .foot-cta { display: none !important; }
   }
   @media (max-width: 540px) {
     .foot-grid { grid-template-columns: 1fr; gap: 28px; }
