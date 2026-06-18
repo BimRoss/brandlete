@@ -229,12 +229,18 @@
     margin-top: 56px;
     padding-top: 20px;
     border-top: 1px solid var(--border);
+    color: var(--ink-3);
+    font-size: 0.84rem;
+  }
+  footer .foot-mark img { width: 140px; height: auto; display: block; margin: 0 0 16px; }
+  footer .foot-mark .foot-logo-dark { display: none; }
+  [data-theme="dark"] footer .foot-mark .foot-logo-light { display: none; }
+  [data-theme="dark"] footer .foot-mark .foot-logo-dark { display: block; }
+  footer .foot-row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    color: var(--ink-3);
-    font-size: 0.84rem;
   }
   footer a { color: var(--ink-3); text-decoration: none; margin-right: 14px; }
   footer a:hover { color: var(--ink); text-decoration: underline; }
@@ -523,10 +529,16 @@
     <div class="allcaps">THERE MAY BE THIRD-PARTY LINKS ON OUR SERVICES, WHICH WILL SEND YOU TO WEBSITES THAT ARE NOT OWNED, MANAGED, CONTROLLED, OR OPERATED BY BRANDLETE. CLICKING ON A THIRD-PARTY LINK IS DONE AT YOUR OWN RISK, AND BY DOING SO, YOU UNDERSTAND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY LOSS OR DAMAGE THAT MAY RESULT FROM SUCH ACTION.</div>
 
     <footer>
-      <div>&copy; 2026 Brandlete, Inc.</div>
-      <div>
-        <a href="/">Home</a>
-        <a href="/terms.html">Terms of Use</a>
+      <div class="foot-mark">
+        <img src="img/brandlete-logo-light.png" alt="Brandlete" class="foot-logo-light" />
+        <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="foot-logo-dark" />
+      </div>
+      <div class="foot-row">
+        <div>&copy; 2026 Brandlete, Inc.</div>
+        <div>
+          <a href="/">Home</a>
+          <a href="/terms.html">Terms of Use</a>
+        </div>
       </div>
     </footer>
     </main>

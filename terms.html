@@ -208,12 +208,18 @@
     margin-top: 56px;
     padding-top: 20px;
     border-top: 1px solid var(--border);
+    color: var(--ink-3);
+    font-size: 0.84rem;
+  }
+  footer .foot-mark img { width: 140px; height: auto; display: block; margin: 0 0 16px; }
+  footer .foot-mark .foot-logo-dark { display: none; }
+  [data-theme="dark"] footer .foot-mark .foot-logo-light { display: none; }
+  [data-theme="dark"] footer .foot-mark .foot-logo-dark { display: block; }
+  footer .foot-row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    color: var(--ink-3);
-    font-size: 0.84rem;
   }
   footer a { color: var(--ink-3); text-decoration: none; margin-right: 14px; }
   footer a:hover { color: var(--ink); text-decoration: underline; }
@@ -342,10 +348,16 @@
     <p><strong>USE OF OUR SERVICES CONSTITUTES ACCEPTANCE OF THESE TERMS, AND OUR PRIVACY POLICY.</strong></p>
 
     <footer>
-      <div>&copy; 2026 Brandlete, Inc.</div>
-      <div>
-        <a href="/">Home</a>
-        <a href="/privacy.html">Privacy Policy</a>
+      <div class="foot-mark">
+        <img src="img/brandlete-logo-light.png" alt="Brandlete" class="foot-logo-light" />
+        <img src="img/brandlete-logo-dark.png" alt="Brandlete" class="foot-logo-dark" />
+      </div>
+      <div class="foot-row">
+        <div>&copy; 2026 Brandlete, Inc.</div>
+        <div>
+          <a href="/">Home</a>
+          <a href="/privacy.html">Privacy Policy</a>
+        </div>
       </div>
     </footer>
     </main>
