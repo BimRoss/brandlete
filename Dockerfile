@@ -6,5 +6,6 @@ COPY terms.html /usr/share/nginx/html/terms.html
 COPY robots.txt /usr/share/nginx/html/robots.txt
 COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY img/ /usr/share/nginx/html/img/
+COPY coach-workspace.pdf /usr/share/nginx/html/coach-workspace.pdf
 
 EXPOSE 80
