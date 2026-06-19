@@ -906,9 +906,8 @@
   }
   .product-img-wrap .pin {
     position: absolute;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    width: 24px;
+    height: 24px;
     transform: translate(-50%, -50%);
     pointer-events: auto;
     z-index: 2;
@@ -926,9 +925,12 @@
     display: grid;
     place-items: center;
     box-shadow: 0 0 0 4px rgba(56,189,248,0.18), 0 4px 12px rgba(2,8,23,0.35);
-    flex-shrink: 0;
   }
   .product-img-wrap .pin em {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 8px);
+    transform: translateY(-50%) translateX(-4px);
     font-style: normal;
     font-size: 0.74rem;
     font-weight: 600;
@@ -939,11 +941,15 @@
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(2,8,23,0.18);
     opacity: 0;
-    transform: translateX(-4px);
     transition: opacity 0.18s, transform 0.18s;
   }
+  .product-img-wrap .pin.pin-left em {
+    left: auto;
+    right: calc(100% + 8px);
+    transform: translateY(-50%) translateX(4px);
+  }
   .product-img-wrap .pin:hover em,
-  .product-img-wrap:hover .pin em { opacity: 1; transform: translateX(0); }
+  .product-img-wrap:hover .pin em { opacity: 1; transform: translateY(-50%) translateX(0); }
   @media (max-width: 720px) {
     .product-img-wrap .pin em { display: none; }
   }
@@ -1668,7 +1674,7 @@
             <div class="product-img-wrap">
               <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
               <span class="pin" style="top:14%;left:8%"><i>1</i><em>Assign weekly work in seconds</em></span>
-              <span class="pin" style="top:42%;left:62%"><i>2</i><em>Every athlete's progress in view</em></span>
+              <span class="pin pin-left" style="top:42%;left:62%"><i>2</i><em>Every athlete's progress in view</em></span>
               <span class="pin" style="top:78%;left:22%"><i>3</i><em>Roster-wide progress at a glance</em></span>
             </div>
             <figcaption><span class="surface-name">Coach Hub</span><span class="surface-tag">Coach view</span></figcaption>
@@ -1677,7 +1683,7 @@
             <div class="product-img-wrap">
               <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
               <span class="pin" style="top:12%;left:10%"><i>1</i><em>Today's focus, one screen</em></span>
-              <span class="pin" style="top:46%;left:64%"><i>2</i><em>Coach updates in line</em></span>
+              <span class="pin pin-left" style="top:46%;left:64%"><i>2</i><em>Coach updates in line</em></span>
               <span class="pin" style="top:80%;left:24%"><i>3</i><em>Progress streak stays visible</em></span>
             </div>
             <figcaption><span class="surface-name">Athlete Workspace</span><span class="surface-tag">Athlete view</span></figcaption>
