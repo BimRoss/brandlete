@@ -408,20 +408,31 @@
   .hero-card {
     position: relative;
     border-radius: 18px;
-    padding: 36px clamp(24px, 4vw, 48px);
+    padding: clamp(40px, 6vw, 72px) clamp(24px, 4vw, 56px);
     overflow: hidden;
-    background: var(--hero-grad);
+    background-color: #060912;
+    background-image: url('img/hero-athletes.jpg');
+    background-size: cover;
+    background-position: center;
     color: #f5f9ff;
     box-shadow: var(--shadow-card);
     isolation: isolate;
+    text-align: center;
   }
   .hero-card::before {
     content: "";
     position: absolute; inset: 0;
-    background: radial-gradient(circle at 78% 20%, rgba(56,189,248,0.35), transparent 60%),
-                radial-gradient(circle at 20% 90%, rgba(124,58,237,0.18), transparent 55%);
+    background:
+      radial-gradient(ellipse at 50% 55%, rgba(6,9,18,0.30) 0%, rgba(6,9,18,0.78) 75%),
+      linear-gradient(180deg, rgba(6,9,18,0.55) 0%, rgba(6,9,18,0.25) 35%, rgba(6,9,18,0.85) 100%);
     pointer-events: none;
     z-index: -1;
+  }
+  @media (max-width: 720px) {
+    .hero-card::before {
+      background:
+        linear-gradient(180deg, rgba(6,9,18,0.65) 0%, rgba(6,9,18,0.55) 50%, rgba(6,9,18,0.92) 100%);
+    }
   }
   .hero-card .eyebrow {
     color: rgba(245,249,255,0.78);
@@ -434,23 +445,25 @@
   }
   .hero-card .eyebrow .pulse { width: 10px; height: 10px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 4px rgba(74,222,128,0.18); animation: pulse 2.4s ease-in-out infinite; }
   @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(74,222,128,0.18); } 50% { box-shadow: 0 0 0 8px rgba(74,222,128,0.03); } }
-  .hero-card h1 { color: #ffffff; max-width: 34ch; text-wrap: balance; }
+  .hero-card h1 { color: #ffffff; max-width: 24ch; margin: 0 auto; text-wrap: balance; text-shadow: 0 2px 18px rgba(0,0,0,0.55); }
   .hero-card h1 .accent { color: var(--accent-cyan); font-weight: 800; }
   .hero-card .lede {
-    margin-top: 18px;
-    color: rgba(245,249,255,0.86);
+    margin: 18px auto 0;
+    color: rgba(245,249,255,0.92);
     font-size: clamp(1.05rem, 1.4vw, 1.18rem);
     max-width: 56ch;
     line-height: 1.55;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.5);
   }
   .hero-card .cta-row {
-    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; justify-content: center;
   }
   .hero-card .hero-roles {
-    margin-top: 28px;
+    margin: 28px auto 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 180px));
     gap: 10px;
+    justify-content: center;
   }
   @media (max-width: 720px) { .hero-card .hero-roles { grid-template-columns: repeat(2, 1fr); } }
   .hero-card .hero-role {
