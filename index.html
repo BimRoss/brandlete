@@ -911,7 +911,10 @@
     transform: translate(-50%, -50%);
     pointer-events: auto;
     z-index: 2;
+    cursor: pointer;
   }
+  .product-img-wrap .pin:focus { outline: none; }
+  .product-img-wrap .pin:focus-visible i { box-shadow: 0 0 0 4px rgba(56,189,248,0.35), 0 0 0 6px rgba(0,204,255,0.6); }
   .product-img-wrap .pin i {
     font-style: normal;
     font-family: 'JetBrains Mono', monospace;
@@ -926,6 +929,7 @@
     place-items: center;
     box-shadow: 0 0 0 4px rgba(56,189,248,0.18), 0 4px 12px rgba(2,8,23,0.35);
   }
+  .product-img-wrap .pin.active i { background: var(--accent-cyan); color: #0b132a; }
   .product-img-wrap .pin em {
     position: absolute;
     top: 50%;
@@ -941,6 +945,7 @@
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(2,8,23,0.18);
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.18s, transform 0.18s;
   }
   .product-img-wrap .pin.pin-left em {
@@ -949,9 +954,32 @@
     transform: translateY(-50%) translateX(4px);
   }
   .product-img-wrap .pin:hover em,
+  .product-img-wrap .pin.active em,
   .product-img-wrap:hover .pin em { opacity: 1; transform: translateY(-50%) translateX(0); }
   @media (max-width: 720px) {
-    .product-img-wrap .pin em { display: none; }
+    .product-img-wrap .pin { width: 30px; height: 30px; }
+    .product-img-wrap .pin i { width: 30px; height: 30px; font-size: 0.86rem; }
+    .product-img-wrap .pin em {
+      top: calc(100% + 10px);
+      left: 50%;
+      right: auto;
+      transform: translateX(0) translateY(-4px);
+      max-width: min(220px, 60vw);
+      white-space: normal;
+      text-align: left;
+      border-radius: 10px;
+      padding: 6px 10px;
+      line-height: 1.25;
+      z-index: 3;
+    }
+    .product-img-wrap .pin.pin-left em {
+      left: auto;
+      right: 50%;
+      transform: translateX(0) translateY(-4px);
+      text-align: right;
+    }
+    .product-img-wrap:hover .pin em { opacity: 0; }
+    .product-img-wrap .pin.active em { opacity: 1; transform: translateX(0) translateY(0); }
   }
   .product-twoup figcaption {
     padding: 14px 18px;
@@ -2398,6 +2426,35 @@
         setActive(link.getAttribute('href').slice(1));
       });
     });
+  })();
+
+  (function () {
+    var pins = document.querySelectorAll('.product-img-wrap .pin');
+    if (!pins.length) return;
+    function closeAll(except) {
+      pins.forEach(function (p) { if (p !== except) p.classList.remove('active'); });
+    }
+    pins.forEach(function (pin) {
+      pin.setAttribute('role', 'button');
+      pin.setAttribute('tabindex', '0');
+      var label = pin.querySelector('em');
+      if (label) pin.setAttribute('aria-label', label.textContent);
+      pin.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var wasActive = pin.classList.contains('active');
+        closeAll(pin);
+        pin.classList.toggle('active', !wasActive);
+      });
+      pin.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          pin.click();
+        } else if (e.key === 'Escape') {
+          pin.classList.remove('active');
+        }
+      });
+    });
+    document.addEventListener('click', function () { closeAll(null); });
   })();
 </script>
 
