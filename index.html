@@ -322,8 +322,11 @@
   @media (max-width: 720px) {
     .topstrip .greet { align-items: center; text-align: center; }
     .topstrip .greet h2 {
-      font-size: 2.1rem;
+      font-size: clamp(1.5rem, 6.2vw, 2rem);
       line-height: 1.2;
+      white-space: normal;
+      text-wrap: balance;
+      padding: 0 12px;
     }
     .greet-role { font-size: 1em; }
     .greet-cursor { height: 0.85em; }
