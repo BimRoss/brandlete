@@ -653,6 +653,10 @@
   }
   .section-head h2 { color: var(--ink); }
   .section-head .right { color: var(--brand); font-size: 0.88rem; font-weight: 600; flex-shrink: 0; }
+  @media (max-width: 720px) {
+    .section-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .section-head .left { width: 100%; }
+  }
 
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
