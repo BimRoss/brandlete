@@ -480,6 +480,19 @@
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.16);
     background: rgba(255,255,255,0.04);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color .15s, background-color .15s, transform .15s;
+  }
+  .hero-card .hero-role:hover {
+    border-color: rgba(0,204,255,0.55);
+    background: rgba(0,204,255,0.08);
+    transform: translateY(-1px);
+  }
+  .hero-card .hero-role:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
   }
   .hero-card .hero-role .role-tag {
     display: block;
@@ -1632,10 +1645,10 @@
         <a href="#power25" class="btn ghost-on-dark">See Partnership Program</a>
       </div>
       <div class="hero-roles">
-        <div class="hero-role"><span class="role-tag">Built for</span><span class="role-name">Coaches</span></div>
-        <div class="hero-role"><span class="role-tag">Clear for</span><span class="role-name">Athletes</span></div>
-        <div class="hero-role"><span class="role-tag">Visible to</span><span class="role-name">Parents</span></div>
-        <div class="hero-role"><span class="role-tag">Actionable for</span><span class="role-name">Program Leaders</span></div>
+        <a class="hero-role" href="#for-coaches"><span class="role-tag">Built for</span><span class="role-name">Coaches</span></a>
+        <a class="hero-role" href="#for-athletes"><span class="role-tag">Clear for</span><span class="role-name">Athletes</span></a>
+        <a class="hero-role" href="#for-parents"><span class="role-tag">Visible to</span><span class="role-name">Parents</span></a>
+        <a class="hero-role" href="#who-for"><span class="role-tag">Actionable for</span><span class="role-name">Program Leaders</span></a>
       </div>
     </section>
 
@@ -1833,17 +1846,17 @@
           <h3>Club Directors.</h3>
           <p class="lede">Create consistency across teams, improve retention, strengthen parent trust, and scale athlete development across your organization.</p>
         </div>
-        <div class="card">
+        <div class="card" id="for-coaches">
           <span class="badge">Coaches</span>
           <h3>Coaches.</h3>
           <p class="lede">Save time, deliver feedback, assign development, communicate clearly, and keep athletes accountable with less administrative work.</p>
         </div>
-        <div class="card">
+        <div class="card" id="for-athletes">
           <span class="badge">Athletes</span>
           <h3>Athletes.</h3>
           <p class="lede">Know what to work on, track progress, complete goals, receive feedback, and take ownership of your development journey.</p>
         </div>
-        <div class="card">
+        <div class="card" id="for-parents">
           <span class="badge">Parents</span>
           <h3>Parents.</h3>
           <p class="lede">Stay informed with visibility into goals, feedback, progress, and the development experience behind your athlete's growth.</p>
