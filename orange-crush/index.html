@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brandlete × Orange Crush Lacrosse</title>
+<meta name="description" content="A page we built just for Orange Crush Lacrosse. What Brandlete looks like for a program already winning at the highest levels of youth lacrosse." />
+<meta name="robots" content="noindex, nofollow" />
+<meta property="og:title" content="Brandlete × Orange Crush Lacrosse" />
+<meta property="og:description" content="Built for Orange Crush. 20-min walkthrough." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/img/brandlete-favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #060912;
+    --bg-2: #0a0f1f;
+    --card: #0f1530;
+    --card-2: #131a36;
+    --border: #1c2444;
+    --ink: #f1f5fb;
+    --ink-2: #c1cae0;
+    --ink-3: #8d99b6;
+    --brand: #00CCFF;
+    --brand-blue: #2196f3;
+    --oc-orange: #F47821;
+    --oc-orange-deep: #c95a10;
+    --oc-orange-soft: rgba(244,120,33,0.14);
+    --maxw: 1080px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(244,120,33,0.16), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(0,204,255,0.10), transparent 70%);
+    z-index: 0;
+  }
+  .wrap, footer { position: relative; z-index: 1; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.1; }
+  h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 700; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; }
+  h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+  p { margin: 0; color: var(--ink-2); }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* Top bar — brands meeting */
+  .topbar {
+    padding: 24px 0 0;
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-mark img { height: 36px; width: auto; display: block; }
+  .brand-mark .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
+  .x-sep {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--ink-3);
+    font-style: italic;
+  }
+  @media (max-width: 640px) {
+    .brand-mark img { height: 28px; }
+    .x-sep { font-size: 1.4rem; }
+    .topbar-inner { gap: 12px; }
+    .brand-mark .label { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--oc-orange-soft);
+    border: 1px solid rgba(244,120,33,0.32);
+    color: var(--oc-orange);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--oc-orange);
+    box-shadow: 0 0 12px var(--oc-orange);
+  }
+  .hero h1 {
+    max-width: 900px;
+    margin: 0 auto 22px;
+  }
+  .hero h1 .accent { color: var(--oc-orange); }
+  .hero .sub {
+    max-width: 720px;
+    margin: 0 auto 36px;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--ink-2);
+  }
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--oc-orange);
+    color: #1a0e04;
+    border-color: var(--oc-orange);
+  }
+  .btn-primary:hover { background: #ff8a35; border-color: #ff8a35; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--oc-orange); }
+
+  /* Note line under CTAs */
+  .hero-note {
+    margin-top: 22px;
+    font-size: 0.86rem;
+    color: var(--ink-3);
+  }
+
+  /* Section */
+  section.bay { padding: 60px 0; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .section-head h2 {
+    max-width: 740px;
+    margin-bottom: 14px;
+  }
+  .section-head p {
+    max-width: 680px;
+    color: var(--ink-2);
+    font-size: 1.05rem;
+  }
+
+  /* Wins grid */
+  .wins {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  @media (max-width: 720px) { .wins { grid-template-columns: 1fr; } }
+  .win {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .win::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: var(--oc-orange);
+  }
+  .win .badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oc-orange);
+    font-weight: 600;
+  }
+  .win .title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .win .sub {
+    font-size: 0.92rem;
+    color: var(--ink-3);
+  }
+
+  /* Outcomes (3 cards) */
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  @media (max-width: 860px) { .outcomes { grid-template-columns: 1fr; } }
+  .outcome {
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 22px;
+  }
+  .outcome .num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2rem;
+    color: var(--oc-orange);
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .outcome h3 { margin-bottom: 8px; }
+  .outcome p { font-size: 0.95rem; }
+
+  /* Dashboard "preview" panel */
+  .preview {
+    margin-top: 32px;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+  }
+  .preview-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  .preview-head .pl {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .preview-head img { height: 28px; width: auto; display: block; }
+  .preview-head .pl-text {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .preview-head .pl-sub {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .preview-head .live {
+    font-size: 0.72rem;
+    color: var(--oc-orange);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .stat .k {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 6px;
+  }
+  .stat .v {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .stat .delta {
+    font-size: 0.74rem;
+    color: var(--oc-orange);
+    margin-top: 4px;
+  }
+  .preview-foot {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    text-align: center;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    margin: 40px auto 80px;
+    padding: 48px 28px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(244,120,33,0.18), transparent 70%),
+      var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+  .final-cta h2 { max-width: 620px; margin: 0 auto 16px; }
+  .final-cta p { max-width: 580px; margin: 0 auto 28px; }
+
+  /* Footer */
+  footer {
+    padding: 28px 0 40px;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--ink-2); }
+  footer a:hover { color: var(--oc-orange); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-mark" href="https://brandlete.com" target="_blank" rel="noopener">
+        <img src="/img/brandlete-logo-dark.png" alt="Brandlete" />
+      </a>
+      <span class="x-sep">×</span>
+      <a class="brand-mark" href="https://www.orangecrushlax.com" target="_blank" rel="noopener" style="justify-content: flex-end;">
+        <img src="oc-logo.png" alt="Orange Crush Lacrosse" />
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>Built for Orange Crush Lacrosse</div>
+    <h1>A program already winning. <span class="accent">Now on the record.</span></h1>
+    <p class="sub">
+      A page we put together just for Orange Crush. What Brandlete looks like for a club that's sending kids to college, winning President's Cups, and headed to the U13 World Series.
+    </p>
+    <div class="cta-row">
+      <a href="https://brandlete.com/#contact" class="btn btn-primary">Book a 20-min walkthrough</a>
+      <a href="#what-we-built" class="btn btn-ghost">See what we built ↓</a>
+    </div>
+    <div class="hero-note">No deck. No pitch. We show you the tool.</div>
+  </section>
+
+  <section class="bay">
+    <div class="section-head">
+      <div class="section-label">What we already know about you</div>
+      <h2>You're not building a program. You've built one.</h2>
+      <p>We pulled this off your site before writing a word. The point: Brandlete isn't a starter platform. It's the system of record for clubs already operating at the level Orange Crush is.</p>
+    </div>
+    <div class="wins">
+      <div class="win">
+        <span class="badge">2026 Girls</span>
+        <div class="title">Undefeated at the President's Cup</div>
+        <div class="sub">National-stage finishes are the rule, not the exception, at OCL.</div>
+      </div>
+      <div class="win">
+        <span class="badge">2029 Boys</span>
+        <div class="title">Champions, NXT Middle School Championships → headed to the U13 Lacrosse World Series</div>
+        <div class="sub">Development pipeline that's producing at every age band.</div>
+      </div>
+      <div class="win">
+        <span class="badge">College Pipeline</span>
+        <div class="title">2026 + 2027 boys and girls commits, multiple classes deep</div>
+        <div class="sub">Recruiting outcomes that already need a system underneath them.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Program Reach</span>
+        <div class="title">Boys + girls, classes of 2026 through 2032, across WNY</div>
+        <div class="sub">Enough athletes, parents, and coaches to make per-player visibility a real problem to solve.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay" id="what-we-built">
+    <div class="section-head">
+      <div class="section-label">What Brandlete adds for OCL specifically</div>
+      <h2>Three things you don't have today.</h2>
+      <p>Not a generic feature list. The pieces a program at Orange Crush's level actually feels the absence of.</p>
+    </div>
+    <div class="outcomes">
+      <div class="outcome">
+        <div class="num">01</div>
+        <h3>Parent visibility, on rails</h3>
+        <p>Every parent in the program sees their kid's development plan, progress, and what's next. Inbox quiet. Sideline questions answered before they're asked.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">02</div>
+        <h3>Recruiting as a pipeline, not a spreadsheet</h3>
+        <p>Every college conversation, showcase, commit, and offer in one view. The 2027 class doesn't fall through the cracks because someone left a Google Sheet open on a different laptop.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">03</div>
+        <h3>Director dashboard</h3>
+        <p>Team health, retention, revenue, scouting, all in one place. The view you wish you had when a board member asks "how's the 2030 class looking?"</p>
+      </div>
+    </div>
+
+    <div class="preview">
+      <div class="preview-head">
+        <div class="pl">
+          <img src="oc-logo.png" alt="" />
+          <div>
+            <div class="pl-text">Orange Crush Lacrosse</div>
+            <div class="pl-sub">Director Dashboard · Preview</div>
+          </div>
+        </div>
+        <div class="live">● Live preview</div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="k">Active Athletes</div>
+          <div class="v">312</div>
+          <div class="delta">↑ 4 this week</div>
+        </div>
+        <div class="stat">
+          <div class="k">Retention (12mo)</div>
+          <div class="v">94%</div>
+          <div class="delta">↑ 2 pts vs. last cycle</div>
+        </div>
+        <div class="stat">
+          <div class="k">College Commits — '26</div>
+          <div class="v">11</div>
+          <div class="delta">3 new this season</div>
+        </div>
+        <div class="stat">
+          <div class="k">Parent NPS</div>
+          <div class="v">62</div>
+          <div class="delta">Top-quartile club</div>
+        </div>
+      </div>
+      <div class="preview-foot">
+        Sample numbers, real layout. Plugged into your actual rosters in onboarding.
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>20 minutes. No pitch.</h2>
+    <p>We show you the tool with Orange Crush's name on it. You decide if it's worth a real conversation. That's the whole ask.</p>
+    <div class="cta-row">
+      <a href="https://brandlete.com/#contact" class="btn btn-primary">Book the walkthrough</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Built for Orange Crush Lacrosse by <a href="https://brandlete.com">Brandlete</a> · john@brandlete.com · brian@brandlete.com
+  </div>
+</footer>
+
+</body>
+</html>
