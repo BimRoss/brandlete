@@ -1265,6 +1265,21 @@
   }
   .contact-field textarea { resize: vertical; min-height: 110px; }
   .contact-form .btn { align-self: flex-start; }
+  .contact-card .lead .book-direct { margin-top: 14px; margin-bottom: 4px; }
+  .contact-card .lead-divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 16px 0 12px;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .contact-card .lead-divider::before,
+  .contact-card .lead-divider::after {
+    content: ""; flex: 1; height: 1px; background: var(--border);
+  }
+  .contact-card .lead-form-hint { color: var(--ink-3); font-size: 0.92rem; line-height: 1.5; }
+  .contact-card .lead-form-hint a { color: var(--brand); font-weight: 600; }
   .contact-status {
     font-size: 0.88rem;
     color: var(--success);
@@ -2174,7 +2189,10 @@
         <div class="lead">
           <img class="shoe" src="img/brandlete-shoe.png" alt="" />
           <h3>Book a 20-minute intro.</h3>
-          <p>We'll show how Brandlete can help your program organize development, support coaches, improve visibility, and create a better athlete experience. Prefer email? <a href="mailto:info@brandlete.com" style="color:var(--brand);font-weight:600;">info@brandlete.com</a> goes to the same inbox.</p>
+          <p>We'll show how Brandlete can help your program organize development, support coaches, improve visibility, and create a better athlete experience.</p>
+          <a class="btn btn-cyan book-direct" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0bFqo43JGcdk9kShp6SSL5J4ZZyWsuaawJnrFhsmzZTkZzmtSBEq3-DyzO9VPWQE8jKZ7KXtvN" target="_blank" rel="noopener">Book directly with John, VP Partnerships</a>
+          <div class="lead-divider"><span>or</span></div>
+          <p class="lead-form-hint">Prefer to send details first? Use the form. Email <a href="mailto:info@brandlete.com">info@brandlete.com</a> goes to the same inbox.</p>
         </div>
         <form class="contact-form" id="contact-form" novalidate>
           <div class="contact-field">
@@ -2215,7 +2233,7 @@
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="message" placeholder="Tell us a little about your program or what you're hoping to solve." required></textarea>
           </div>
-          <button type="submit" class="btn">Book a Demo</button>
+          <button type="submit" class="btn">Send message</button>
           <div class="contact-status" id="contact-status" role="status" aria-live="polite"></div>
         </form>
       </div>
