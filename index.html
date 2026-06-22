@@ -594,6 +594,15 @@
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .cohort-mark:hover, .cohort-mark:focus-visible {
+    background: rgba(0,204,255,0.18);
+    border-color: rgba(0,204,255,0.75);
+    transform: translateY(-1px);
+    outline: none;
   }
   @media (max-width: 640px) {
     .cohort-bubbles { gap: 8px; }
@@ -1476,7 +1485,8 @@
     flex-wrap: wrap;
     gap: 8px;
   }
-  .power25-who ul li {
+  .power25-who ul li { display: flex; }
+  .power25-who ul li a {
     padding: 6px 12px;
     border: 1px solid rgba(56,189,248,0.32);
     background: rgba(56,189,248,0.08);
@@ -1484,6 +1494,14 @@
     color: #ffffff;
     font-weight: 500;
     font-size: 0.86rem;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .power25-who ul li a:hover, .power25-who ul li a:focus-visible {
+    background: rgba(56,189,248,0.2);
+    border-color: rgba(56,189,248,0.7);
+    transform: translateY(-1px);
+    outline: none;
   }
   .power25-benefits {
     margin-top: 22px;
@@ -1677,12 +1695,12 @@
     <div class="cohort-strip" aria-label="Designed for organizations developing athletes">
       <span class="cohort-label">Designed for organizations developing athletes</span>
       <div class="cohort-bubbles">
-        <span class="cohort-mark">Clubs &amp; Travel Programs</span>
-        <span class="cohort-mark">Collegiate Programs</span>
-        <span class="cohort-mark">High Schools</span>
-        <span class="cohort-mark">Academies</span>
-        <span class="cohort-mark">Camps</span>
-        <span class="cohort-mark">Specialized Coaches</span>
+        <a class="cohort-mark" href="#contact">Clubs &amp; Travel Programs</a>
+        <a class="cohort-mark" href="#contact">Collegiate Programs</a>
+        <a class="cohort-mark" href="#contact">High Schools</a>
+        <a class="cohort-mark" href="#contact">Academies</a>
+        <a class="cohort-mark" href="#contact">Camps</a>
+        <a class="cohort-mark" href="#contact">Specialized Coaches</a>
       </div>
     </div>
 
@@ -1804,10 +1822,10 @@
         <div class="power25-who">
           <h3>Who this is for</h3>
           <ul>
-            <li>Athletic departments &amp; schools</li>
-            <li>Club &amp; travel programs</li>
-            <li>Academies &amp; camps</li>
-            <li>Colleges &amp; universities</li>
+            <li><a href="#contact">Athletic departments &amp; schools</a></li>
+            <li><a href="#contact">Club &amp; travel programs</a></li>
+            <li><a href="#contact">Academies &amp; camps</a></li>
+            <li><a href="#contact">Colleges &amp; universities</a></li>
           </ul>
         </div>
 
