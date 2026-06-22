@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Brandlete × Orange Crush Lacrosse</title>
-<meta name="description" content="A page we built just for Orange Crush Lacrosse. What Brandlete looks like for a program already winning at the highest levels of youth lacrosse." />
+<meta name="description" content="Helping Orange Crush scale athlete development across every team. Brandlete brings structure, visibility, and consistency to the OCL development philosophy." />
 <meta name="robots" content="noindex, nofollow" />
 <meta property="og:title" content="Brandlete × Orange Crush Lacrosse" />
-<meta property="og:description" content="Built for Orange Crush. 20-min walkthrough." />
+<meta property="og:description" content="Helping Orange Crush scale athlete development across every team." />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/png" href="/img/brandlete-favicon.png" />
 
@@ -238,14 +238,14 @@
     color: var(--ink-3);
   }
 
-  /* Outcomes (3 cards) */
+  /* Outcomes (4 cards, 2x2) */
   .outcomes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-top: 32px;
   }
-  @media (max-width: 860px) { .outcomes { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) { .outcomes { grid-template-columns: 1fr; } }
   .outcome {
     background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
     border: 1px solid var(--border);
@@ -262,6 +262,57 @@
   }
   .outcome h3 { margin-bottom: 8px; }
   .outcome p { font-size: 0.95rem; }
+
+  /* Workflow rows */
+  .workflow {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wf-row {
+    display: grid;
+    grid-template-columns: 56px 180px 1fr;
+    gap: 20px;
+    align-items: center;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--oc-orange);
+    border-radius: 12px;
+    padding: 18px 22px;
+  }
+  @media (max-width: 720px) {
+    .wf-row { grid-template-columns: 44px 1fr; gap: 14px; }
+    .wf-role { grid-column: 2; }
+    .wf-detail { grid-column: 1 / -1; }
+  }
+  .wf-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--oc-orange);
+    font-style: italic;
+    line-height: 1;
+  }
+  .wf-role {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 600;
+  }
+  .wf-role strong {
+    display: block;
+    color: var(--ink);
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .wf-detail {
+    font-size: 0.95rem;
+    color: var(--ink-2);
+  }
 
   /* Dashboard "preview" panel */
   .preview {
@@ -383,69 +434,82 @@
 
   <section class="hero">
     <div class="eyebrow"><span class="dot"></span>Built for Orange Crush Lacrosse</div>
-    <h1>A program already winning. <span class="accent">Now on the record.</span></h1>
+    <h1>Helping Orange Crush <span class="accent">scale athlete development</span> across every team.</h1>
     <p class="sub">
-      A page we put together just for Orange Crush. What Brandlete looks like for a club that's sending kids to college, winning President's Cups, and headed to the U13 World Series.
+      Orange Crush has built a strong reputation for player development, competition, and long-term growth. Brandlete helps bring structure, visibility, and consistency to that experience across the entire organization.
     </p>
     <div class="cta-row">
       <a href="https://brandlete.com/#contact" class="btn btn-primary">Book a 20-min walkthrough</a>
-      <a href="#what-we-built" class="btn btn-ghost">See what we built ↓</a>
+      <a href="#fit" class="btn btn-ghost">See how it fits ↓</a>
     </div>
-    <div class="hero-note">No deck. No pitch. We show you the tool.</div>
+    <div class="hero-note">A conversation about development, not a product demo.</div>
   </section>
 
   <section class="bay">
     <div class="section-head">
-      <div class="section-label">What we already know about you</div>
-      <h2>You're not building a program. You've built one.</h2>
-      <p>We pulled this off your site before writing a word. The point: Brandlete isn't a starter platform. It's the system of record for clubs already operating at the level Orange Crush is.</p>
+      <div class="section-label">A development culture worth scaling</div>
+      <h2>The work is already happening. Brandlete helps it travel.</h2>
+      <p>What Orange Crush has built across age groups, coaches, and seasons is the hard part. Brandlete is the layer that lets a development philosophy live consistently inside every team, inside every parent's pocket, and inside every coach's week.</p>
     </div>
     <div class="wins">
       <div class="win">
-        <span class="badge">2026 Girls</span>
-        <div class="title">Undefeated at the President's Cup</div>
-        <div class="sub">National-stage finishes are the rule, not the exception, at OCL.</div>
+        <span class="badge">Long-term growth</span>
+        <div class="title">2026 Girls undefeated at the President's Cup</div>
+        <div class="sub">Years of development showing up on the national stage. The kind of outcome a system should reinforce, not reinvent.</div>
       </div>
       <div class="win">
-        <span class="badge">2029 Boys</span>
-        <div class="title">Champions, NXT Middle School Championships → headed to the U13 Lacrosse World Series</div>
-        <div class="sub">Development pipeline that's producing at every age band.</div>
+        <span class="badge">Pipeline at every age</span>
+        <div class="title">2029 Boys → NXT champions, headed to the U13 Lacrosse World Series</div>
+        <div class="sub">Development that's working from middle school up. Worth scaling the same way into the 2030, 2031, 2032 classes.</div>
       </div>
       <div class="win">
-        <span class="badge">College Pipeline</span>
-        <div class="title">2026 + 2027 boys and girls commits, multiple classes deep</div>
-        <div class="sub">Recruiting outcomes that already need a system underneath them.</div>
+        <span class="badge">Lacrosse IQ + recruiting</span>
+        <div class="title">2026 + 2027 boys and girls already committing to college rosters</div>
+        <div class="sub">Players who've grown inside Orange Crush's system. The next step is making that visible to families and college coaches earlier.</div>
       </div>
       <div class="win">
-        <span class="badge">Program Reach</span>
+        <span class="badge">Year-round reach</span>
         <div class="title">Boys + girls, classes of 2026 through 2032, across WNY</div>
-        <div class="sub">Enough athletes, parents, and coaches to make per-player visibility a real problem to solve.</div>
+        <div class="sub">A roster wide enough that consistency between teams and coaches becomes the lever for the next decade of growth.</div>
       </div>
     </div>
   </section>
 
-  <section class="bay" id="what-we-built">
+  <section class="bay" id="fit">
     <div class="section-head">
-      <div class="section-label">What Brandlete adds for OCL specifically</div>
-      <h2>Three things you don't have today.</h2>
-      <p>Not a generic feature list. The pieces a program at Orange Crush's level actually feels the absence of.</p>
+      <div class="section-label">Why Brandlete Fits Orange Crush</div>
+      <h2>A platform for clubs that lead with athlete development.</h2>
+      <p>Brandlete isn't a replacement for what Orange Crush already does. It's the operating layer that makes the development philosophy repeatable across every team, coach, athlete, and parent in the program.</p>
     </div>
     <div class="outcomes">
       <div class="outcome">
         <div class="num">01</div>
-        <h3>Parent visibility, on rails</h3>
-        <p>Every parent in the program sees their kid's development plan, progress, and what's next. Inbox quiet. Sideline questions answered before they're asked.</p>
+        <h3>Consistent Development</h3>
+        <p>Shared development systems across age groups and teams, so a 2031 boy and a 2027 girl are growing inside the same Orange Crush model — not whatever framework their coach happens to favor.</p>
       </div>
       <div class="outcome">
         <div class="num">02</div>
-        <h3>Recruiting as a pipeline, not a spreadsheet</h3>
-        <p>Every college conversation, showcase, commit, and offer in one view. The 2027 class doesn't fall through the cracks because someone left a Google Sheet open on a different laptop.</p>
+        <h3>Coach Alignment</h3>
+        <p>Help every coach in the program deliver a more consistent athlete experience. Plans, drills, feedback, and standards live in one place. The OCL way travels with the player, not the coach.</p>
       </div>
       <div class="outcome">
         <div class="num">03</div>
-        <h3>Director dashboard</h3>
-        <p>Team health, retention, revenue, scouting, all in one place. The view you wish you had when a board member asks "how's the 2030 class looking?"</p>
+        <h3>Parent Visibility</h3>
+        <p>Families see their player's goals, progress, feedback, and development on their phone. The sideline question becomes the in-app answer. Parents stay invested for longer.</p>
       </div>
+      <div class="outcome">
+        <div class="num">04</div>
+        <h3>Organization Insights</h3>
+        <p>Directors see engagement, participation, and development across the entire club. Where development is landing, where it's drifting, which classes need attention — all visible in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay" id="picture">
+    <div class="section-head">
+      <div class="section-label">What Orange Crush Could Look Like With Brandlete</div>
+      <h2>The same development culture, operating across every team.</h2>
+      <p>A picture of what a season looks like when the development work and the platform are pointing the same direction.</p>
     </div>
 
     <div class="preview">
@@ -453,43 +517,50 @@
         <div class="pl">
           <img src="oc-logo.png" alt="" />
           <div>
-            <div class="pl-text">Orange Crush Lacrosse</div>
-            <div class="pl-sub">Director Dashboard · Preview</div>
+            <div class="pl-text">Orange Crush Lacrosse on Brandlete</div>
+            <div class="pl-sub">Sample workflow · across every team</div>
           </div>
         </div>
-        <div class="live">● Live preview</div>
+        <div class="live">● Sample flow</div>
       </div>
-      <div class="stat-grid">
-        <div class="stat">
-          <div class="k">Active Athletes</div>
-          <div class="v">312</div>
-          <div class="delta">↑ 4 this week</div>
+
+      <div class="workflow">
+        <div class="wf-row">
+          <div class="wf-num">01</div>
+          <div class="wf-role">Coaches<strong>Assign development plans + feedback</strong></div>
+          <div class="wf-detail">Each coach builds out lacrosse-IQ goals, position-specific skill work, and weekly feedback for the players on their roster — pulled from the OCL development model, not improvised per team.</div>
         </div>
-        <div class="stat">
-          <div class="k">Retention (12mo)</div>
-          <div class="v">94%</div>
-          <div class="delta">↑ 2 pts vs. last cycle</div>
+        <div class="wf-row">
+          <div class="wf-num">02</div>
+          <div class="wf-role">Athletes<strong>Complete goals + log work</strong></div>
+          <div class="wf-detail">Players see what's expected, check off skill work between practices, and build a year-round record of the reps they're putting in — not just the games they're playing.</div>
         </div>
-        <div class="stat">
-          <div class="k">College Commits — '26</div>
-          <div class="v">11</div>
-          <div class="delta">3 new this season</div>
+        <div class="wf-row">
+          <div class="wf-num">03</div>
+          <div class="wf-role">Parents<strong>Stay connected to progress</strong></div>
+          <div class="wf-detail">Families see their player's development plan and feedback in real time. Investment goes up, churn goes down, the family stays inside the Orange Crush ecosystem for more seasons.</div>
         </div>
-        <div class="stat">
-          <div class="k">Parent NPS</div>
-          <div class="v">62</div>
-          <div class="delta">Top-quartile club</div>
+        <div class="wf-row">
+          <div class="wf-num">04</div>
+          <div class="wf-role">Directors<strong>See organization-wide insights</strong></div>
+          <div class="wf-detail">Across every team, age group, and coach: who's engaged, who's at risk, where development is landing, where it isn't. The big-picture view a growing club starts to need.</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-num">05</div>
+          <div class="wf-role">AI<strong>Automates the busywork around development</strong></div>
+          <div class="wf-detail">Drafts player feedback for coaches to edit, surfaces athletes whose progress has stalled, flags parents who haven't engaged in weeks — so coaches and directors spend their time on the work that needs a human.</div>
         </div>
       </div>
+
       <div class="preview-foot">
-        Sample numbers, real layout. Plugged into your actual rosters in onboarding.
+        A walkthrough of this against Orange Crush's actual structure is what the 20 minutes is for.
       </div>
     </div>
   </section>
 
   <section class="final-cta">
-    <h2>20 minutes. No pitch.</h2>
-    <p>We show you the tool with Orange Crush's name on it. You decide if it's worth a real conversation. That's the whole ask.</p>
+    <h2>A conversation about development.</h2>
+    <p>20 minutes with John and Brian. Not a sales pitch — a working session on how Brandlete would extend what Orange Crush is already doing across every team, coach, and family in the program.</p>
     <div class="cta-row">
       <a href="https://brandlete.com/#contact" class="btn btn-primary">Book the walkthrough</a>
     </div>
