@@ -1420,6 +1420,7 @@
     box-shadow: var(--shadow-card);
     overflow: hidden;
     isolation: isolate;
+    text-align: center;
   }
   .power25::before {
     content: "";
@@ -1437,10 +1438,10 @@
     text-transform: uppercase;
     margin-bottom: 14px;
   }
-  .power25 h2 { color: #ffffff; max-width: 22ch; font-size: clamp(1.7rem, 3vw, 2.4rem); }
+  .power25 h2 { color: #ffffff; max-width: 22ch; margin-left: auto; margin-right: auto; font-size: clamp(1.7rem, 3vw, 2.4rem); }
   .power25 h2 .accent { color: var(--accent-cyan); }
   .power25 .lede {
-    margin-top: 14px;
+    margin: 14px auto 0;
     color: rgba(245,249,255,0.82);
     font-size: clamp(1rem, 1.3vw, 1.12rem);
     max-width: 62ch;
@@ -1451,13 +1452,14 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 18px 40px;
     padding: 18px clamp(18px, 3vw, 26px);
     background: rgba(6,10,24,0.55);
     border: 1px solid rgba(56,189,248,0.18);
     border-radius: 14px;
   }
-  .power25-stats .power25-pricing-note { margin: 0 0 0 auto; }
+  .power25-stats .power25-pricing-note { margin: 0; }
   .power25-pricing-note {
     margin: 14px 0 0;
     color: rgba(245,249,255,0.78);
@@ -1485,9 +1487,11 @@
     margin-top: 22px;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px 14px;
   }
+  .power25-who ul { justify-content: center; }
   .power25-who h3 {
     margin: 0;
     color: var(--accent-cyan);
@@ -1528,6 +1532,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
+    text-align: left;
   }
   @media (max-width: 880px) { .power25-benefits { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 540px) { .power25-benefits { grid-template-columns: 1fr; } }
@@ -1561,6 +1566,7 @@
     justify-content: space-between;
     gap: 18px;
     flex-wrap: wrap;
+    text-align: left;
   }
   .power25-cta .fineprint {
     margin: 0;
