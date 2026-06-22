@@ -1418,15 +1418,17 @@
     line-height: 1.55;
   }
   .power25-stats {
-    margin-top: 26px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    padding: 22px clamp(18px, 3vw, 28px);
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 40px;
+    padding: 18px clamp(18px, 3vw, 26px);
     background: rgba(6,10,24,0.55);
     border: 1px solid rgba(56,189,248,0.18);
     border-radius: 14px;
   }
+  .power25-stats .power25-pricing-note { margin: 0 0 0 auto; }
   .power25-pricing-note {
     margin: 14px 0 0;
     color: rgba(245,249,255,0.78);
@@ -1450,18 +1452,46 @@
     text-transform: uppercase;
     color: rgba(245,249,255,0.7);
   }
-  .power25-body {
-    margin-top: 28px;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 28px;
+  .power25-who {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
   }
-  @media (max-width: 880px) { .power25-body { grid-template-columns: 1fr; } }
+  .power25-who h3 {
+    margin: 0;
+    color: var(--accent-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .power25-who ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .power25-who ul li {
+    padding: 6px 12px;
+    border: 1px solid rgba(56,189,248,0.32);
+    background: rgba(56,189,248,0.08);
+    border-radius: 999px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.86rem;
+  }
   .power25-benefits {
+    margin-top: 22px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 14px;
   }
+  @media (max-width: 880px) { .power25-benefits { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 540px) { .power25-benefits { grid-template-columns: 1fr; } }
   .power25-benefit {
     padding: 14px 16px 16px;
@@ -1482,49 +1512,25 @@
     font-size: 0.88rem;
     line-height: 1.5;
   }
-  .power25-who h3 {
-    color: var(--accent-cyan);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-  .power25-who ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .power25-who ul li {
-    padding-left: 14px;
-    border-left: 2px solid var(--accent-cyan);
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.96rem;
-  }
-  .power25-who .fineprint {
-    color: rgba(245,249,255,0.66);
-    font-size: 0.86rem;
-    line-height: 1.5;
-  }
   .power25-cta {
-    margin-top: 26px;
-    padding: 18px clamp(18px, 3vw, 24px);
+    margin-top: 22px;
+    padding: 16px clamp(18px, 3vw, 22px);
     background: rgba(6,10,24,0.6);
     border: 1px solid rgba(56,189,248,0.22);
     border-radius: 12px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 18px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
   }
-  @media (max-width: 760px) { .power25-cta { grid-template-columns: 1fr; } }
-  .power25-cta .pitch { color: #ffffff; font-weight: 600; font-size: 1.02rem; }
-  .power25-cta .pitch small { display: block; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; font-weight: 500; }
+  .power25-cta .fineprint {
+    margin: 0;
+    color: rgba(245,249,255,0.72);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 44ch;
+  }
   .power25-cta .ctas { display: flex; gap: 10px; flex-wrap: wrap; }
   .power25-cta .btn-light { background: var(--accent-cyan); border-color: var(--accent-cyan); color: #0a1430; }
   .power25-cta .btn-light:hover { background: #79d6ff; border-color: #79d6ff; }
@@ -1792,53 +1798,48 @@
             <div class="num white">6 mo</div>
             <div class="label">Test period</div>
           </div>
+          <p class="power25-pricing-note"><a href="#contact">Contact us for customized pricing.</a></p>
         </div>
-        <p class="power25-pricing-note"><a href="#contact">Contact us for customized pricing.</a></p>
 
-        <div class="power25-body">
-          <div class="power25-benefits">
-            <div class="power25-benefit">
-              <h4>Founder-led onboarding</h4>
-              <p>Direct setup with the founding team to get your first Playbook live fast.</p>
-            </div>
-            <div class="power25-benefit">
-              <h4>Priority product access</h4>
-              <p>First look at new features, beta surfaces, and platform updates before general release.</p>
-            </div>
-            <div class="power25-benefit">
-              <h4>Development Playbook setup</h4>
-              <p>We build your initial Playbooks alongside your coaches so your curriculum lands on day one.</p>
-            </div>
-            <div class="power25-benefit">
-              <h4>Quarterly strategy session</h4>
-              <p>Sit down with our team every quarter to align on growth, retention, and program goals.</p>
-            </div>
-            <div class="power25-benefit">
-              <h4>Founding partner recognition</h4>
-              <p>Public recognition as a Power 25 founding partner across our launch assets.</p>
-            </div>
-            <div class="power25-benefit">
-              <h4>Direct product feedback loop</h4>
-              <p>Your feedback shapes what we build next. Founding partners get a real seat at the table.</p>
-            </div>
+        <div class="power25-who">
+          <h3>Who this is for</h3>
+          <ul>
+            <li>Athletic departments &amp; schools</li>
+            <li>Club &amp; travel programs</li>
+            <li>Academies &amp; camps</li>
+            <li>Colleges &amp; universities</li>
+          </ul>
+        </div>
+
+        <div class="power25-benefits">
+          <div class="power25-benefit">
+            <h4>Founder-led onboarding</h4>
+            <p>Direct setup with the founding team to get your first Playbook live fast.</p>
           </div>
-          <div class="power25-who">
-            <h3>Who this is for</h3>
-            <ul>
-              <li>Athletic departments &amp; schools</li>
-              <li>Club &amp; travel programs</li>
-              <li>Academies &amp; camps</li>
-              <li>Colleges &amp; universities</li>
-            </ul>
-            <p class="fineprint">Only 25 organizations will be selected for the first launch cohort.</p>
+          <div class="power25-benefit">
+            <h4>Priority product access</h4>
+            <p>First look at new features, beta surfaces, and platform updates before general release.</p>
+          </div>
+          <div class="power25-benefit">
+            <h4>Development Playbook setup</h4>
+            <p>We build your initial Playbooks alongside your coaches so your curriculum lands on day one.</p>
+          </div>
+          <div class="power25-benefit">
+            <h4>Quarterly strategy session</h4>
+            <p>Sit down with our team every quarter to align on growth, retention, and program goals.</p>
+          </div>
+          <div class="power25-benefit">
+            <h4>Founding partner recognition</h4>
+            <p>Public recognition as a Power 25 founding partner across our launch assets.</p>
+          </div>
+          <div class="power25-benefit">
+            <h4>Direct product feedback loop</h4>
+            <p>Your feedback shapes what we build next. Founding partners get a real seat at the table.</p>
           </div>
         </div>
 
         <div class="power25-cta">
-          <div class="pitch">
-            Only 25 organizations will be selected for the first launch cohort.
-            <small>Six-month test period. <a href="#contact">Contact us for customized pricing.</a></small>
-          </div>
+          <p class="fineprint">Only 25 organizations will be selected for the first launch cohort.</p>
           <div class="ctas">
             <a href="https://www.linkedin.com/in/johnosberg" target="_blank" rel="noopener" class="btn ghost-on-dark">LinkedIn with John</a>
             <a href="#contact" class="btn btn-light">Apply for Power 25</a>
