@@ -1368,10 +1368,14 @@
     display: block;
   }
   [data-theme="dark"] .schedule-embed {
-    background: #ffffff;
+    background: #e8ecf3;
     border-radius: 14px;
     padding: 6px;
     border: 1px solid rgba(255,255,255,0.08);
+  }
+  [data-theme="dark"] .schedule-embed iframe {
+    filter: brightness(0.86) saturate(0.94);
+    border-radius: 10px;
   }
   @media (max-width: 640px) {
     .schedule-embed iframe { height: 760px; }
