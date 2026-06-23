@@ -1354,6 +1354,12 @@
     border: 0;
     display: block;
   }
+  [data-theme="dark"] .schedule-embed {
+    background: #1a1f33;
+  }
+  [data-theme="dark"] .schedule-embed iframe {
+    filter: invert(0.92) hue-rotate(180deg);
+  }
   @media (max-width: 640px) {
     .schedule-embed iframe { height: 760px; }
   }
