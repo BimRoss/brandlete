@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bryant &amp; Stratton Soccer × Brandlete</title>
+<meta name="description" content="At Bryant &amp; Stratton Soccer, your development is the program. A personalized plan, real parent visibility, and a growth record that travels with you." />
+<meta name="robots" content="noindex, nofollow" />
+<meta property="og:title" content="Bryant &amp; Stratton Soccer × Brandlete" />
+<meta property="og:description" content="Your development is the program." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/img/brandlete-favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #060912;
+    --bg-2: #0a0f1f;
+    --card: #0f1530;
+    --card-2: #131a36;
+    --border: #1c2444;
+    --ink: #f1f5fb;
+    --ink-2: #c1cae0;
+    --ink-3: #8d99b6;
+    --brand: #00CCFF;
+    --brand-blue: #2196f3;
+    --bs-red: #d62828;
+    --bs-red-deep: #9d1c1c;
+    --bs-red-soft: rgba(214,40,40,0.16);
+    --maxw: 1080px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(214,40,40,0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(0,204,255,0.10), transparent 70%);
+    z-index: 0;
+  }
+  .wrap, footer { position: relative; z-index: 1; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.1; }
+  h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 700; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; }
+  h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+  p { margin: 0; color: var(--ink-2); }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .topbar { padding: 24px 0 0; }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-mark img { height: 44px; width: auto; display: block; }
+  .bs-wordmark {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.3rem; color: var(--ink); font-style: italic;
+    line-height: 1.1; text-align: right;
+  }
+  .bs-wordmark .sm {
+    display: block; font-family: 'Inter', sans-serif; font-style: normal;
+    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--bs-red); font-weight: 700; margin-top: 4px;
+  }
+  .x-sep {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--ink-3);
+    font-style: italic;
+  }
+  @media (max-width: 640px) {
+    .brand-mark img { height: 32px; }
+    .bs-wordmark { font-size: 1rem; }
+    .bs-wordmark .sm { font-size: 0.58rem; }
+    .x-sep { font-size: 1.4rem; }
+    .topbar-inner { gap: 12px; }
+  }
+
+  .hero { padding: 80px 0 60px; text-align: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 999px;
+    background: var(--bs-red-soft);
+    border: 1px solid rgba(214,40,40,0.34);
+    color: #ff6a6a;
+    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 28px;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--bs-red);
+    box-shadow: 0 0 12px var(--bs-red);
+  }
+  .hero h1 { max-width: 920px; margin: 0 auto 22px; }
+  .hero h1 .accent { color: #ff6a6a; }
+  .hero .sub {
+    max-width: 740px; margin: 0 auto 36px;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--ink-2);
+  }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 26px; border-radius: 12px;
+    font-weight: 600; font-size: 1rem;
+    border: 1px solid transparent; cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--bs-red); color: #fff;
+    border-color: var(--bs-red);
+  }
+  .btn-primary:hover { background: #e94545; border-color: #e94545; }
+  .btn-ghost {
+    background: transparent; color: var(--ink);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--bs-red); }
+  .hero-note { margin-top: 22px; font-size: 0.86rem; color: var(--ink-3); }
+
+  section.bay { padding: 60px 0; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-3); margin-bottom: 14px; font-weight: 600;
+  }
+  .section-head h2 { max-width: 740px; margin-bottom: 14px; }
+  .section-head p { max-width: 680px; color: var(--ink-2); font-size: 1.05rem; }
+
+  .outcomes {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px;
+  }
+  @media (max-width: 720px) { .outcomes { grid-template-columns: 1fr; } }
+  .outcome {
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px 22px;
+  }
+  .outcome .num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2rem; color: var(--bs-red); font-style: italic;
+    line-height: 1; margin-bottom: 14px;
+  }
+  .outcome h3 { margin-bottom: 8px; }
+  .outcome p { font-size: 0.95rem; }
+
+  .wins {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px;
+  }
+  @media (max-width: 720px) { .wins { grid-template-columns: 1fr; } }
+  .win {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px;
+    display: flex; flex-direction: column; gap: 8px;
+    position: relative; overflow: hidden;
+  }
+  .win::before {
+    content: ''; position: absolute; inset: 0 auto 0 0;
+    width: 3px; background: var(--bs-red);
+  }
+  .win .badge {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #ff6a6a; font-weight: 600;
+  }
+  .win .title {
+    font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.35;
+  }
+  .win .sub { font-size: 0.92rem; color: var(--ink-3); }
+
+  .workflow { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .wf-row {
+    display: grid; grid-template-columns: 56px 200px 1fr; gap: 20px;
+    align-items: center;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--bs-red);
+    border-radius: 12px; padding: 18px 22px;
+  }
+  @media (max-width: 720px) {
+    .wf-row { grid-template-columns: 44px 1fr; gap: 14px; }
+    .wf-role { grid-column: 2; }
+    .wf-detail { grid-column: 1 / -1; }
+  }
+  .wf-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.8rem; color: var(--bs-red); font-style: italic; line-height: 1;
+  }
+  .wf-role {
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); font-weight: 600;
+  }
+  .wf-role strong {
+    display: block; color: var(--ink); font-size: 1rem;
+    text-transform: none; letter-spacing: -0.01em;
+    margin-top: 4px; font-weight: 600;
+  }
+  .wf-detail { font-size: 0.95rem; color: var(--ink-2); }
+
+  .parent-card {
+    margin-top: 32px;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px; padding: 36px 28px;
+    text-align: center;
+  }
+  .parent-card .label {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #ff6a6a; font-weight: 600; margin-bottom: 16px;
+  }
+  .parent-card h3 {
+    font-size: clamp(1.4rem, 2.4vw, 1.8rem); font-weight: 700;
+    max-width: 640px; margin: 0 auto 14px; line-height: 1.2;
+  }
+  .parent-card p { max-width: 580px; margin: 0 auto; }
+
+  .final-cta {
+    margin: 40px auto 80px; padding: 48px 28px; text-align: center;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(214,40,40,0.20), transparent 70%),
+      var(--card);
+    border: 1px solid var(--border); border-radius: 20px;
+  }
+  .final-cta h2 { max-width: 620px; margin: 0 auto 16px; }
+  .final-cta p { max-width: 580px; margin: 0 auto 28px; }
+
+  footer {
+    padding: 28px 0 40px; text-align: center;
+    color: var(--ink-3); font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--ink-2); }
+  footer a:hover { color: var(--bs-red); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-mark" href="https://brandlete.com" target="_blank" rel="noopener">
+        <img src="/img/brandlete-logo-dark.png" alt="Brandlete" />
+      </a>
+      <span class="x-sep">×</span>
+      <div class="bs-wordmark">
+        Bryant &amp; Stratton
+        <span class="sm">Soccer · Buffalo</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>For athletes considering Bryant &amp; Stratton Soccer</div>
+    <h1>At Bryant &amp; Stratton Soccer, your <span class="accent">development</span> is the program.</h1>
+    <p class="sub">
+      A personalized development plan from the day you commit. Real visibility for your parents. A coaching staff running on a modern athlete-development platform. This is what's behind the door when you choose Bryant &amp; Stratton.
+    </p>
+    <div class="cta-row">
+      <a href="#commit" class="btn btn-primary">Talk to Coach Parker</a>
+      <a href="#first-season" class="btn btn-ghost">See your first season ↓</a>
+    </div>
+    <div class="hero-note">A preview of the experience Coach Parker has built for the program.</div>
+  </section>
+
+  <section class="bay" id="for-you">
+    <div class="section-head">
+      <div class="section-label">What changes when you commit</div>
+      <h2>The experience designed around you, the athlete.</h2>
+      <p>Plenty of programs sign you and roster you. Bryant &amp; Stratton signs you and starts building a plan around you. Here's what that looks like in practice.</p>
+    </div>
+    <div class="outcomes">
+      <div class="outcome">
+        <div class="num">01</div>
+        <h3>A development plan built around you</h3>
+        <p>Not a depth chart. Your position, your goals, your gap to the player you want to be in two years. Reviewed and adjusted with your coach every cycle.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">02</div>
+        <h3>Real visibility, week to week</h3>
+        <p>Practice, games, training, feedback. You see your growth as actual numbers and notes, not a feeling at the end of the season.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">03</div>
+        <h3>A growth record that travels</h3>
+        <p>When the next step is a transfer, the pros, or a career, you walk out with a documented story of your years here. Film, milestones, the work behind the result.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">04</div>
+        <h3>Your athletic brand, on purpose</h3>
+        <p>How you present to the next opportunity matters. Bryant &amp; Stratton helps you build that profile intentionally while you play, instead of scrambling for it after.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay">
+    <div class="parent-card">
+      <div class="label">For parents</div>
+      <h3>You'll actually see what your kid is working on.</h3>
+      <p>A weekly window into your athlete's development. Goals, progress, what coach is focused on this cycle, where they're improving. Not a phone call once a season. Real visibility, from home, for the four years they're here.</p>
+    </div>
+  </section>
+
+  <section class="bay" id="behind">
+    <div class="section-head">
+      <div class="section-label">Why Bryant &amp; Stratton, behind the scenes</div>
+      <h2>The program's signal: a coaching staff that operates like a serious development organization.</h2>
+      <p>This is what's making the experience above possible. The reason it can be promised at all.</p>
+    </div>
+    <div class="wins">
+      <div class="win">
+        <span class="badge">Coaches who plan</span>
+        <div class="title">A modern athlete-development platform powers the staff, not a stack of binders</div>
+        <div class="sub">Practice plans, individual development paths, and feedback live in one operating layer. Less admin, more time on the actual coaching.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Track record that travels</span>
+        <div class="title">Every player's growth documented and exportable, not lost between seasons</div>
+        <div class="sub">When recruits become alumni, the record of who they became here goes with them. That's leverage at every next step.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Multi-campus consistency</span>
+        <div class="title">One standard of athletic experience across every Bryant &amp; Stratton location</div>
+        <div class="sub">Athletes get the same quality of development infrastructure regardless of which Bryant &amp; Stratton campus they're on.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Staff with leverage</span>
+        <div class="title">AI handles the busywork so coaches can focus on athletes</div>
+        <div class="sub">Drafts feedback, surfaces athletes whose progress has stalled, flags who needs a one-on-one this week. A small staff that runs like a much larger one.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay" id="first-season">
+    <div class="section-head">
+      <div class="section-label">Your first season at Bryant &amp; Stratton</div>
+      <h2>What walking into the program actually looks like.</h2>
+      <p>From the day you commit to the day you leave, this is the rhythm.</p>
+    </div>
+
+    <div class="workflow">
+      <div class="wf-row">
+        <div class="wf-num">01</div>
+        <div class="wf-role">Day you commit<strong>Your profile is built that day</strong></div>
+        <div class="wf-detail">Coach Parker and the staff start your development profile within 24 hours. Goals conversation, baseline assessment, your two-year picture.</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-num">02</div>
+        <div class="wf-role">Pre-season<strong>A custom plan, not a roster slot</strong></div>
+        <div class="wf-detail">Your position, your gap, your specific work between now and your first start. Built with you. Reviewed every cycle so it stays current with where you actually are.</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-num">03</div>
+        <div class="wf-role">Season<strong>Every practice, game, and rep tracked</strong></div>
+        <div class="wf-detail">You see your growth in real numbers and real notes. Your parents see it from home. Your coach sees patterns across the team that would otherwise be invisible.</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-num">04</div>
+        <div class="wf-role">Off-season<strong>A documented year, not a forgotten one</strong></div>
+        <div class="wf-detail">When the season ends, you have a record of what you did, what you grew on, and what comes next. A foundation for year two, not a reset.</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-num">05</div>
+        <div class="wf-role">When you graduate<strong>You walk out with the story you built</strong></div>
+        <div class="wf-detail">Transcripts of athletic growth, film, the documented arc of who you became as an athlete here. Whatever's next, you arrive ready and ready to prove it.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="commit">
+    <h2>See your first season before you commit.</h2>
+    <p>A 20-minute call with Coach Parker on what your development plan would look like at Bryant &amp; Stratton. Bring questions. Bring your parents. We'll show you exactly what your four years will look like.</p>
+    <div class="cta-row">
+      <a href="mailto:aparker@bryantstratton.edu" class="btn btn-primary">Connect with Coach Parker</a>
+      <a href="https://brandlete.com" target="_blank" rel="noopener" class="btn btn-ghost">About the platform behind it</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Built for Bryant &amp; Stratton Soccer by <a href="https://brandlete.com">Brandlete</a> · The same approach extends across every sport in the athletic department.
+  </div>
+</footer>
+
+</body>
+</html>
