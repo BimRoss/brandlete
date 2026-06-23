@@ -27,9 +27,10 @@
     --ink-3: #8d99b6;
     --brand: #00CCFF;
     --brand-blue: #2196f3;
-    --bs-red: #d62828;
-    --bs-red-deep: #9d1c1c;
-    --bs-red-soft: rgba(214,40,40,0.16);
+    --bs-blue: #1f7cc4;
+    --bs-blue-deep: #0e2347;
+    --bs-blue-soft: rgba(31,124,196,0.16);
+    --bs-blue-light: #5ea7df;
     --maxw: 1080px;
     color-scheme: dark;
   }
@@ -50,7 +51,7 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(214,40,40,0.18), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(31,124,196,0.18), transparent 70%),
       radial-gradient(ellipse 50% 40% at 50% 100%, rgba(0,204,255,0.10), transparent 70%);
     z-index: 0;
   }
@@ -68,15 +69,15 @@
   .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
   .brand-mark { display: flex; align-items: center; gap: 10px; }
   .brand-mark img { height: 44px; width: auto; display: block; }
-  .bs-wordmark {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 1.3rem; color: var(--ink); font-style: italic;
-    line-height: 1.1; text-align: right;
+  .bs-mark { display: flex; align-items: center; gap: 12px; }
+  .bs-mark img {
+    height: 64px; width: auto; display: block;
+    background: #fff; border-radius: 10px; padding: 6px;
   }
-  .bs-wordmark .sm {
-    display: block; font-family: 'Inter', sans-serif; font-style: normal;
+  .bs-mark .sm {
+    font-family: 'Inter', sans-serif;
     font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--bs-red); font-weight: 700; margin-top: 4px;
+    color: var(--bs-blue); font-weight: 700;
   }
   .x-sep {
     font-family: 'Instrument Serif', Georgia, serif;
@@ -86,8 +87,8 @@
   }
   @media (max-width: 640px) {
     .brand-mark img { height: 32px; }
-    .bs-wordmark { font-size: 1rem; }
-    .bs-wordmark .sm { font-size: 0.58rem; }
+    .bs-mark img { height: 46px; padding: 4px; border-radius: 8px; }
+    .bs-mark .sm { font-size: 0.58rem; }
     .x-sep { font-size: 1.4rem; }
     .topbar-inner { gap: 12px; }
   }
@@ -96,18 +97,18 @@
   .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 8px 16px; border-radius: 999px;
-    background: var(--bs-red-soft);
-    border: 1px solid rgba(214,40,40,0.34);
-    color: #ff6a6a;
+    background: var(--bs-blue-soft);
+    border: 1px solid rgba(31,124,196,0.34);
+    color: var(--bs-blue-light);
     font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
     font-weight: 600; margin-bottom: 28px;
   }
   .eyebrow .dot {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--bs-red);
-    box-shadow: 0 0 12px var(--bs-red);
+    width: 6px; height: 6px; border-radius: 50%; background: var(--bs-blue);
+    box-shadow: 0 0 12px var(--bs-blue);
   }
   .hero h1 { max-width: 920px; margin: 0 auto 22px; }
-  .hero h1 .accent { color: #ff6a6a; }
+  .hero h1 .accent { color: var(--bs-blue-light); }
   .hero .sub {
     max-width: 740px; margin: 0 auto 36px;
     font-size: clamp(1.05rem, 1.6vw, 1.2rem);
@@ -123,15 +124,15 @@
   }
   .btn:hover { transform: translateY(-1px); }
   .btn-primary {
-    background: var(--bs-red); color: #fff;
-    border-color: var(--bs-red);
+    background: var(--bs-blue); color: #fff;
+    border-color: var(--bs-blue);
   }
-  .btn-primary:hover { background: #e94545; border-color: #e94545; }
+  .btn-primary:hover { background: #2a8bd6; border-color: #2a8bd6; }
   .btn-ghost {
     background: transparent; color: var(--ink);
     border-color: var(--border);
   }
-  .btn-ghost:hover { border-color: var(--bs-red); }
+  .btn-ghost:hover { border-color: var(--bs-blue); }
   .hero-note { margin-top: 22px; font-size: 0.86rem; color: var(--ink-3); }
 
   section.bay { padding: 60px 0; }
@@ -153,7 +154,7 @@
   }
   .outcome .num {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 2rem; color: var(--bs-red); font-style: italic;
+    font-size: 2rem; color: var(--bs-blue); font-style: italic;
     line-height: 1; margin-bottom: 14px;
   }
   .outcome h3 { margin-bottom: 8px; }
@@ -172,11 +173,11 @@
   }
   .win::before {
     content: ''; position: absolute; inset: 0 auto 0 0;
-    width: 3px; background: var(--bs-red);
+    width: 3px; background: var(--bs-blue);
   }
   .win .badge {
     font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: #ff6a6a; font-weight: 600;
+    color: var(--bs-blue-light); font-weight: 600;
   }
   .win .title {
     font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.35;
@@ -189,7 +190,7 @@
     align-items: center;
     background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--bs-red);
+    border-left: 3px solid var(--bs-blue);
     border-radius: 12px; padding: 18px 22px;
   }
   @media (max-width: 720px) {
@@ -199,7 +200,7 @@
   }
   .wf-num {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 1.8rem; color: var(--bs-red); font-style: italic; line-height: 1;
+    font-size: 1.8rem; color: var(--bs-blue); font-style: italic; line-height: 1;
   }
   .wf-role {
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
@@ -221,7 +222,7 @@
   }
   .parent-card .label {
     font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: #ff6a6a; font-weight: 600; margin-bottom: 16px;
+    color: var(--bs-blue-light); font-weight: 600; margin-bottom: 16px;
   }
   .parent-card h3 {
     font-size: clamp(1.4rem, 2.4vw, 1.8rem); font-weight: 700;
@@ -232,7 +233,7 @@
   .final-cta {
     margin: 40px auto 80px; padding: 48px 28px; text-align: center;
     background:
-      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(214,40,40,0.20), transparent 70%),
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(31,124,196,0.20), transparent 70%),
       var(--card);
     border: 1px solid var(--border); border-radius: 20px;
   }
@@ -245,7 +246,7 @@
     border-top: 1px solid var(--border);
   }
   footer a { color: var(--ink-2); }
-  footer a:hover { color: var(--bs-red); }
+  footer a:hover { color: var(--bs-blue); }
 </style>
 </head>
 <body>
@@ -258,8 +259,8 @@
         <img src="/img/brandlete-logo-dark.png" alt="Brandlete" />
       </a>
       <span class="x-sep">×</span>
-      <div class="bs-wordmark">
-        Bryant &amp; Stratton
+      <div class="bs-mark">
+        <img src="/bryant-stratton/img/bobcats-logo.jpg" alt="Bryant &amp; Stratton Bobcats Athletics" />
         <span class="sm">Soccer · Buffalo</span>
       </div>
     </div>
