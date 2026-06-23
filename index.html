@@ -336,8 +336,9 @@
     .topstrip .greet h2 .greet-tail { display: block; }
   }
   @media (max-width: 920px) {
-    .topstrip { margin-bottom: 32px; }
+    .topstrip { margin-bottom: 16px; gap: 8px; }
     .topstrip .actions { display: none; }
+    .content { padding-top: 10px; padding-bottom: 40px; }
   }
 
   .chip {
@@ -437,10 +438,14 @@
   }
   @media (max-width: 720px) {
     .hero-card {
-      padding: clamp(32px, 8vw, 56px) clamp(18px, 5vw, 28px);
+      padding: clamp(22px, 5vw, 36px) clamp(18px, 5vw, 28px);
       background-image: url('img/hero-athletes-mobile.jpg');
       background-position: center center;
     }
+    .hero-card .eyebrow { margin-bottom: 10px; }
+    .hero-card .lede { margin-top: 12px; }
+    .hero-card .cta-row { margin-top: 18px; }
+    .hero-card .hero-roles { margin-top: 18px; }
     .hero-card::before {
       background:
         linear-gradient(180deg, rgba(6,9,18,0.62) 0%, rgba(6,9,18,0.55) 50%, rgba(6,9,18,0.62) 100%);
