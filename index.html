@@ -665,6 +665,14 @@
   }
   .section-head h2 { color: var(--ink); }
   .section-head .right { color: var(--brand); font-size: 0.88rem; font-weight: 600; flex-shrink: 0; }
+  .section-head .contact-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+  .section-head .contact-cta a { color: var(--brand); }
+  .section-head .contact-cta .cta-note { margin: 0; font-size: 0.78rem; font-weight: 500; }
+  .section-head .contact-cta .cta-note a { color: var(--ink-soft); text-decoration: underline; }
+  .section-head .contact-cta .cta-note a:hover { color: var(--brand); }
+  @media (max-width: 760px) {
+    .section-head .contact-cta { align-items: flex-start; text-align: left; }
+  }
   @media (max-width: 720px) {
     .section-head { flex-direction: column; align-items: flex-start; gap: 10px; }
     .section-head .left { width: 100%; }
@@ -2293,7 +2301,10 @@
           <div class="eyebrow">Contact</div>
           <h2>Ready to see Brandlete in action?</h2>
         </div>
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@brandlete.com" class="right" target="_blank" rel="noopener">info@brandlete.com ↗</a>
+        <div class="right contact-cta">
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@brandlete.com" target="_blank" rel="noopener">info@brandlete.com ↗</a>
+          <p class="cta-note"><a href="mailto:info@brandlete.com?subject=Brandlete%20demo%20request">or open in your default mail app</a></p>
+        </div>
       </div>
       <div class="schedule-block" id="schedule">
         <h3>Pick a 30-minute slot.</h3>
