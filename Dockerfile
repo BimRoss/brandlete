@@ -8,6 +8,7 @@ COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY img/ /usr/share/nginx/html/img/
 COPY orange-crush/ /usr/share/nginx/html/orange-crush/
 COPY xlv/ /usr/share/nginx/html/xlv/
+COPY bryant-stratton/ /usr/share/nginx/html/bryant-stratton/
 COPY coach-workspace.pdf /usr/share/nginx/html/coach-workspace.pdf
 
 EXPOSE 80
