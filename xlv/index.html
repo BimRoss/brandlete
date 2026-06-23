@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brandlete × Excelsior Empire Regional Volleyball Association</title>
+<meta name="description" content="Helping XLV bring a modern athlete development experience to every member club in the region. Brandlete is the platform XLV can extend across upstate New York." />
+<meta name="robots" content="noindex, nofollow" />
+<meta property="og:title" content="Brandlete × XLV" />
+<meta property="og:description" content="A platform XLV can extend to every member club." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/img/brandlete-favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #060912;
+    --bg-2: #0a0f1f;
+    --card: #0f1530;
+    --card-2: #131a36;
+    --border: #1c2444;
+    --ink: #f1f5fb;
+    --ink-2: #c1cae0;
+    --ink-3: #8d99b6;
+    --brand: #00CCFF;
+    --brand-blue: #2196f3;
+    --xlv-blue: #1e8fd1;
+    --xlv-blue-deep: #006298;
+    --xlv-blue-soft: rgba(30,143,209,0.16);
+    --maxw: 1080px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(30,143,209,0.20), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(0,204,255,0.10), transparent 70%);
+    z-index: 0;
+  }
+  .wrap, footer { position: relative; z-index: 1; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.1; }
+  h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 700; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; }
+  h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+  p { margin: 0; color: var(--ink-2); }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .topbar { padding: 24px 0 0; }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-mark img { height: 44px; width: auto; display: block; }
+  .x-sep {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--ink-3);
+    font-style: italic;
+  }
+  @media (max-width: 640px) {
+    .brand-mark img { height: 32px; }
+    .x-sep { font-size: 1.4rem; }
+    .topbar-inner { gap: 12px; }
+  }
+
+  .hero { padding: 80px 0 60px; text-align: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 999px;
+    background: var(--xlv-blue-soft);
+    border: 1px solid rgba(30,143,209,0.34);
+    color: var(--xlv-blue);
+    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 28px;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--xlv-blue);
+    box-shadow: 0 0 12px var(--xlv-blue);
+  }
+  .hero h1 { max-width: 920px; margin: 0 auto 22px; }
+  .hero h1 .accent { color: var(--xlv-blue); }
+  .hero .sub {
+    max-width: 740px; margin: 0 auto 36px;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--ink-2);
+  }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 26px; border-radius: 12px;
+    font-weight: 600; font-size: 1rem;
+    border: 1px solid transparent; cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--xlv-blue); color: #04101a;
+    border-color: var(--xlv-blue);
+  }
+  .btn-primary:hover { background: #2fa3e3; border-color: #2fa3e3; }
+  .btn-ghost {
+    background: transparent; color: var(--ink);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--xlv-blue); }
+  .hero-note { margin-top: 22px; font-size: 0.86rem; color: var(--ink-3); }
+
+  section.bay { padding: 60px 0; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-3); margin-bottom: 14px; font-weight: 600;
+  }
+  .section-head h2 { max-width: 740px; margin-bottom: 14px; }
+  .section-head p { max-width: 680px; color: var(--ink-2); font-size: 1.05rem; }
+
+  .wins {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px;
+  }
+  @media (max-width: 720px) { .wins { grid-template-columns: 1fr; } }
+  .win {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px;
+    display: flex; flex-direction: column; gap: 8px;
+    position: relative; overflow: hidden;
+  }
+  .win::before {
+    content: ''; position: absolute; inset: 0 auto 0 0;
+    width: 3px; background: var(--xlv-blue);
+  }
+  .win .badge {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--xlv-blue); font-weight: 600;
+  }
+  .win .title {
+    font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.35;
+  }
+  .win .sub { font-size: 0.92rem; color: var(--ink-3); }
+
+  .outcomes {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px;
+  }
+  @media (max-width: 720px) { .outcomes { grid-template-columns: 1fr; } }
+  .outcome {
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px 22px;
+  }
+  .outcome .num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2rem; color: var(--xlv-blue); font-style: italic;
+    line-height: 1; margin-bottom: 14px;
+  }
+  .outcome h3 { margin-bottom: 8px; }
+  .outcome p { font-size: 0.95rem; }
+
+  .workflow { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .wf-row {
+    display: grid; grid-template-columns: 56px 200px 1fr; gap: 20px;
+    align-items: center;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--xlv-blue);
+    border-radius: 12px; padding: 18px 22px;
+  }
+  @media (max-width: 720px) {
+    .wf-row { grid-template-columns: 44px 1fr; gap: 14px; }
+    .wf-role { grid-column: 2; }
+    .wf-detail { grid-column: 1 / -1; }
+  }
+  .wf-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.8rem; color: var(--xlv-blue); font-style: italic; line-height: 1;
+  }
+  .wf-role {
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); font-weight: 600;
+  }
+  .wf-role strong {
+    display: block; color: var(--ink); font-size: 1rem;
+    text-transform: none; letter-spacing: -0.01em;
+    margin-top: 4px; font-weight: 600;
+  }
+  .wf-detail { font-size: 0.95rem; color: var(--ink-2); }
+
+  .preview {
+    margin-top: 32px;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px; padding: 28px;
+  }
+  .preview-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding-bottom: 18px; border-bottom: 1px solid var(--border); margin-bottom: 22px;
+  }
+  .preview-head .pl { display: flex; align-items: center; gap: 10px; }
+  .preview-head img { height: 36px; width: auto; display: block; }
+  .preview-head .pl-text { font-weight: 600; color: var(--ink); }
+  .preview-head .pl-sub {
+    font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .preview-head .live {
+    font-size: 0.72rem; color: var(--xlv-blue); letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .preview-foot {
+    margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--border);
+    font-size: 0.8rem; color: var(--ink-3); text-align: center;
+  }
+
+  .final-cta {
+    margin: 40px auto 80px; padding: 48px 28px; text-align: center;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(30,143,209,0.20), transparent 70%),
+      var(--card);
+    border: 1px solid var(--border); border-radius: 20px;
+  }
+  .final-cta h2 { max-width: 620px; margin: 0 auto 16px; }
+  .final-cta p { max-width: 580px; margin: 0 auto 28px; }
+
+  footer {
+    padding: 28px 0 40px; text-align: center;
+    color: var(--ink-3); font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--ink-2); }
+  footer a:hover { color: var(--xlv-blue); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-mark" href="https://brandlete.com" target="_blank" rel="noopener">
+        <img src="/img/brandlete-logo-dark.png" alt="Brandlete" />
+      </a>
+      <span class="x-sep">×</span>
+      <a class="brand-mark" href="https://www.xlvball.org" target="_blank" rel="noopener" style="justify-content: flex-end;">
+        <img src="xlv-logo.webp" alt="Excelsior Empire Regional Volleyball Association" />
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>Built for Excelsior Empire Volleyball</div>
+    <h1>Bringing modern athlete development to <span class="accent">every club</span> under the XLV umbrella.</h1>
+    <p class="sub">
+      XLV oversees the regional ecosystem and supports the clubs that make it work. Brandlete is the platform XLV can extend to every member club, so every coach, athlete, and family across upstate New York gets the same modern development experience under the XLV banner.
+    </p>
+    <div class="cta-row">
+      <a href="https://brandlete.com/#contact" class="btn btn-primary">Book a 20-min walkthrough</a>
+      <a href="#fit" class="btn btn-ghost">See how it fits ↓</a>
+    </div>
+    <div class="hero-note">A working session on the experience XLV can deliver to its clubs.</div>
+  </section>
+
+  <section class="bay">
+    <div class="section-head">
+      <div class="section-label">What we already know about XLV</div>
+      <h2>A regional ecosystem worth equipping.</h2>
+      <p>What XLV has built across clubs, coaches, referees, and athletes is the hard part. Brandlete is the platform XLV can hand to every member club, so the development experience lives consistently across the entire region instead of varying club to club.</p>
+    </div>
+    <div class="wins">
+      <div class="win">
+        <span class="badge">USAV Regional Partner</span>
+        <div class="title">The official upstate New York authority for USA Volleyball</div>
+        <div class="sub">An institutional credential that gives XLV a unique position to shape the experience every club in the region delivers.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Mission-driven</span>
+        <div class="title">"Promote volleyball as a lifetime activity"</div>
+        <div class="sub">Juniors, high performance, adult competition, coaches, referees. A federation that thinks in player-lifetime, not single seasons.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Member-club support</span>
+        <div class="title">Clubs from SyrV (nationals) to programs across upstate, plus a financial-assistance program so no kid is priced out</div>
+        <div class="sub">XLV exists to support the clubs underneath it. The platform XLV offers those clubs is part of that support.</div>
+      </div>
+      <div class="win">
+        <span class="badge">Regional + cross-border reach</span>
+        <div class="title">Canadian clubs participate in XLV tournaments; Positive Athlete partnership recognizes character on top of competition</div>
+        <div class="sub">The reach is real. The mission already extends beyond the sideline. The infrastructure underneath should too.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay" id="fit">
+    <div class="section-head">
+      <div class="section-label">Why Brandlete Fits XLV</div>
+      <h2>The platform XLV can offer every club it serves.</h2>
+      <p>Brandlete isn't a replacement for what XLV already does as the regional body. It's the modern athlete-development layer XLV can extend to its member clubs, so every club in the region operates on the same foundation, with XLV seeing across all of it.</p>
+    </div>
+    <div class="outcomes">
+      <div class="outcome">
+        <div class="num">01</div>
+        <h3>Consistent Experience, Club to Club</h3>
+        <p>Every member club, every coach, every athlete operating on the same modern platform under the XLV banner. A family in Syracuse and a family in Albany get the same level of development visibility.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">02</div>
+        <h3>Coach + Referee Development at Scale</h3>
+        <p>XLV runs development programs for both. One platform to track progress, certifications, and growth across hundreds of coaches and refs in the region, not a binder per program.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">03</div>
+        <h3>Member-Club Value-Add</h3>
+        <p>A platform XLV provides to its clubs as part of belonging to the regional body. Clubs get a turnkey athlete-development system; XLV strengthens the reason to be an XLV member.</p>
+      </div>
+      <div class="outcome">
+        <div class="num">04</div>
+        <h3>Regional Insights, One View</h3>
+        <p>Across every member club, age band, and program: who's engaged, where development is landing, where it isn't. The big-picture view a governing body needs to do the job well.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay" id="picture">
+    <div class="section-head">
+      <div class="section-label">What XLV Could Look Like With Brandlete</div>
+      <h2>One platform, many clubs, one regional view.</h2>
+      <p>What a season looks like when XLV equips every member club with the same modern foundation.</p>
+    </div>
+
+    <div class="preview">
+      <div class="preview-head">
+        <div class="pl">
+          <img src="xlv-logo.webp" alt="" />
+          <div>
+            <div class="pl-text">Excelsior Empire Volleyball on Brandlete</div>
+            <div class="pl-sub">Sample workflow · across every member club</div>
+          </div>
+        </div>
+        <div class="live">● Sample flow</div>
+      </div>
+
+      <div class="workflow">
+        <div class="wf-row">
+          <div class="wf-num">01</div>
+          <div class="wf-role">XLV (regional body)<strong>Deploys Brandlete to every member club</strong></div>
+          <div class="wf-detail">One activation rolls a clean, club-branded platform out to every member club in the region. XLV sets the development framework once; every club inherits it.</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-num">02</div>
+          <div class="wf-role">Member clubs (e.g. SyrV)<strong>Get a turnkey athlete-development platform with their branding</strong></div>
+          <div class="wf-detail">Each club runs Brandlete with their own colors, logo, and roster. The club keeps its identity; XLV keeps consistency underneath.</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-num">03</div>
+          <div class="wf-role">Coaches + referees<strong>Develop on the platform, not in binders</strong></div>
+          <div class="wf-detail">Plans, certifications, feedback, and growth tracked the same way across every club. XLV's coaches-development and refs-development programs finally have an operating layer.</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-num">04</div>
+          <div class="wf-role">Athletes + parents<strong>Same modern experience, region-wide</strong></div>
+          <div class="wf-detail">A player journey that travels from juniors to high performance to adult competition without breaking. Parents in every market get the same visibility into goals, progress, and feedback.</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-num">05</div>
+          <div class="wf-role">AI<strong>Handles the busywork across the region</strong></div>
+          <div class="wf-detail">Drafts coach feedback, surfaces athletes whose progress has stalled, flags clubs whose engagement is drifting. XLV's small team gets the leverage to manage a region's worth of programs.</div>
+        </div>
+      </div>
+
+      <div class="preview-foot">
+        Walking through this against XLV's actual club roster is what the 20 minutes is for.
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>A working session on what XLV could deliver to its clubs.</h2>
+    <p>20 minutes with John and Brian. Not a sales pitch, a conversation about extending a modern development platform across every club XLV supports.</p>
+    <div class="cta-row">
+      <a href="https://brandlete.com/#contact" class="btn btn-primary">Book the walkthrough</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Built for Excelsior Empire Regional Volleyball Association by <a href="https://brandlete.com">Brandlete</a> · john@brandlete.com · brian@brandlete.com
+  </div>
+</footer>
+
+</body>
+</html>
