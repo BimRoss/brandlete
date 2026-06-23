@@ -1318,6 +1318,49 @@
   }
   .contact-status.error { color: var(--danger); }
 
+  .schedule-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 18px;
+  }
+  .schedule-block h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .schedule-block .schedule-lede {
+    color: var(--ink-3);
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+  .schedule-embed {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--border);
+  }
+  .schedule-embed iframe {
+    width: 100%;
+    height: 700px;
+    border: 0;
+    display: block;
+  }
+  @media (max-width: 640px) {
+    .schedule-embed iframe { height: 760px; }
+  }
+  .schedule-fallback {
+    margin-top: 12px;
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+  .schedule-fallback a { color: var(--brand); font-weight: 600; }
+
   .cta-strip {
     margin-top: 28px;
     background: var(--card);
@@ -2243,14 +2286,20 @@
         </div>
         <a href="mailto:info@brandlete.com" class="right">info@brandlete.com ↗</a>
       </div>
+      <div class="schedule-block">
+        <h3>Pick a 20-minute slot.</h3>
+        <p class="schedule-lede">Walk through Brandlete with John, VP Partnerships. Pick a time below and you'll get a calendar invite right away.</p>
+        <div class="schedule-embed">
+          <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bFqo43JGcdk9kShp6SSL5J4ZZyWsuaawJnrFhsmzZTkZzmtSBEq3-DyzO9VPWQE8jKZ7KXtvN?gv=true" title="Schedule a Brandlete demo with John Osberg" loading="lazy"></iframe>
+        </div>
+        <p class="schedule-fallback">Trouble loading the calendar? <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0bFqo43JGcdk9kShp6SSL5J4ZZyWsuaawJnrFhsmzZTkZzmtSBEq3-DyzO9VPWQE8jKZ7KXtvN" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+      </div>
       <div class="contact-card">
         <div class="lead">
           <img class="shoe" src="img/brandlete-shoe.png" alt="" />
-          <h3>Book a 20-minute intro.</h3>
-          <p>We'll show how Brandlete can help your program organize development, support coaches, improve visibility, and create a better athlete experience.</p>
-          <a class="btn btn-cyan book-direct" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0bFqo43JGcdk9kShp6SSL5J4ZZyWsuaawJnrFhsmzZTkZzmtSBEq3-DyzO9VPWQE8jKZ7KXtvN" target="_blank" rel="noopener">Book directly with John, VP Partnerships</a>
-          <div class="lead-divider"><span>or</span></div>
-          <p class="lead-form-hint">Prefer to send details first? Use the form. Email <a href="mailto:info@brandlete.com">info@brandlete.com</a> goes to the same inbox.</p>
+          <h3>Have a question first?</h3>
+          <p>Send us a note and we'll get back to you. For Power 25, pricing, press, or anything that isn't a demo request, drop the details and we'll route it to the right person.</p>
+          <p class="lead-form-hint">Or email <a href="mailto:info@brandlete.com">info@brandlete.com</a> directly.</p>
         </div>
         <form class="contact-form" id="contact-form" novalidate>
           <div class="contact-field">
