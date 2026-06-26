@@ -2721,10 +2721,17 @@
   // Re-anchor after lazy images load — product screenshots above sections like
   // #power25 have no explicit dimensions, so they load with height:0 and then
   // expand, pushing the hash target down after the initial scroll fires.
+  // Use explicit scrollTo rather than scrollIntoView — iOS WKWebView can land
+  // block:'start' at the bottom of the viewport instead of the top.
   if (window.location.hash) {
     window.addEventListener('load', function() {
-      var target = document.getElementById(window.location.hash.slice(1));
-      if (target) target.scrollIntoView({ block: 'start' });
+      var id = window.location.hash.replace(/^#/, '');
+      var target = document.getElementById(id);
+      if (!target) return;
+      var topbar = document.querySelector('.mobile-topbar');
+      var navH = topbar ? topbar.offsetHeight : 0;
+      var absoluteY = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: Math.max(0, absoluteY - navH - 8) });
     });
   }
 
