@@ -2718,6 +2718,16 @@
     document.addEventListener('click', function () { closeAll(null); });
   })();
 
+  // Re-anchor after lazy images load — product screenshots above sections like
+  // #power25 have no explicit dimensions, so they load with height:0 and then
+  // expand, pushing the hash target down after the initial scroll fires.
+  if (window.location.hash) {
+    window.addEventListener('load', function() {
+      var target = document.getElementById(window.location.hash.slice(1));
+      if (target) target.scrollIntoView({ block: 'start' });
+    });
+  }
+
   // Section anchor copy-link buttons
   document.querySelectorAll('.section-link').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
