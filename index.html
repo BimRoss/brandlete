@@ -1934,7 +1934,7 @@
         <div class="product-twoup">
           <figure>
             <div class="product-img-wrap">
-              <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." loading="lazy" />
+              <img src="img/product-coach.png" alt="Brandlete Coach Hub showing active development systems and at-a-glance KPIs." width="1536" height="1024" loading="lazy" />
               <span class="pin" style="top:14%;left:8%"><i>1</i><em>Assign weekly work in seconds</em></span>
               <span class="pin pin-left" style="top:42%;left:62%"><i>2</i><em>Every athlete's progress in view</em></span>
               <span class="pin" style="top:78%;left:22%"><i>3</i><em>Roster-wide progress at a glance</em></span>
@@ -1943,7 +1943,7 @@
           </figure>
           <figure>
             <div class="product-img-wrap">
-              <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." loading="lazy" />
+              <img src="img/product-athlete.png" alt="Brandlete athlete dashboard showing today's focus, coach updates, and progress streak." width="1536" height="1024" loading="lazy" />
               <span class="pin" style="top:12%;left:10%"><i>1</i><em>Today's focus, one screen</em></span>
               <span class="pin pin-left" style="top:46%;left:64%"><i>2</i><em>Coach updates in line</em></span>
               <span class="pin" style="top:80%;left:24%"><i>3</i><em>Progress streak stays visible</em></span>
@@ -2717,23 +2717,6 @@
     });
     document.addEventListener('click', function () { closeAll(null); });
   })();
-
-  // Re-anchor after lazy images load — product screenshots above sections like
-  // #power25 have no explicit dimensions, so they load with height:0 and then
-  // expand, pushing the hash target down after the initial scroll fires.
-  // Use explicit scrollTo rather than scrollIntoView — iOS WKWebView can land
-  // block:'start' at the bottom of the viewport instead of the top.
-  if (window.location.hash) {
-    window.addEventListener('load', function() {
-      var id = window.location.hash.replace(/^#/, '');
-      var target = document.getElementById(id);
-      if (!target) return;
-      var topbar = document.querySelector('.mobile-topbar');
-      var navH = topbar ? topbar.offsetHeight : 0;
-      var absoluteY = target.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: Math.max(0, absoluteY - navH - 8) });
-    });
-  }
 
   // Section anchor copy-link buttons
   document.querySelectorAll('.section-link').forEach(function(btn) {
