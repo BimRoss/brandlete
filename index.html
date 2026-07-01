@@ -890,6 +890,28 @@
     border-radius: 999px;
     align-self: flex-start;
   }
+  .compare-wrap { margin-top: 22px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare {
+    width: 100%; border-collapse: separate; border-spacing: 0; min-width: 580px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    box-shadow: var(--shadow-card); overflow: hidden;
+  }
+  .compare th, .compare td { padding: 14px 18px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
+  .compare tbody tr:last-child td { border-bottom: none; }
+  .compare thead th {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 600;
+  }
+  .compare tbody td { color: var(--ink-2); font-size: 0.95rem; }
+  .compare .cap { color: var(--ink); font-weight: 600; }
+  .compare th.center, .compare td.center { text-align: center; }
+  .compare .col-us { background: var(--brand-soft); }
+  .compare thead th.col-us { color: var(--brand); }
+  .compare .mark { display: inline-flex; align-items: center; justify-content: center; }
+  .compare .mark svg { width: 20px; height: 20px; }
+  .compare .yes { color: var(--brand-2); }
+  .compare .no { color: var(--ink-3); opacity: 0.6; }
+  .compare .limited { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
   .card .list {
     list-style: none;
     padding: 0;
@@ -1778,6 +1800,10 @@
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 10h18"/><path d="M8 2v4M16 2v4"/><path d="M8 15h3"/></svg></span>
         <span>Program Operations<span class="sub">Run the whole program</span></span>
       </a>
+      <a href="#compare">
+        <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <span>How We Stack Up<span class="sub">Against the competition</span></span>
+      </a>
       <a href="#playbooks">
         <span class="ico"><svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h11a3 3 0 0 1 3 3v13H7a2 2 0 0 1-2-2z"/><path d="M9 8h8M9 12h8M9 16h5"/></svg></span>
         <span>Playbooks<span class="sub">Your curriculum, reusable</span></span>
@@ -2067,6 +2093,69 @@
           <h3>Roster &amp; team management.</h3>
           <p class="lede">Build teams, assign staff, and manage every roster across your organization from one backend.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="section-head">
+        <div class="left">
+          <div class="eyebrow">How we stack up</div>
+          <h2>How we stack up against the competition.<button class="section-link" data-hash="compare" aria-label="Copy link to this section" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button></h2>
+        </div>
+      </div>
+      <p class="section-lede">Traditional sports tech runs the logistics and stops there. Brandlete does everything they do to operate a program, then adds the one thing they were never built for: developing the athlete.</p>
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">Capability</th>
+              <th scope="col" class="center">Traditional sports tech</th>
+              <th scope="col" class="center col-us">Brandlete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cap">Team scheduling &amp; calendars</td>
+              <td class="center"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">Registration &amp; payments</td>
+              <td class="center"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">Team &amp; org communication</td>
+              <td class="center"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">Tournament operations</td>
+              <td class="center"><span class="limited">Limited</span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">Program health &amp; revenue visibility</td>
+              <td class="center"><span class="limited">Limited</span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">Athlete development system</td>
+              <td class="center"><span class="mark no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 12h12"/></svg></span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">College readiness &amp; athlete profiles</td>
+              <td class="center"><span class="mark no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 12h12"/></svg></span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="cap">Retention &amp; early-warning signals</td>
+              <td class="center"><span class="mark no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 12h12"/></svg></span></td>
+              <td class="center col-us"><span class="mark yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
